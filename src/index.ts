@@ -25,17 +25,21 @@ function makeMatrix<T>(
     initialValues?: T
 ): Matrix<T>;
 
-function makeMatrix<T>(dimensions: 1 | [number], initialValues?: T): T[];
+// TODO: Find way to get more specific return types with below overloads:
+// https://github.com/microsoft/TypeScript/issues/38357
+// const mat = makeMatrix(3); // <- type should be number[][][], not Matrix
 
-function makeMatrix<T>(
-    dimensions: 2 | [number, number],
-    initialValues?: T
-): T[][];
+// function makeMatrix<T>(dimensions: 1 | [number], initialValues?: T): T[];
 
-function makeMatrix<T>(
-    dimensions: 3 | [number, number, number],
-    initialValues?: T
-): T[][][];
+// function makeMatrix<T>(
+//     dimensions: 2 | [number, number],
+//     initialValues?: T
+// ): T[][];
+
+// function makeMatrix<T>(
+//     dimensions: 3 | [number, number, number],
+//     initialValues?: T
+// ): T[][][];
 
 function makeMatrix<T>(
     dimensions: number | number[],
@@ -67,7 +71,3 @@ function makeMatrix<T>(
 }
 
 export default makeMatrix;
-
-// TODO: Find way to get right return type: https://github.com/microsoft/TypeScript/issues/38357
-
-// const mat = makeMatrix(3); // <- type should be number[][][], not Matrix
