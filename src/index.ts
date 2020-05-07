@@ -9,7 +9,7 @@ export type Matrix<T> = T[] | Matrix<T>[];
  *
  * Both numbers and number arrays are supported to create the matrix. If a number is
  * passed as the `dimensions` parameter, the smallest array with that number of
- * dimensions is returned. If an array is passed, the returned matrix will have
+ * dimensions is returned. If an array is passed, the returned matrix will be of
  * those exact dimensions. For example, passing in `[3, 2, 5]` will result in a
  * three-dimensional array that is 3x2x5 in size.
  *
