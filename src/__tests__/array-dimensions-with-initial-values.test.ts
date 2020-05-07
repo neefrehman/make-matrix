@@ -151,41 +151,9 @@ test("1x1x1x1x1 test - With string initialValues", () => {
     ]);
 });
 
-test("2x6x2x5x2 test - With string initialValues", () => {
-    expect(makeMatrix([2, 6, 2, 5, 2], "string")).toStrictEqual([
+test("2x4x2x5x2 test - With string initialValues", () => {
+    expect(makeMatrix([2, 4, 2, 5, 2], "string")).toStrictEqual([
         [
-            [
-                [
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"]
-                ],
-                [
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"]
-                ]
-            ],
-            [
-                [
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"]
-                ],
-                [
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"]
-                ]
-            ],
             [
                 [
                     ["string", "string"],
@@ -252,38 +220,6 @@ test("2x6x2x5x2 test - With string initialValues", () => {
             ]
         ],
         [
-            [
-                [
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"]
-                ],
-                [
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"]
-                ]
-            ],
-            [
-                [
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"]
-                ],
-                [
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"],
-                    ["string", "string"]
-                ]
-            ],
             [
                 [
                     ["string", "string"],
@@ -728,41 +664,9 @@ test("1x1x1x1x1 test - With number initialValues", () => {
     expect(makeMatrix([1, 1, 1, 1, 1], 0)).toStrictEqual([[[[[0]]]]]);
 });
 
-test("2x6x2x5x2 test - With number initialValues", () => {
-    expect(makeMatrix([2, 6, 2, 5, 2], 0)).toStrictEqual([
+test("2x4x2x5x2 test - With number initialValues", () => {
+    expect(makeMatrix([2, 4, 2, 5, 2], 0)).toStrictEqual([
         [
-            [
-                [
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0]
-                ],
-                [
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0]
-                ]
-            ],
-            [
-                [
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0]
-                ],
-                [
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0]
-                ]
-            ],
             [
                 [
                     [0, 0],
@@ -829,38 +733,6 @@ test("2x6x2x5x2 test - With number initialValues", () => {
             ]
         ],
         [
-            [
-                [
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0]
-                ],
-                [
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0]
-                ]
-            ],
-            [
-                [
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0]
-                ],
-                [
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0],
-                    [0, 0]
-                ]
-            ],
             [
                 [
                     [0, 0],
@@ -1167,41 +1039,9 @@ test("1x1x1x1x1 test - With boolean initialValues", () => {
     expect(makeMatrix([1, 1, 1, 1, 1], false)).toStrictEqual([[[[[false]]]]]);
 });
 
-test("2x6x2x5x2 test - With boolean initialValues", () => {
-    expect(makeMatrix([2, 6, 2, 5, 2], false)).toStrictEqual([
+test("2x4x2x5x2 test - With boolean initialValues", () => {
+    expect(makeMatrix([2, 4, 2, 5, 2], false)).toStrictEqual([
         [
-            [
-                [
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false]
-                ],
-                [
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false]
-                ]
-            ],
-            [
-                [
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false]
-                ],
-                [
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false]
-                ]
-            ],
             [
                 [
                     [false, false],
@@ -1268,38 +1108,6 @@ test("2x6x2x5x2 test - With boolean initialValues", () => {
             ]
         ],
         [
-            [
-                [
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false]
-                ],
-                [
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false]
-                ]
-            ],
-            [
-                [
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false]
-                ],
-                [
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false],
-                    [false, false]
-                ]
-            ],
             [
                 [
                     [false, false],

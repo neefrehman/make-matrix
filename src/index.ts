@@ -1,6 +1,6 @@
 /**
- * A multidimensional array returned by `makeMatrix`,
- * typed recusively to ensure each point has the same type (`T`) as `initialValues`.
+ * A multidimensional array returned by `makeMatrix`, typed recusively to ensure each
+ * point in the matrix has the same type as the function's `initialValues` parameter.
  */
 export type Matrix<T> = T[] | Matrix<T>[];
 
@@ -67,3 +67,7 @@ function makeMatrix<T>(
 }
 
 export default makeMatrix;
+
+// TODO: Find way to get right return type: https://github.com/microsoft/TypeScript/issues/38357
+
+// const mat = makeMatrix(3); // <- type should be number[][][], not Matrix
