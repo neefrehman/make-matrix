@@ -2,6 +2,15 @@
     "name": "make-matrix",
     "version": "1.0.0",
     "description": "A simple, type-safe way to create multi-dimensional arrays",
+    "homepage": "https://github.com/neefrehman/make-matrix#readme",
+    "bugs": {
+        "url": "https://github.com/neefrehman/make-matrix/issues"
+    },
+    "author": "Neef Rehman",
+    "license": "ISC",
+    "files": [
+        "lib/**/*"
+    ],
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "repository": {
@@ -16,15 +25,6 @@
         "generative coding",
         "creative coding"
     ],
-    "files": [
-        "lib/**/*"
-    ],
-    "author": "Neef Rehman",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/neefrehman/make-matrix/issues"
-    },
-    "homepage": "https://github.com/neefrehman/make-matrix#readme",
     "dependencies": {},
     "devDependencies": {
         "@commitlint/cli": "^8.3.5",
