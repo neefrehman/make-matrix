@@ -38,6 +38,7 @@
         "url": "https://github.com/neefrehman/make-matrix/issues"
     },
     "homepage": "https://github.com/neefrehman/make-matrix#readme",
+    "dependencies": {},
     "devDependencies": {
         "@types/jest": "^25.2.1",
         "@typescript-eslint/eslint-plugin": "^2.31.0",
@@ -66,5 +67,22 @@
             "pre-commit": "lint-staged"
         }
     },
-    "dependencies": {}
+    "release": {
+        "plugins": [
+            "@semantic-release/commit-analyzer",
+            "@semantic-release/release-notes-generator",
+            "@semantic-release/npm",
+            [
+                "@semantic-release/github",
+                {
+                    "assets": [
+                        {
+                            "path": "lib/index.js",
+                            "label": "JS distribution"
+                        }
+                    ]
+                }
+            ]
+        ]
+    }
 }
