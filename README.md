@@ -2,7 +2,8 @@
 
 # make-matrix
 
-https://github.com/{neefrehman}/{make-matrix}/workflows/{CI}/badge.svg / commitizen badge / npm badge / zipsize badge / downloads badge / license badge
+![build](https://github.com/neefrehman/make-matrix/workflows/CI/badge.svg?branch=master) / [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+/ npm badge / zipsize badge / downloads badge
 
 A simple, type-safe way to create multi-dimensional arrays
 
