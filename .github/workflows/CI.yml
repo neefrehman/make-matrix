@@ -34,6 +34,7 @@ jobs:
               run: npm run build
             - name: test
               run: npm test
+#     TODO: add release action
 #     release:
 #         if: ${{ github.ref == 'master' }}
 #         needs: test
