@@ -12,7 +12,6 @@ jobs:
     test:
         needs: prepare
         name: Test on node ${{ matrix.node }} and ${{ matrix.os }}
-
         runs-on: ${{ matrix.os }}
 
         strategy:
@@ -35,3 +34,21 @@ jobs:
               run: npm run build
             - name: test
               run: npm test
+#     release:
+#         if: ${{ github.ref == 'master' }}
+#         needs: test
+#         runs-on: ubuntu-latest
+
+#         steps:
+#             - uses: actions/checkout@v2
+#             - uses: actions/setup-node@v1
+#               with:
+#                   node-version: 12
+#                   registry-url: https://registry.npmjs.org
+#             - run: npm install
+#             - run: npm run build
+#             - run: npx semantic-release
+#               env:
+#                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+#                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#                   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -2,21 +2,17 @@
     "name": "make-matrix",
     "version": "1.0.0",
     "description": "A simple, type-safe way to create multi-dimensional arrays",
+    "homepage": "https://github.com/neefrehman/make-matrix#readme",
+    "bugs": {
+        "url": "https://github.com/neefrehman/make-matrix/issues"
+    },
+    "author": "Neef Rehman",
+    "license": "ISC",
+    "files": [
+        "lib/**/*"
+    ],
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
-    "scripts": {
-        "format": "prettier \"src/**/*.{js,ts,tsx}\"",
-        "format:fix": "prettier \"src/**/*.{js,ts,tsx}\" --write",
-        "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
-        "lint:fix": "eslint \"src/**/*.{js,ts,tsx}\" --fix",
-        "test": "jest --config jestconfig.json",
-        "build": "tsc",
-        "prepare": "npm run build",
-        "prepublishOnly": "npm test && npm run lint",
-        "preversion": "npm run lint",
-        "version": "npm run format && git add -A src",
-        "postversion": "git push && git push --tags"
-    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/neefrehman/make-matrix.git"
@@ -29,19 +25,15 @@
         "generative coding",
         "creative coding"
     ],
-    "files": [
-        "lib/**/*"
-    ],
-    "author": "Neef Rehman",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/neefrehman/make-matrix/issues"
-    },
-    "homepage": "https://github.com/neefrehman/make-matrix#readme",
+    "dependencies": {},
     "devDependencies": {
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
         "@types/jest": "^25.2.1",
         "@typescript-eslint/eslint-plugin": "^2.31.0",
         "@typescript-eslint/parser": "^2.31.0",
+        "commitizen": "^4.1.2",
+        "cz-conventional-changelog": "^3.2.0",
         "eslint": "^6.8.0",
         "eslint-config-airbnb": "^18.1.0",
         "eslint-config-prettier": "^6.11.0",
@@ -54,17 +46,61 @@
         "ts-jest": "^25.5.0",
         "typescript": "^3.8.3"
     },
+    "scripts": {
+        "format": "prettier \"src/**/*.{js,ts,tsx}\"",
+        "format:fix": "prettier \"src/**/*.{js,ts,tsx}\" --write",
+        "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
+        "lint:fix": "eslint \"src/**/*.{js,ts,tsx}\" --fix",
+        "test": "jest --config jestconfig.json",
+        "cm": "git-cz",
+        "build": "tsc",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm test && npm run lint",
+        "preversion": "npm run lint",
+        "version": "npm run format && git add -A src",
+        "postversion": "git push && git push --tags"
+    },
     "lint-staged": {
         "*.(js|ts|tsx)": [
             "eslint --fix",
             "prettier --write",
+            "jest  --findRelatedTests --config jestconfig.json",
             "git add"
         ]
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged"
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-commit": "lint-staged",
+            "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
         }
     },
-    "dependencies": {}
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "release": {
+        "plugins": [
+            "@semantic-release/commit-analyzer",
+            "@semantic-release/release-notes-generator",
+            "@semantic-release/npm",
+            [
+                "@semantic-release/github",
+                {
+                    "assets": [
+                        {
+                            "path": "lib/index.js",
+                            "label": "JS distribution"
+                        }
+                    ]
+                }
+            ]
+        ]
+    }
 }
