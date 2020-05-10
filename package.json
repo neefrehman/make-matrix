@@ -64,6 +64,7 @@
         "*.(js|ts|tsx)": [
             "eslint --fix",
             "prettier --write",
+            "jest  --findRelatedTests --config jestconfig.json",
             "git add"
         ]
     },
