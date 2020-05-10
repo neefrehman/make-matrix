@@ -3,9 +3,8 @@
 # make-matrix
 
 ![build](https://github.com/neefrehman/make-matrix/workflows/CI/badge.svg?branch=master)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![npm version](http://img.shields.io/npm/v/make-matrix.svg?style=flat)](https://npmjs.org/package/make-matrix "View this project on npm")
-![bundle size](https://badgen.net/bundlephobia/minzip/make-matrix)
+[![bundle size](https://badgen.net/bundlephobia/minzip/make-matrix)](https://bundlephobia.com/result?p=make-matrix "View this project on bundlephobia")
 
 A simple, type-safe way to create multi-dimensional arrays
 
