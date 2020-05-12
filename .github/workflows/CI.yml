@@ -36,8 +36,8 @@ jobs:
               run: npm test
 
     release:
-        if: ${{ github.ref == 'master' }}
         needs: test
+        if: ${{ github.ref == 'master' }}
         runs-on: ubuntu-latest
 
         steps:
