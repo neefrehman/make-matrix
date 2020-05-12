@@ -1,4 +1,4 @@
-<!-- TODO: LOOPING MATRIX P5 GIF? -->
+<!-- TODO: LOOPING MATRIX P5 GIF + add add social media preview in repo -->
 
 # make-matrix
 
@@ -72,12 +72,21 @@ const fourDimensionalStringArray = makeMatrix([2, 6, 5], "value");
 
 ## Example
 
- <!-- TODO --->
-
-To create the 3D grid seen at the top of this readme, with [p5.js](https://github.com/processing/p5.js/), make-matrix can be used as follows:
+To easily create a 3D grid like at the top of this readme using [p5.js](https://github.com/processing/p5.js/), make-matrix can be used like below. See [more fleshed out code here](https://github.com/neefrehman/make-matrix/tree/master/examples/p5-grid.js), and a [demo of such a grid here](https://generative.neef.co/120520).
 
 ```js
-let codeIsComingSoon;
+const res = 10; // 10px grid resolution
+const matrix = makeMatrix([5, 5, 5]); // A 5x5x5 cube grid
+
+for (let x = 0; x < matrix.length; x += res) {
+    for (let y = 0; y < matrix[x].length; y += res) {
+        for (let z = 0; z < matrix[x][y].length; z += res) {
+            p.line(x, y, z, x + res, y, z);
+            p.line(x, y, z, x, y + res, z);
+            p.line(x, y, z, x, y, z + res);
+        }
+    }
+}
 ```
 
 ## With TypeScript

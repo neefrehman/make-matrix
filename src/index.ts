@@ -11,11 +11,8 @@ export type Matrix<T> = T[][][][][] | Matrix<T>[];
  * matrix will be of those exact dimensions. For example, passing in `[3, 2, 5]`
  * will result in a three-dimensional array that is 3x2x5 in size.
  *
- * All points within the matrix can be initialised to a specific value with the
- * optional `initialValues` parameter.
- *
  * @param dimensions - The desired dimensions of the matrix. A number or array of numbers.
- * @param initialValues - The value that each point in the matrix will initialise to. Can be anything. Defaults to `null`.
+ * @param initialValues - The value that each point in the matrix initialises to. Can be anything. Defaults to `null`.
  * @returns A matrix of `N` dimensions, with each point initialised to the `initialValues` parameter.
  */
 function makeMatrix<T>(dimensions: 1 | [number], initialValues?: T): T[];

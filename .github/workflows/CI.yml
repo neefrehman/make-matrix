@@ -34,22 +34,22 @@ jobs:
               run: npm run build
             - name: test
               run: npm test
-#     TODO: add release action
-#     release:
-#         if: ${{ github.ref == 'master' }}
-#         needs: test
-#         runs-on: ubuntu-latest
 
-#         steps:
-#             - uses: actions/checkout@v2
-#             - uses: actions/setup-node@v1
-#               with:
-#                   node-version: 12
-#                   registry-url: https://registry.npmjs.org
-#             - run: npm install
-#             - run: npm run build
-#             - run: npx semantic-release
-#               env:
-#                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-#                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-#                   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    release:
+        if: ${{ github.ref == 'master' }}
+        needs: test
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 12
+                  registry-url: https://registry.npmjs.org
+            - run: npm install
+            - run: npm run build
+            - run: npx semantic-release
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
