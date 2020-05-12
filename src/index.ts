@@ -67,11 +67,3 @@ function makeMatrix<T>(
 }
 
 export default makeMatrix;
-
-// TODO: Find a way to get generic overload suggested first?
-// AND have overload become more specfic as matching parameters are entered
-// (don't think it's possible 😢)
-// https://github.com/microsoft/TypeScript/issues/38357
-
-// TODO: Need a better generic type? This one doesn't work
-// Matrix isn't very safe
