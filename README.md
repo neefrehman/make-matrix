@@ -1,4 +1,4 @@
-<!-- TODO: LOOPING MATRIX P5 GIF + add add social media preview in repo -->
+![animated title](assets/banner.gif)
 
 # make-matrix
 
