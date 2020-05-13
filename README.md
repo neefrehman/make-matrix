@@ -65,9 +65,11 @@ const fourDimensionalArray = makeMatrix([2, 6, 9, 5, 6]);
 By default each point in the matrix will be initialised to `null` (so that if reading a point returns `undefined`, you know that it exists outside the current bounds of the matrix). To fill each point in the matrix with a custom inital value, pass that value as the function's second parameter, `initialValues`:
 
 ```js
-const threeDimensionalNumberArray = makeMatrix([2, 6, 5], 0);
+// create a 3x5 array, with each point equal to 0
+const twoDimensionalNumberArray = makeMatrix([3, 5], 0);
 
-const fourDimensionalStringArray = makeMatrix([2, 6, 5], "value");
+// create a 2x6x5 array, with each point equal to "value"
+const threeDimensionalStringArray = makeMatrix([2, 6, 5], "value");
 ```
 
 ## With TypeScript
