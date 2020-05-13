@@ -109,9 +109,9 @@ const matrix = makeMatrix([5, 5, 5]); // A 5x5x5 cube grid
 for (let x = 0; x < matrix.length; x += res) {
     for (let y = 0; y < matrix[x].length; y += res) {
         for (let z = 0; z < matrix[x][y].length; z += res) {
-            p.line(x, y, z, x + res, y, z);
-            p.line(x, y, z, x, y + res, z);
-            p.line(x, y, z, x, y, z + res);
+            line(x, y, z, x + res, y, z);
+            line(x, y, z, x, y + res, z);
+            line(x, y, z, x, y, z + res);
         }
     }
 }
