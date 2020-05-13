@@ -57,7 +57,7 @@ const fiveBySevenArray = makeMatrix([5, 7]);
 const threeByThreeByTwoArray = makeMatrix([3, 3, 2]);
 
 // create an array of size 2x6x9x5x6
-const fourDimensionalArray = makeMatrix([2, 6, 9, 5, 6]);
+const fiveDimensionalArray = makeMatrix([2, 6, 9, 5, 6]);
 ```
 
 ### Initialise the matrix with set values
