@@ -1,6 +1,4 @@
-<img src="assets/banner.gif" alt="animated title" width="100%">
-
-# make-matrix
+<img src="assets/banner.gif" alt="make-matrix (animated title)" width="100%">
 
 ![build](https://github.com/neefrehman/make-matrix/workflows/CI/badge.svg?branch=master)
 [![npm version](http://img.shields.io/npm/v/make-matrix.svg?style=flat)](https://npmjs.org/package/make-matrix "View this project on npm")
