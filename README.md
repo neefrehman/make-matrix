@@ -1,4 +1,4 @@
-![animated title](assets/banner.gif)
+<img src="assets/banner.gif" alt="animated title" width="100%">
 
 # make-matrix
 
