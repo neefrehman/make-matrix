@@ -100,7 +100,7 @@ const sixDimensionalNumberArray: number[][][][][][] = makeMatrix(6, 0);
 
 ## Example
 
-To easily create a 3D grid using [p5.js](https://github.com/processing/p5.js/), make-matrix can be used like below. The source code for the grid at the top of this readme [can be seen here](https://github.com/neefrehman/Generative/blob/master/src/sketches/20/05/120520.tsx), and an [interactive demo of it grid here](https://generative.neef.co/120520).
+To easily create a 3D grid using [p5.js](https://github.com/processing/p5.js/), make-matrix can be used like below. The source code for the grid at the top of this readme [can be seen here](https://github.com/neefrehman/Generative/blob/master/src/sketches/20/05/120520.tsx), and an [interactive demo of it here](https://generative.neef.co/120520).
 
 ```js
 const res = 10; // 10px grid resolution
