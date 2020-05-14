@@ -1,5 +1,5 @@
 /**
- * A multidimensional array returned by `makeMatrix` when over 4 dimensions are required.
+ * A multidimensional array returned by `makeMatrix` for over four dimensions.
  */
 export type Matrix<T> = T[][][][][] | Matrix<T>[];
 
