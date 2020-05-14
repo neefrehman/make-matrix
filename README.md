@@ -159,4 +159,6 @@ This package is [MIT Licensed](https://github.com/neefrehman/make-matrix/blob/ma
 
 ---
 
-<img align="center" src="assets/banner_alt-pixelated_bounce.gif" alt="make-matrix">
+<p align="center">
+    <img src="assets/banner_alt-pixelated_bounce.gif" alt="make-matrix">
+</p>
