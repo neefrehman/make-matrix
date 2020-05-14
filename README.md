@@ -60,7 +60,7 @@ const fiveDimensionalArray = makeMatrix([2, 6, 9, 5, 6]);
 
 ### Initialise the matrix with set values
 
-By default each point in the matrix will be initialised to `null` (so that if reading a point returns `undefined`, you know that it exists outside the current bounds of the matrix). To fill each point in the matrix with a custom inital value, pass that value as the function's second parameter, `initialValues`:
+By default each point in the matrix will be initialised to `null` (so that if reading a point returns `undefined`, you know that it exists outside the current bounds of the matrix). To fill each point with a custom inital value, pass that value as the function's second parameter, `initialValues`:
 
 ```js
 // create a 3x5 array, with each point equal to 0
@@ -90,7 +90,7 @@ threeDNumberArray[2][1] = 10; // error: Type '"value"' is not assignable to type
 threeDNumberArray[2][1][2][0] = 10; // error: Property '0' does not exist on type 'Number'
 ```
 
-Above four dimensions, the returned array will have the generic type `Matrix<T>`. This type will ensure a minimum array depth of five levels, but won't be able to check the type of points within the matrix at six or more dimensions. The `Matrix` type is also a named export of this package, to be used manually if needed.
+Above four dimensions, the returned array will have the generic type `Matrix<T>`. This type will ensure a minimum array depth of five levels, but won't be able to check the type of points within the matrix at six or more dimensions. The `Matrix` type is also a named export of this package, to be annotated manually if needed.
 
 For more type-safety at these levels of dimensionality, it is recomended that you add more specific type annotations to your variables:
 
