@@ -85,7 +85,7 @@ threeDNumberArray[2][1][2] = 10; // OK
 
 threeDNumberArray[2][1][2] = false; // error: Type 'false' is not assignable to type 'number'
 
-threeDNumberArray[2][1] = 10; // error: Type '"value"' is not assignable to type 'number[]
+threeDNumberArray[2][1] = 10; // error: Type '"value"' is not assignable to type 'number[]'
 
 threeDNumberArray[2][1][2][0] = 10; // error: Property '0' does not exist on type 'Number'
 ```
