@@ -1,4 +1,4 @@
-<img src="assets/banner.gif" alt="make-matrix (animated title)" width="100%">
+<img src="assets/banner.gif" alt="make-matrix" width="100%">
 
 ![build](https://github.com/neefrehman/make-matrix/workflows/CI/badge.svg?branch=master)
 [![npm version](http://img.shields.io/npm/v/make-matrix.svg?style=flat)](https://npmjs.org/package/make-matrix "View this project on npm")
@@ -8,7 +8,7 @@ A simple, type-safe way to create multi-dimensional arrays
 
 ## Features
 
--   🛸 Easily create multi-dimensional arrays, with as many dimensions as are needed
+-   🛸 Easily create multi-dimensional arrays, with as many dimensions as needed
 -   🎛 Define exact dimensions to create an array of specified size
 -   🔢 Initialise every point in the array to a custom initial value
 -   📜 Comes with [TypeScript](https://www.typescriptlang.org) definitions and type-safe returns
@@ -100,7 +100,7 @@ const sixDimensionalNumberArray: number[][][][][][] = makeMatrix(6, 0);
 
 ## Example
 
-To easily create a 3D grid like at the top of this readme using [p5.js](https://github.com/processing/p5.js/), make-matrix can be used like below. See [more fleshed out code here](https://github.com/neefrehman/make-matrix/tree/master/examples/p5-grid.js), and a [demo of such a grid here](https://generative.neef.co/120520).
+To easily create a 3D grid using [p5.js](https://github.com/processing/p5.js/), make-matrix can be used like below. You can see the [code for the grid at the top of this readme here](https://github.com/neefrehman/Generative/blob/master/src/sketches/20/05/120520.tsx), and an [interactive demo of that grid here](https://generative.neef.co/120520).
 
 ```js
 const res = 10; // 10px grid resolution
