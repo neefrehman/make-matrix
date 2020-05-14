@@ -156,3 +156,7 @@ Open your git logs to debug commit errors.
 ## License
 
 This package is [MIT Licensed](https://github.com/neefrehman/make-matrix/blob/master/LICENSE).
+
+---
+
+<img align="center" src="assets/banner_alt-pixelated_bounce.gif" alt="make-matrix">
