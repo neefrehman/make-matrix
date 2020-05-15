@@ -1,6 +1,6 @@
 <img src="assets/banner.gif" alt="make-matrix" width="100%">
 
-![build](https://github.com/neefrehman/make-matrix/workflows/CI/badge.svg?branch=master)
+[![build](https://github.com/neefrehman/make-matrix/workflows/CI/badge.svg?branch=master)](https://github.com/neefrehman/make-matrix/actions "View the build actions for this project")
 [![npm version](http://img.shields.io/npm/v/make-matrix.svg?style=flat)](https://npmjs.org/package/make-matrix "View this project on npm")
 [![bundle size](https://badgen.net/bundlephobia/minzip/make-matrix)](https://bundlephobia.com/result?p=make-matrix "View this project on bundlephobia")
 
