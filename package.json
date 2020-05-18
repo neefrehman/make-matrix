@@ -96,7 +96,7 @@
                     "assets": [
                         {
                             "path": "lib/index.js",
-                            "label": "JS distribution"
+                            "label": "make-matrix.js"
                         }
                     ]
                 }
