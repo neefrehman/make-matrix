@@ -9,7 +9,7 @@ export type Matrix<T> = T[][][][][] | Matrix<T>[];
  * If a number is passed to the `dimensions` parameter, the smallest array with
  * that number of dimensions is returned. If an array is passed, the returned
  * matrix will be of those exact dimensions. For example, passing in `[3, 2, 5]`
- * will result in a three-dimensional array that is 3x2x5 in size.
+ * will result in a three-dimensional array that is 3x2x5 in sizee.
  *
  * @param dimensions - The desired dimensions of the matrix. A number or array of numbers.
  * @param initialValues - The value that each point in the matrix initialises to. Defaults to `null`.
