@@ -1,4 +1,4 @@
-import { MatrixOld, ValueOrFunction } from "./types";
+import { Matrix, ValueOrFunction, Vector } from "./types";
 
 /**
  * Returns a matrix (multi-dimensional array) with your desired dimensions and
@@ -23,35 +23,10 @@ import { MatrixOld, ValueOrFunction } from "./types";
  *
  * const twoDRandomNumberArray = makeMatrix([1, 4], () => Math.random()); // A 1x4 array initialised with random numbers
  */
-function makeMatrix<T>(
-    dimensions: 1 | [number],
-    initialValues?: ValueOrFunction<T> | null
-): T[];
-
-function makeMatrix<T>(
-    dimensions: 2 | [number, number],
-    initialValues?: ValueOrFunction<T> | null
-): T[][];
-
-function makeMatrix<T>(
-    dimensions: 3 | [number, number, number],
-    initialValues?: ValueOrFunction<T> | null
-): T[][][];
-
-function makeMatrix<T>(
-    dimensions: 4 | [number, number, number, number],
-    initialValues?: ValueOrFunction<T> | null
-): T[][][][];
-
-function makeMatrix<T>(
-    dimensions: number | number[],
-    initialValues?: ValueOrFunction<T> | null
-): MatrixOld<T>;
-
-function makeMatrix<T>(
-    dimensions: number | number[],
+export const makeMatrix = <D extends number, T>(
+    dimensions: D | Vector<D>,
     initialValues: ValueOrFunction<T> | null = null
-): MatrixOld<T> {
+): Matrix<D, T> => {
     let currentDimensionLength: number;
     let remainingDimensions: number | number[];
     let needsRecursion: boolean;
@@ -84,7 +59,13 @@ function makeMatrix<T>(
           )
         : currentMatrix;
 
-    return finalMatrix;
-}
+    return finalMatrix as Matrix<D, T>;
+};
 
 export default makeMatrix;
+
+// TODO: callback logic for mapping values based on Vector position?
+// makeMatrix([1, 2, 3], position => position.join())
+// progress: https://www.staging-typescript.org/play?ts=4.0.3#code/DYUwLgBAxgrgTnEA7MARAlgW2QZ3QeyQgF4IAGAbgChRIAHfPMApALggDUQox84SIAbQC61WhDqIAbgRg4M2JHkIDKVKlEI5IURAEMwIALIG46AB4CAPKgghzhpABMcEJDEwAjEHAA0EABUAPgAKKggIiCcsXBYcdi4ePhsg33DI9CR0Zj1gDlyYEHjOApAAeTgAMRgkHhYrYIgAHzcYYGABd3aqAEp2EzAzcxt-RuIgiABvdIjNJR14RBQFWMIAGWQAczAACwFoxWUlQTJRGegtSERMPUzMzZWlOP2Yp60AOhxgdCgQEIBGHrUSIXeZuEAgFwAJW48COAmutyySAeryOOHeoBRuwgEzU6nOc20EERdxRj3RAGF8DVIKRScjUYc4pitrtgZEiZBeGBchS4tTaQiQDcyUzVkpBSgIABqCD-DkRSQgGQ0+RolgCHl8jVaKVgRUQABmfBC4nQxEoEHQECsEG1wH5eppKAo1plMp6EkY2RYgnQwlU1EJWnwoEx+E2IQYTBYQPUIJN-DN4GtQbTdodTslLoN7s93tjhEEsAQyDQuqQwg9wYTnMu0EW5YGQwEgneHYAggg9ABPEKlpYV5nrNk7HrCd43OghEJe8ZTc4gxBgeBEMC9uggfBG61ZHJ5UquYgniAAIiNNTqhDPS5BkQA-Hvfbl8sBCjg53f7xB2HcD2+H6GgAvvGIZgkamS5C2FidBC0KwnARzfhAT6Ds2pgWFOegznOJBBChP66CABjGJh5ghAy9zZjg-j-ugr5Hj0hEQMxP4ROw6EoDB5jBsu4BrsaUHADxEB6K4PEjIEQTUMBwZEmGIARlGxGkTxISCAATP42kQJpwj+HhC4DDs7xGsA+CmiZ7xwHozj4JgeEAFTymQPTuQSnleQSAD0PmBGUqBlJxuTAJ4ehQAA1hAFmbD8xp8BA050PcEBSEeEDhTgkIQCoiS8PwMa+oQD5UH5EDYbhRXMIQCTcAVKTzhM0zlSCXJCOYvi9r4ABevgdu8gakNVLDUOVoHqOV7VsK0Xg+CIIgCKphjqYI-z+AAzMIQIQOVlQAJIABpGAAouwOxgGAdDxH5cW7DAnjvJomA+ZgPxwIwO5gD5ASbiAADKujoHQ33oDgOAfj5G0AJwACxkND6iZIYcBGhFICcPVyS2PYjguLN3j8KQdm9hMuPIPj3a2b2VjuHNcDNecZAPuwdOE4aWLbDs7CoLJ6gbluJTvuUVRXjVSANBMpABHYDgU64JOoYEzQQLOTWBF6rMqj4brlRdV03T5d07A9T0Oa972fUa32-VugNmCDPlgxDRRQwA7AAbB7G2TU5TnhC5nZJW0zAHBKuRiT2vYkgJcBIDlnjRwABstZGDBYSfvBAAAKH0yE4RT2n9AC0OB6Ea4DRzAdAB-a+AQAArFElYYhAnaePgUgY03YdvEodFgAA5K4iBQM9FM5b2NJiUgSD4LyhgQFP8C1+lZh6J4oCuEmSV8BjZcVxu7wBz5VACxjkk43LziuGzPijFLEBX3jrj-OcT4BCI5w87LL96e-gQFrCG-k-X+8sIA+xBB-IBX8QQ-3JjfCAsMAGf2EDA4BcDQEIPxg3FB6CgEgJJvgtBJDdb+QCIFYKEBqjtCLoLA+ldSpAA
+
+// FIXME: const m1: number[][][] = makeMatrix([1, 1, 2]); // https://github.com/microsoft/TypeScript/issues/40081
