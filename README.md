@@ -26,7 +26,7 @@ npm install make-matrix
 import makeMatrix from "make-matrix";
 ```
 
-## Basic usage
+## Usage
 
 ### Create a matrix
 
@@ -68,6 +68,15 @@ const twoDimensionalNumberArray = makeMatrix([3, 5], 0);
 
 // create a 2x6x5 array, with each point equal to "value"
 const threeDimensionalStringArray = makeMatrix([2, 6, 5], "value");
+```
+
+### Pass a callback for dynamic initial values
+
+The `initialValues` parameter also accepts a callback which you can use to dynamically create items for each position in the matrix.
+
+```js
+// create a 10x10x10 array, with each point a different random number between one and 10
+const twoDRandomNumberArray = makeMatrix([10, 10, 10], () => Math.floor(Math.random() * 10));
 ```
 
 ## With TypeScript
@@ -126,18 +135,18 @@ makeMatrix(dimensions, initialValues);
 // With types
 makeMatrix<T>(
     dimensions: number | number[],
-    initialValues?: T
+    initialValues?: T | (() => T)
 ): Matrix<T>;
 ```
 
 ### Parameters
 
 -   `dimensions` — The desired dimensions of the matrix. A number or array of numbers.
--   `initialValues` — The value that each point in the matrix will initialise to. Optional (defaults to `null`). Can be anything.
+-   `initialValues` — The value that each point in the matrix will initialise to. Can take any value. If a callback is passed, it will be run for each point in the matrix, which will be initialised to the callbacks returned value. (Optional — defaults to `null`).
 
 ### Returns
 
--   `Matrix` — A multidimensional array of your desired dimensions, with each point initialised to equal the `initialValues` parameter.
+-   `Matrix` — A multidimensional array of your desired dimensions, with each point initialised to equal the `initialValues` parameter (or its returned value).
 
 ## Contributing
 
