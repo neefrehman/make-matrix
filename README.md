@@ -60,7 +60,7 @@ const fiveDimensionalArray = makeMatrix([2, 6, 9, 5, 6]);
 
 ### Initialise the matrix with set values
 
-By default each point in the matrix will be initialised to `null` (so that if reading a point returns `undefined`, you know that it exists outside the current bounds of the matrix). To fill each point with a custom inital value, pass that value as the function's second parameter, `initialValues`:
+By default each point in the matrix will be initialised to `null` (so that if reading a point returns `undefined`, you know that it exists outside the current bounds of the matrix). To fill each point with a custom initial value, pass that value as the function's second parameter, `initialValues`:
 
 ```js
 // create a 3x5 array, with each point equal to 0
