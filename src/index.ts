@@ -79,6 +79,10 @@ function makeMatrix<T>(
         needsRecursion = remainingDimensions.length > 0;
     }
 
+    if (!Number.isInteger(currentDimensionLength)) {
+        throw new TypeError(`Dimensions must be integers`);
+    }
+
     // Spread operator used as as constructed array's can't be mapped:
     // https://itnext.io/heres-why-mapping-a-constructed-array-doesn-t-work-in-javascript-f1195138615a
     const currentMatrix = [...Array(currentDimensionLength)].map(() => {

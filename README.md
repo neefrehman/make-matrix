@@ -72,7 +72,7 @@ const threeDimensionalStringArray = makeMatrix([2, 6, 5], "value");
 
 ### Pass a callback for dynamic initial values
 
-The `initialValues` parameter also accepts a callback which you can use to dynamically create items for each position in the matrix.
+The `initialValues` parameter also accepts a callback, which you can use to dynamically create items for each position in the matrix.
 
 ```js
 // create a 10x10x10 array, with each point a different random number between one and 10
