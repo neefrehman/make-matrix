@@ -85,17 +85,17 @@ function makeMatrix<T>(
 
     // Spread operator used as as constructed array's can't be mapped:
     // https://itnext.io/heres-why-mapping-a-constructed-array-doesn-t-work-in-javascript-f1195138615a
-    const currentMatrix = [...Array(currentDimensionLength)].map(() => {
-        return typeof initialValues === "function"
-            ? initialValues()
-            : initialValues;
-    });
+    const currentMatrix = [...Array(currentDimensionLength)];
 
     const finalMatrix = needsRecursion
         ? currentMatrix.map(() =>
               makeMatrix(remainingDimensions, initialValues)
           )
-        : currentMatrix;
+        : currentMatrix.map(() => {
+              return typeof initialValues === "function"
+                  ? initialValues()
+                  : initialValues;
+          });
 
     return finalMatrix;
 }
