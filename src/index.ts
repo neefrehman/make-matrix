@@ -1,17 +1,4 @@
-/**
- * A multidimensional array returned by `makeMatrix` for over four dimensions.
- */
-export type Matrix<T> = T[][][][][] | Matrix<T>[];
-
-/**
- * Provides type safety for values as well as functions that return values
- * for `createMatrix`'s `initialValues` parameter.
- */
-type ValueOrFunction<T> = T extends boolean
-    ? boolean | (() => boolean) // To solve boolean expanding: https://github.com/microsoft/TypeScript/issues/30029
-    : T extends any // from: https://github.com/microsoft/TypeScript/issues/37663
-    ? T | (() => T)
-    : never;
+import type { Matrix, ValueOrFunction, Vector } from "./types";
 
 /**
  * Returns a matrix (multi-dimensional array) with your desired dimensions and
@@ -36,46 +23,61 @@ type ValueOrFunction<T> = T extends boolean
  *
  * const twoDRandomNumberArray = makeMatrix([1, 4], () => Math.random()); // A 1x4 array initialised with random numbers
  */
-function makeMatrix<T>(
+function makeMatrix<D extends number, T>(
     dimensions: 1 | [number],
-    initialValues?: ValueOrFunction<T> | null
+    initialValues?: ValueOrFunction<D, T>
 ): T[];
 
-function makeMatrix<T>(
+function makeMatrix<D extends number, T>(
     dimensions: 2 | [number, number],
-    initialValues?: ValueOrFunction<T> | null
+    initialValues?: ValueOrFunction<D, T>
 ): T[][];
 
-function makeMatrix<T>(
+function makeMatrix<D extends number, T>(
     dimensions: 3 | [number, number, number],
-    initialValues?: ValueOrFunction<T> | null
+    initialValues?: ValueOrFunction<D, T>
 ): T[][][];
 
-function makeMatrix<T>(
+function makeMatrix<D extends number, T>(
     dimensions: 4 | [number, number, number, number],
-    initialValues?: ValueOrFunction<T> | null
+    initialValues?: ValueOrFunction<D, T>
 ): T[][][][];
 
-function makeMatrix<T>(
+function makeMatrix<D extends number, T>(
     dimensions: number | number[],
-    initialValues?: ValueOrFunction<T> | null
+    initialValues?: ValueOrFunction<D, T>
 ): Matrix<T>;
 
-function makeMatrix<T>(
+function makeMatrix<D extends number, T>(
     dimensions: number | number[],
-    initialValues: ValueOrFunction<T> | null = null
+    initialValues: ValueOrFunction<D, T> = null
+): Matrix<T> {
+    const dimensionCount =
+        typeof dimensions === "number" ? dimensions : dimensions.length;
+    const intialPosition = Array(dimensionCount).fill(0) as Vector<D>;
+
+    return _makeMatrix(dimensions, initialValues, intialPosition) as Matrix<T>;
+}
+
+function _makeMatrix<D extends number, T>(
+    dimensions: number | number[],
+    initialValues: ValueOrFunction<D, T> = null,
+    currentPosition: Vector<D>
 ): Matrix<T> {
     let currentDimensionLength: number;
-    let remainingDimensions: number | number[];
+    let remainingDimensions: number | Vector;
+    let remainingDimensionCount: number;
     let needsRecursion: boolean;
 
     if (typeof dimensions === "number") {
         currentDimensionLength = dimensions;
         remainingDimensions = dimensions - 1;
+        remainingDimensionCount = remainingDimensions;
         needsRecursion = remainingDimensions > 0;
     } else {
         currentDimensionLength = dimensions[0];
         remainingDimensions = dimensions.slice(1);
+        remainingDimensionCount = remainingDimensions.length;
         needsRecursion = remainingDimensions.length > 0;
     }
 
@@ -83,21 +85,20 @@ function makeMatrix<T>(
         throw new TypeError(`Dimensions must be integers`);
     }
 
-    // Spread operator used as as constructed array's can't be mapped:
-    // https://itnext.io/heres-why-mapping-a-constructed-array-doesn-t-work-in-javascript-f1195138615a
-    const currentMatrix = [...Array(currentDimensionLength)];
+    const currentDimension = currentPosition.length - 1 - remainingDimensionCount;
 
-    const finalMatrix = needsRecursion
-        ? currentMatrix.map(() =>
-              makeMatrix(remainingDimensions, initialValues)
-          )
-        : currentMatrix.map(() => {
-              return typeof initialValues === "function"
-                  ? initialValues()
-                  : initialValues;
-          });
+    const finalMatrix = [...Array(currentDimensionLength)].map((_, i) => {
+        currentPosition[currentDimension] = i;
+        return needsRecursion
+            ? _makeMatrix(remainingDimensions, initialValues, currentPosition)
+            : typeof initialValues === "function" // @ts-expect-error: "expression is not callable" https://github.com/microsoft/TypeScript/issues/37663
+            ? initialValues(currentPosition.slice())
+            : initialValues;
+    });
 
-    return finalMatrix;
+    return finalMatrix as Matrix<T>;
 }
 
 export default makeMatrix;
+
+export type { Matrix };

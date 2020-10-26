@@ -72,11 +72,24 @@ const threeDimensionalStringArray = makeMatrix([2, 6, 5], "value");
 
 ### Pass a callback for dynamic initial values
 
-The `initialValues` parameter also accepts a callback, which you can use to dynamically create items for each position in the matrix.
+The `initialValues` parameter can also be a callback, which you can use to dynamically create items for each position in the matrix. The callback can accept an argument which will resolve to the current vector co-ordinates at each point in the matrix. This can allow you to populate your matrix in a "self-aware" way.
 
 ```js
-// create a 10x10x10 array, with each point a different random number between one and 10
+// create a 10x10x10 array, with each point a different random number between one and 9
 const twoDRandomNumberArray = makeMatrix([10, 10, 10], () => Math.floor(Math.random() * 10));
+
+// create a 5x5 array, with each point self described by a string
+const twoDRandomNumberArray = makeMatrix([5, 5], (vector) => vector.join());
+
+// create a 7x3,8 array, with each point transformed into a vector object
+const twoDRandomNumberArray = makeMatrix([7, 3, 8], (vector) => {
+    return {
+        x: vector.x,
+        y: vector.y,
+        z: vector.z,
+        otherData: OTHER_DATA
+    }
+});
 ```
 
 ## With TypeScript
@@ -85,7 +98,7 @@ This package comes with type definitions to provide type-safety when working wit
 
 Up to and including four dimensions, returned arrays will be given a specific type dictated by `T` and the number of dimensions, where `T` is the type of the value passed to the functions `initialValues` parameter (or `unknown` if not set).
 
-For example, a three-dimensional array of numbers will be of type `number[][][]`. Points within the matrix can then only be reassigned to numbers. TypeScript's compiler will present errors when any reassignments are of the wrong type, including if they are at an incorrect depth in the array.
+For example, a three-dimensional array of numbers will be of type `number[][][]`. Points within the matrix can then only be reassigned to numbers. TypeScript's compiler will present errors when any reassignments are of the wrong type, including if they are at an incorrect depth in the array. This type-safety also exists when callbacks are used to dynamically populate your matrix.
 
 ```ts
 const threeDNumberArray = makeMatrix([2, 6, 5], 0); // return type of number[][][]
@@ -104,7 +117,7 @@ Above four dimensions, the returned array will have the generic type `Matrix<T>`
 For more type-safety at these levels of dimensionality, it is recomended that you add more specific type annotations to your variables:
 
 ```ts
-const sixDimensionalNumberArray: number[][][][][][] = makeMatrix(6, 0);
+const sixDimensionalNumberArray: string[][][][][][] = makeMatrix(6, "this is deep");
 ```
 
 ## Example
@@ -133,9 +146,9 @@ for (let x = 0; x < matrix.length; x += res) {
 makeMatrix(dimensions, initialValues);
 
 // With types
-makeMatrix<T>(
+makeMatrix<D, T>(
     dimensions: number | number[],
-    initialValues?: T | (() => T)
+    initialValues?: (vector: VectorOfLength<D>) => T
 ): Matrix<T>;
 ```
 
