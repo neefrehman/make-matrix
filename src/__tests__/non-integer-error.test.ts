@@ -4,7 +4,3 @@ import makeMatrix from "../index";
 test("Array error test - When non-integer is used", () => {
     expect(() => makeMatrix([1, 0.2, 3])).toThrow(TypeError);
 });
-
-test("Number error test - When non-integer is used", () => {
-    expect(() => makeMatrix(0.2)).toThrow(TypeError);
-});
