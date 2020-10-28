@@ -56,7 +56,7 @@ function makeMatrix<D extends number, T>(
         typeof dimensions === "number" ? dimensions : dimensions.length;
     const intialPosition = Array(dimensionCount).fill(0) as Vector<D>;
 
-    return _makeMatrix(dimensions, initialValues, intialPosition) as Matrix<T>;
+    return _makeMatrix(dimensions, initialValues, intialPosition);
 }
 
 function _makeMatrix<D extends number, T>(
