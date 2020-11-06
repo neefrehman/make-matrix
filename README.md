@@ -148,7 +148,7 @@ makeMatrix(dimensions, initialValues);
 // With types
 makeMatrix<D, T>(
     dimensions: number | number[],
-    initialValues?: (vector: VectorOfLength<D>) => T
+    initialValues?: T | ((vector: VectorOfLength<D>) => T)
 ): Matrix<T>;
 ```
 
