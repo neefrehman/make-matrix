@@ -23,22 +23,22 @@ import type { Matrix, ValueOrFunction, Vector } from "./types";
  *
  * const twoDVectorArray = makeMatrix([3, 3], vector => vector.join()); // A 3x3 array initialised with each point's co-ordinate as a string
  */
-function makeMatrix<D extends number, T>(
+function makeMatrix<D extends 1, T>(
     dimensions: 1 | [number],
     initialValues?: ValueOrFunction<D, T>
 ): T[];
 
-function makeMatrix<D extends number, T>(
+function makeMatrix<D extends 2, T>(
     dimensions: 2 | [number, number],
     initialValues?: ValueOrFunction<D, T>
 ): T[][];
 
-function makeMatrix<D extends number, T>(
+function makeMatrix<D extends 3, T>(
     dimensions: 3 | [number, number, number],
     initialValues?: ValueOrFunction<D, T>
 ): T[][][];
 
-function makeMatrix<D extends number, T>(
+function makeMatrix<D extends 4, T>(
     dimensions: 4 | [number, number, number, number],
     initialValues?: ValueOrFunction<D, T>
 ): T[][][][];
