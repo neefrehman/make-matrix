@@ -299,133 +299,37 @@ test("2x4x1x5x3x1 test - With string initialValues", () => {
         [
             [
                 [
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
                     [["string"], ["string"], ["string"], ["string"], ["string"]]
                 ]
             ],
             [
                 [
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
                     [["string"], ["string"], ["string"], ["string"], ["string"]]
                 ]
             ],
             [
                 [
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
                     [["string"], ["string"], ["string"], ["string"], ["string"]]
                 ]
             ],
             [
                 [
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
                     [["string"], ["string"], ["string"], ["string"], ["string"]]
                 ]
             ]
@@ -433,133 +337,37 @@ test("2x4x1x5x3x1 test - With string initialValues", () => {
         [
             [
                 [
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
                     [["string"], ["string"], ["string"], ["string"], ["string"]]
                 ]
             ],
             [
                 [
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
                     [["string"], ["string"], ["string"], ["string"], ["string"]]
                 ]
             ],
             [
                 [
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
                     [["string"], ["string"], ["string"], ["string"], ["string"]]
                 ]
             ],
             [
                 [
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
-                    [
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"],
-                        ["string"]
-                    ],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
+                    [["string"], ["string"], ["string"], ["string"], ["string"]],
                     [["string"], ["string"], ["string"], ["string"], ["string"]]
                 ]
             ]
