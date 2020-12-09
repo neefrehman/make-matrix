@@ -84,10 +84,10 @@ const twoDRandomNumberArray = makeMatrix([5, 5], (vector) => vector.join());
 // create a 7x3,8 array, with each point transformed into a vector object
 const twoDRandomNumberArray = makeMatrix([7, 3, 8], (vector) => {
     return {
-        x: vector.x,
-        y: vector.y,
-        z: vector.z,
-        otherData: OTHER_DATA
+        x: vector[0],
+        y: vector[1],
+        z: vector[2],
+        otherData: OTHER_DATA,
     }
 });
 ```
