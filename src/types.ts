@@ -20,12 +20,3 @@ export type ValueOrFunction<D extends number, T> =
     | T
     | ((vector: Vector<D>) => T)
     | null;
-
-// Removed as it would cause the vector parameter to have a type of any instead of Vector
-// export type ValueOrFunction<D extends number, T> =
-//     | (T extends boolean
-//           ? boolean | SelfAwareCallback<D, boolean> // To solve boolean expansion: https://github.com/microsoft/TypeScript/issues/30029
-//           : T extends any // To solve non-callable expression bug: https://github.com/microsoft/TypeScript/issues/37663
-//           ? T | SelfAwareCallback<D, T>
-//           : never)
-//     | null;
