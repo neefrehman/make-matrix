@@ -91,8 +91,8 @@ function _makeMatrix<D extends number, T>(
         currentPosition[currentDimension] = i;
         return needsRecursion
             ? _makeMatrix(remainingDimensions, initialValues, currentPosition)
-            : typeof initialValues === "function" // @ts-expect-error: "expression is not callable" https://github.com/microsoft/TypeScript/issues/37663
-            ? initialValues(currentPosition.slice())
+            : initialValues instanceof Function
+            ? initialValues(currentPosition.slice() as Vector<D>)
             : initialValues;
     });
 
