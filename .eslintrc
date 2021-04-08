@@ -12,8 +12,7 @@
     "plugins": ["@typescript-eslint", "prettier"],
     "extends": [
         "plugin:@typescript-eslint/recommended",
-        "prettier",
-        "prettier/@typescript-eslint"
+        "prettier"
     ],
     "rules": {
         "strict": 0,
@@ -26,6 +25,7 @@
                 }
             }
         ],
-        "prettier/prettier": "warn"
+        "prettier/prettier": "warn",
+        "@typescript-eslint/ban-ts-comment": "off"
     }
 }

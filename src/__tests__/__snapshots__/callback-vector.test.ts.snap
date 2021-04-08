@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vector callback test - joined 1`] = `
+Array [
+  Array [
+    Array [
+      Array [
+        "my position is 0,0,0,0",
+      ],
+      Array [
+        "my position is 0,0,1,0",
+      ],
+    ],
+    Array [
+      Array [
+        "my position is 0,1,0,0",
+      ],
+      Array [
+        "my position is 0,1,1,0",
+      ],
+    ],
+  ],
+  Array [
+    Array [
+      Array [
+        "my position is 1,0,0,0",
+      ],
+      Array [
+        "my position is 1,0,1,0",
+      ],
+    ],
+    Array [
+      Array [
+        "my position is 1,1,0,0",
+      ],
+      Array [
+        "my position is 1,1,1,0",
+      ],
+    ],
+  ],
+]
+`;
+
+exports[`vector callback test - joined 2`] = `
+Array [
+  Array [
+    Array [
+      Object {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+      },
+      Object {
+        "x": 0,
+        "y": 0,
+        "z": 1,
+      },
+      Object {
+        "x": 0,
+        "y": 0,
+        "z": 2,
+      },
+    ],
+    Array [
+      Object {
+        "x": 0,
+        "y": 1,
+        "z": 0,
+      },
+      Object {
+        "x": 0,
+        "y": 1,
+        "z": 1,
+      },
+      Object {
+        "x": 0,
+        "y": 1,
+        "z": 2,
+      },
+    ],
+    Array [
+      Object {
+        "x": 0,
+        "y": 2,
+        "z": 0,
+      },
+      Object {
+        "x": 0,
+        "y": 2,
+        "z": 1,
+      },
+      Object {
+        "x": 0,
+        "y": 2,
+        "z": 2,
+      },
+    ],
+  ],
+  Array [
+    Array [
+      Object {
+        "x": 1,
+        "y": 0,
+        "z": 0,
+      },
+      Object {
+        "x": 1,
+        "y": 0,
+        "z": 1,
+      },
+      Object {
+        "x": 1,
+        "y": 0,
+        "z": 2,
+      },
+    ],
+    Array [
+      Object {
+        "x": 1,
+        "y": 1,
+        "z": 0,
+      },
+      Object {
+        "x": 1,
+        "y": 1,
+        "z": 1,
+      },
+      Object {
+        "x": 1,
+        "y": 1,
+        "z": 2,
+      },
+    ],
+    Array [
+      Object {
+        "x": 1,
+        "y": 2,
+        "z": 0,
+      },
+      Object {
+        "x": 1,
+        "y": 2,
+        "z": 1,
+      },
+      Object {
+        "x": 1,
+        "y": 2,
+        "z": 2,
+      },
+    ],
+  ],
+  Array [
+    Array [
+      Object {
+        "x": 2,
+        "y": 0,
+        "z": 0,
+      },
+      Object {
+        "x": 2,
+        "y": 0,
+        "z": 1,
+      },
+      Object {
+        "x": 2,
+        "y": 0,
+        "z": 2,
+      },
+    ],
+    Array [
+      Object {
+        "x": 2,
+        "y": 1,
+        "z": 0,
+      },
+      Object {
+        "x": 2,
+        "y": 1,
+        "z": 1,
+      },
+      Object {
+        "x": 2,
+        "y": 1,
+        "z": 2,
+      },
+    ],
+    Array [
+      Object {
+        "x": 2,
+        "y": 2,
+        "z": 0,
+      },
+      Object {
+        "x": 2,
+        "y": 2,
+        "z": 1,
+      },
+      Object {
+        "x": 2,
+        "y": 2,
+        "z": 2,
+      },
+    ],
+  ],
+]
+`;
+
+exports[`vector callback test - straight 1`] = `
+Array [
+  Array [
+    Array [
+      Array [
+        0,
+        0,
+        0,
+      ],
+      Array [
+        0,
+        0,
+        1,
+      ],
+    ],
+    Array [
+      Array [
+        0,
+        1,
+        0,
+      ],
+      Array [
+        0,
+        1,
+        1,
+      ],
+    ],
+  ],
+  Array [
+    Array [
+      Array [
+        1,
+        0,
+        0,
+      ],
+      Array [
+        1,
+        0,
+        1,
+      ],
+    ],
+    Array [
+      Array [
+        1,
+        1,
+        0,
+      ],
+      Array [
+        1,
+        1,
+        1,
+      ],
+    ],
+  ],
+]
+`;
