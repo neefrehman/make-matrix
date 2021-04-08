@@ -96,9 +96,9 @@ const twoDRandomNumberArray = makeMatrix([7, 3, 8], (vector) => {
 
 This package comes with type definitions to provide type-safety when working with the returned arrays.
 
-Up to and including four dimensions, returned arrays will be given a specific type dictated by `T` and the number of dimensions, where `T` is the type of the value passed to the functions `initialValues` parameter (or `unknown` if not set).
+Returned Matrices will be given a specific type dictated by `T` and the number of dimensions, where `T` is the type of the value passed to the functions `initialValues` parameter (or `unknown`, if not set).
 
-For example, a three-dimensional array of numbers will be of type `number[][][]`. Points within the matrix can then only be reassigned to numbers. TypeScript's compiler will present errors when any reassignments are of the wrong type, including if they are at an incorrect depth in the array. This type-safety also exists when callbacks are used to dynamically populate your matrix.
+For example, a three-dimensional array of numbers will be of type `number[][][]`. Points within the matrix can then only be reassigned to numbers. TypeScript's compiler will present errors when any reassignments are of the wrong type, including if they are at an incorrect depth in the array. This type-safety also occurs when callbacks are used to dynamically populate your matrix.
 
 ```ts
 const threeDNumberArray = makeMatrix([2, 6, 5], 0); // return type of number[][][]
@@ -112,13 +112,7 @@ threeDNumberArray[2][1] = 10; // error: Type '"value"' is not assignable to type
 threeDNumberArray[2][1][2][0] = 10; // error: Property '0' does not exist on type 'Number'
 ```
 
-Above four dimensions, the returned array will have the generic type `Matrix<T>`. This type will ensure a minimum array depth of five levels, but won't be able to check the type of points within the matrix at six or more dimensions. The `Matrix` type is also a named export of this package, to be annotated manually if needed.
-
-For more type-safety at these levels of dimensionality, it is recomended that you add more specific type annotations to your variables:
-
-```ts
-const sixDimensionalNumberArray: string[][][][][][] = makeMatrix(6, "this is deep");
-```
+This type-safety will work for any number of dimensions, however large numbers may slow down your typescript server, due to the nature of the recursive types working under the hood.
 
 ## Example
 
