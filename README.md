@@ -75,14 +75,14 @@ const threeDimensionalStringArray = makeMatrix([2, 6, 5], "value");
 The `initialValues` parameter can also be a callback, which you can use to dynamically create items for each position in the matrix. The callback can accept an argument which will resolve to the current vector co-ordinates at each point in the matrix. This can allow you to populate your matrix in a "self-aware" way.
 
 ```js
-// create a 10x10x10 array, with each point a different random number between one and 9
+// create a 10x10x10 array, with each point a different random number between 0 and 9
 const twoDRandomNumberArray = makeMatrix([10, 10, 10], () => Math.floor(Math.random() * 10));
 
 // create a 5x5 array, with each point self described by a string
-const twoDRandomNumberArray = makeMatrix([5, 5], (vector) => vector.join());
+const twoDVectorStringArray = makeMatrix([5, 5], (vector) => vector.join());
 
 // create a 7x3,8 array, with each point transformed into a vector object
-const twoDRandomNumberArray = makeMatrix([7, 3, 8], (vector) => {
+const twoDVectorObjectArray = makeMatrix([7, 3, 8], (vector) => {
     return {
         x: vector[0],
         y: vector[1],
