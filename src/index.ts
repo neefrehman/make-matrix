@@ -81,4 +81,6 @@ function _makeMatrix<D extends number, T>(
 
 export default makeMatrix;
 
+export { makeMatrix };
+
 export type { Matrix };
