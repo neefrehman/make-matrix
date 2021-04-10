@@ -12,7 +12,7 @@ A simple, type-safe way to create multi-dimensional arrays
 -   🎛 Define exact dimensions to create an array of specified size
 -   🔢 Initialise every point in the array to a custom initial value
 -   📜 Comes with [TypeScript](https://www.typescriptlang.org) definitions and type-safe returns
--   🔬 Tiny size ([~ 500 bytes gzipped](https://bundlephobia.com/result?p=make-matrix)), with no external dependencies
+-   🔬 Tiny size ([~500 bytes gzipped](https://bundlephobia.com/result?p=make-matrix)), with no external dependencies
 
 ## Installation
 
@@ -30,32 +30,14 @@ import makeMatrix from "make-matrix";
 
 ### Create a matrix
 
-To simply create an array of `n` dimensions, just pass `n` as the function's first parameter.
+To simply create an array of `n` dimensions, just pass `n` as the function's first parameter. And to create an array with exact dimensions, pass in an array of numbers.
 
 ```js
 // create a 2D array
 const twoDimensionalArray = makeMatrix(2);
 
-// create a 3D array
-const threeDimensionalArray = makeMatrix(3);
-
-// create a 4D array
-const fourDimensionalArray = makeMatrix(4);
-```
-
-### Create a matrix with specified dimensions
-
-To create an array with exact dimensions, pass in an array of numbers.
-
-```js
-// create an array of size 5x7
-const fiveBySevenArray = makeMatrix([5, 7]);
-
 // create an array of size 3x3x2
 const threeByThreeByTwoArray = makeMatrix([3, 3, 2]);
-
-// create an array of size 2x6x9x5x6
-const fiveDimensionalArray = makeMatrix([2, 6, 9, 5, 6]);
 ```
 
 ### Initialise the matrix with set values
@@ -72,14 +54,14 @@ const threeDimensionalStringArray = makeMatrix([2, 6, 5], "value");
 
 ### Pass a callback for dynamic initial values
 
-The `initialValues` parameter can also be a callback, which you can use to dynamically create items for each position in the matrix. The callback can accept an argument which will resolve to the current vector co-ordinates at each point in the matrix. This can allow you to populate your matrix in a "self-aware" way.
+The `initialValues` parameter can also be a callback, which you can use to dynamically create items for each position in the matrix. The callback can also accept an argument which will resolve to the current vector co-ordinates at each point in the matrix. This will allow you to populate your matrix in a "self-aware" fashion.
 
 ```js
 // create a 10x10x10 array, with each point a different random number between 0 and 9
 const twoDRandomNumberArray = makeMatrix([10, 10, 10], () => Math.floor(Math.random() * 10));
 
-// create a 5x5 array, with each point self described by a string
-const twoDVectorStringArray = makeMatrix([5, 5], (vector) => vector.join());
+// create a 5x5 array, with each point self-described by a string
+const twoDVectorStringArray = makeMatrix([5, 5], (vector) => `I am at position ${vector.join()}`);
 
 // create a 7x3,8 array, with each point transformed into a vector object
 const twoDVectorObjectArray = makeMatrix([7, 3, 8], (vector) => {
@@ -136,14 +118,10 @@ for (let x = 0; x < matrix.length; x += res) {
 ## API
 
 ```ts
-// Simple
-makeMatrix(dimensions, initialValues);
-
-// With types
 makeMatrix<D, T>(
-    dimensions: number | number[],
+    dimensions: D | VectorOfLength<D>,
     initialValues?: T | ((vector: VectorOfLength<D>) => T)
-): Matrix<T>;
+): Matrix<D, T>;
 ```
 
 ### Parameters
