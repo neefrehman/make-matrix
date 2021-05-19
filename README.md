@@ -10,7 +10,7 @@ A simple, type-safe way to create multi-dimensional arrays
 
 -   🛸 Easily create multi-dimensional arrays, with as many dimensions as needed
 -   🎛 Define exact dimensions to create an array of specified size
--   🔢 Initialise every point in the array to a custom initial value
+-   🔢 Initialise every point in the array to a custom or self-aware starting value
 -   📜 Comes with [TypeScript](https://www.typescriptlang.org) definitions and type-safe returns
 -   🔬 Tiny size ([~500 bytes gzipped](https://bundlephobia.com/result?p=make-matrix)), with no external dependencies
 
@@ -63,12 +63,12 @@ const twoDRandomNumberArray = makeMatrix([10, 10, 10], () => Math.floor(Math.ran
 // create a 5x5 array, with each point self-described by a string
 const twoDVectorStringArray = makeMatrix([5, 5], (vector) => `I am at position ${vector.join()}`);
 
-// create a 7x3,8 array, with each point transformed into a vector object
-const twoDVectorObjectArray = makeMatrix([7, 3, 8], (vector) => {
+// create a 7x3x8 array, with each point transformed into a vector object
+const twoDVectorObjectArray = makeMatrix([7, 3, 8], ([x, y, z]) => {
     return {
-        x: vector[0],
-        y: vector[1],
-        z: vector[2],
+        x,
+        y,
+        z,
         otherData: OTHER_DATA,
     }
 });
@@ -85,16 +85,16 @@ For example, a three-dimensional array of numbers will be of type `number[][][]`
 ```ts
 const threeDNumberArray = makeMatrix([2, 6, 5], 0); // return type of number[][][]
 
-threeDNumberArray[2][1][2] = 10; // OK
+threeDNumberArray[2][1][2] = 10;      // ✅ OK
 
-threeDNumberArray[2][1][2] = false; // error: Type 'false' is not assignable to type 'number'
+threeDNumberArray[2][1][2] = false;   // 🚨 error: Type 'false' is not assignable to type 'number'
 
-threeDNumberArray[2][1] = 10; // error: Type '"value"' is not assignable to type 'number[]'
+threeDNumberArray[2][1] = 10;         // 🚨 error: Type number is not assignable to type 'number[]'
 
-threeDNumberArray[2][1][2][0] = 10; // error: Property '0' does not exist on type 'Number'
+threeDNumberArray[2][1][2][0] = 10;   // 🚨 error: Property '0' does not exist on type 'Number'
 ```
 
-This type-safety will work for any number of dimensions, however large numbers may slow down your typescript server, due to the nature of the recursive types working under the hood.
+This type-safety will work for any number of dimensions, however large numbers may slow down the typescript compiler, due to the recursive nature of the types working under the hood.
 
 ## Example
 
