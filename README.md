@@ -120,18 +120,22 @@ for (let x = 0; x < matrix.length; x += res) {
 ```ts
 makeMatrix<D, T>(
     dimensions: D | VectorOfLength<D>,
-    initialValues?: T | ((vector: VectorOfLength<D>) => T)
+    initialValues?: T | ((vector: VectorOfLength<D>) => T) = null
 ): Matrix<D, T>;
 ```
 
 ### Parameters
 
--   `dimensions` — The desired dimensions of the matrix. A number or array of numbers.
--   `initialValues` — The value that each point in the matrix will initialise to. Can take any value. If a callback is passed, it will be run for each point in the matrix, which will be initialised to the callbacks returned value. (Optional — defaults to `null`).
+| Name  | Description  |
+| ------------- | ------------- |
+| `dimensions`  | The desired dimensions of the matrix. A number or array of numbers.  |
+| `initialValues`  | The value that each point in the matrix will initialise to. Can take any value. If a callback is passed, it will be run for each point in the matrix, which will be initialised to the callbacks returned value. (Optional — defaults to `null`).  |
 
 ### Returns
 
--   `Matrix` — A multidimensional array of your desired dimensions, with each point initialised to equal the `initialValues` parameter (or its returned value).
+| Name  | Description  |
+| ------------- | ------------- |
+| `Matrix`  | A multidimensional array of your desired dimensions, with each point initialised to equal the `initialValues` parameter (or its returned value).  |
 
 ## Contributing
 

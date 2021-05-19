@@ -28,9 +28,9 @@ const makeMatrix = <D extends number, T>(
     initialValues: ValueOrFunction<D, T> = null
 ): Matrix<D, T> => {
     const dimensionCount = typeof dimensions === "number" ? dimensions : dimensions.length;
-    const intialPosition = Array(dimensionCount).fill(0) as Vector<D>;
+    const initialPosition = Array(dimensionCount).fill(0) as Vector<D>;
 
-    return _makeMatrix(dimensions, initialValues, intialPosition);
+    return _makeMatrix(dimensions, initialValues, initialPosition);
 };
 
 /**
@@ -62,12 +62,12 @@ function _makeMatrix<D extends number, T>(
     const currentDimension = currentPosition.length - 1 - remainingDimensionCount;
     const needsRecursion = remainingDimensionCount > 0;
 
-    const finalMatrix = [...Array(currentDimensionLength)].map((_, i) => {
+    const matrix = [...Array(currentDimensionLength)].map((_, i) => {
         currentPosition[currentDimension] = i;
         // @ts-ignore — `Type instantiation is excessively deep...`
         return needsRecursion
             ? _makeMatrix(
-                  remainingDimensions as D | Vector<D>,
+                  remainingDimensions as typeof dimensions,
                   initialValues,
                   currentPosition
               )
@@ -76,7 +76,7 @@ function _makeMatrix<D extends number, T>(
             : initialValues;
     });
 
-    return finalMatrix as Matrix<D, T>;
+    return matrix as Matrix<D, T>;
 }
 
 export default makeMatrix;
