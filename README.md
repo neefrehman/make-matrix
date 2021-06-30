@@ -64,14 +64,7 @@ const twoDRandomNumberArray = makeMatrix([10, 10, 10], () => Math.floor(Math.ran
 const twoDVectorStringArray = makeMatrix([5, 5], (vector) => `I am at position ${vector.join()}`);
 
 // create a 7x3x8 array, with each point transformed into a vector object
-const twoDVectorObjectArray = makeMatrix([7, 3, 8], ([x, y, z]) => {
-    return {
-        x,
-        y,
-        z,
-        otherData: OTHER_DATA,
-    }
-});
+const twoDVectorObjectArray = makeMatrix([7, 3, 8], ([x, y, z]) => ({ x, y, z }));
 ```
 
 ## With TypeScript
