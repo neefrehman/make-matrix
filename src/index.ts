@@ -14,13 +14,9 @@ import type { Matrix, ValueOrFunction, Vector } from "./types";
  *
  * @example
  * const twoDArray = makeMatrix(2); // A 2D array
- *
  * const threeXThreeXTwoArray = makeMatrix([3, 3, 2]); // An array of size 3x3x2
- *
  * const twoDNumberArray = makeMatrix([3, 5], 0); // A 3x5 array initialised to 0
- *
  * const twoDRandomNumberArray = makeMatrix([1, 4], () => Math.random()); // A 1x4 array initialised with random numbers
- *
  * const twoDVectorArray = makeMatrix([3, 3], vector => vector.join()); // A 3x3 array initialised with each point's co-ordinate as a string
  */
 const makeMatrix = <D extends number, T>(
@@ -81,6 +77,4 @@ function _makeMatrix<D extends number, T>(
 
 export default makeMatrix;
 
-export { makeMatrix };
-
-export type { Matrix };
+export { makeMatrix, type Matrix };
