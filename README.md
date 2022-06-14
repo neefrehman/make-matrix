@@ -89,6 +89,13 @@ threeDNumberArray[2][1][2][0] = 10;   // 🚨 error: Property '0' does not exist
 
 This type-safety will work for any number of dimensions, however large numbers may slow down the typescript compiler, due to the recursive nature of the types working under the hood.
 
+Please also be aware that—when using this function with a primitive instead of a literal type, such as when creating matrices of dynamic size—the compiler will error as below. This is an unfortunate limitation with recursive types that can't be worked around. Instead, you'll have to use a `// @ts-ignore` statement.
+
+```ts
+const dimensions: number[] = [2, 6, 5];
+const threeDNumberArray = makeMatrix(dimensions, 0); // 🚨 error: Type instantiation is excessively deep and possibly infinite
+```
+
 ## Example
 
 To easily create a 3D grid using [p5.js](https://github.com/processing/p5.js/), make-matrix can be used like below. The source code for the grid at the top of this readme [can be seen here](https://github.com/neefrehman/Generative/blob/master/src/sketches/20/05/120520.tsx), and an [interactive demo of it here](https://generative.neef.co/120520).
