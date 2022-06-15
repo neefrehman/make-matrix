@@ -26,8 +26,8 @@
         "creative coding"
     ],
     "devDependencies": {
-        "@commitlint/cli": "^14.1.0",
-        "@commitlint/config-conventional": "^14.1.0",
+        "@commitlint/cli": "^17.0.2",
+        "@commitlint/config-conventional": "^17.0.2",
         "@types/jest": "^28.1.1",
         "@typescript-eslint/eslint-plugin": "^5.28.0",
         "@typescript-eslint/parser": "^5.28.0",
@@ -39,7 +39,7 @@
         "jest": "^28.1.1",
         "lint-staged": "^13.0.1",
         "prettier": "^2.7.0",
-        "semantic-release": "^18.0.0",
+        "semantic-release": "^19.0.3",
         "simple-git-hooks": "^2.8.0",
         "ts-jest": "^28.0.5",
         "typescript": "^4.7.3"
