@@ -1,6 +1,6 @@
 name: Test & Release
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
     setupNode:
@@ -39,19 +39,14 @@ jobs:
         needs: setupNode
         runs-on: ubuntu-latest
         steps:
+            - name: 'Checkout'
+              uses: actions/checkout@v2
             - name: Load node_modules
               uses: actions/cache@v2
               with:
                   path: node_modules
                   key: ${{ runner.os }}-node_modules-${{ needs.setupNode.outputs.package_lock_sha }}
                   # no restore-keys here, as we should be guaranteed a cache hit by having run setupNode
-            - name: 'Checkout'
-              uses: actions/checkout@v2
-            - name: Setup Node
-              uses: actions/setup-node@v3
-              with:
-                  node-version: ${{ needs.setupNode.outputs.node_version }}
-                  cache: 'npm'
             - name: lint
               run: npm run lint
             - name: build
@@ -67,11 +62,6 @@ jobs:
         steps:
             - name: 'Checkout'
               uses: actions/checkout@v2
-            - name: Setup Node
-              uses: actions/setup-node@v3
-              with:
-                  node-version: ${{ needs.setupNode.outputs.node_version }}
-                  cache: 'npm'
             - name: Load node_modules
               uses: actions/cache@v2
               with:
