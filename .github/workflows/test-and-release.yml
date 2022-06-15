@@ -1,50 +1,28 @@
 name: Test & Release
 
-on: [push]
+on:
+    push:
+        branches:
+            - "master"
 
 jobs:
-    prepare:
-        name: Prepare
-        if: "! contains(github.event.head_commit.message, '[skip ci]')"
+    setup-node-and-test:
         runs-on: ubuntu-latest
-
-        steps:
-            - run: echo "${{ github.event.head_commit.message }}"
-
-    test:
-        name: Test
-        needs: prepare
-        runs-on: ubuntu-latest
-
-        steps:
-            - uses: actions/checkout@v2
-            - name: Setup Node
-              uses: actions/setup-node@v1
-              with:
-                  node-version: 14
-                  registry-url: https://registry.npmjs.org
-            - name: install
-              run: npm install
-            - name: lint
-              run: npm run lint
-            - name: build
-              run: npm run build
-            - name: test
-              run: npm test
+        uses: ./.github/workflows/setup-node-and-test.yml
 
     release:
         name: Release
-        if: github.ref == 'refs/heads/master'
-        needs: test
+        needs: setup-node-and-test
         runs-on: ubuntu-latest
-
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
+            - name: "Checkout"
+              uses: actions/checkout@v2
+            - name: Load node_modules
+              uses: actions/cache@v2
               with:
-                  node-version: 14
-                  registry-url: https://registry.npmjs.org
-            - run: npm install
+                  path: node_modules
+                  key: ${{ runner.os }}-node_modules-${{ needs.setup-node-and-test.outputs.package_lock_sha }}
+                  # no restore-keys here, as we should be guaranteed a cache hit by having run setup-node-and-test
             - run: npm run build
             - run: npx semantic-release
               env:

@@ -49,8 +49,8 @@
         "format:fix": "prettier \"src/**/*.{js,ts,tsx}\" --write",
         "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
         "lint:fix": "eslint \"src/**/*.{js,ts,tsx}\" --fix",
-        "test": "jest --config jestconfig.json",
-        "test:coverage": "jest --coverage --config jestconfig.json",
+        "test": "jest --config jest.config.js",
+        "test:coverage": "jest --coverage --config jest.config.js",
         "updateSnapShots": "jest --updateSnapshot",
         "build": "tsc",
         "prepare": "npm run build",
@@ -67,7 +67,7 @@
         "*.(js|ts|tsx)": [
             "eslint --fix",
             "prettier --write",
-            "jest --findRelatedTests --config jestconfig.json"
+            "jest --findRelatedTests --passWithNoTests --config jest.config.js"
         ]
     },
     "simple-git-hooks": {
