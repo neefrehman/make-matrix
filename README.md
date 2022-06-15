@@ -79,11 +79,8 @@ For example, a three-dimensional array of numbers will be of type `number[][][]`
 const threeDNumberArray = makeMatrix([2, 6, 5], 0); // return type of number[][][]
 
 threeDNumberArray[2][1][2] = 10;      // ✅ OK
-
-threeDNumberArray[2][1][2] = false;   // 🚨 error: Type 'false' is not assignable to type 'number'
-
-threeDNumberArray[2][1] = 10;         // 🚨 error: Type number is not assignable to type 'number[]'
-
+threeDNumberArray[2][1][2] = false;   // 🚨 error: Type 'boolean' is not assignable to type 'number'
+threeDNumberArray[2][1] = 10;         // 🚨 error: Type 'number' is not assignable to type 'number[]'
 threeDNumberArray[2][1][2][0] = 10;   // 🚨 error: Property '0' does not exist on type 'Number'
 ```
 
@@ -92,7 +89,7 @@ This type-safety will work for any number of dimensions, however large numbers m
 Please also be aware that—when using this function with a primitive instead of a literal type, such as when creating matrices of dynamic size—the compiler will error as below. This is an unfortunate limitation with recursive types that can't be worked around. Instead, you'll have to use a `// @ts-ignore` statement.
 
 ```ts
-const dimensions: number[] = [2, 6, 5];
+const dimensions = [2, 6, 5] as number[];
 const threeDNumberArray = makeMatrix(dimensions, 0); // 🚨 error: Type instantiation is excessively deep and possibly infinite
 ```
 
