@@ -3,7 +3,7 @@ name: Test & Release
 on:
     push:
         branches:
-            - "master"
+            - "main"
 
 jobs:  
     setup-node-and-test:
