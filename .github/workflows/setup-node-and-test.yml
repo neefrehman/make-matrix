@@ -42,9 +42,10 @@ jobs:
             - name: install node_modules (cache miss)
               if: steps.cache-node_modules.outputs.cache-hit != 'true'
               run: npm i
+            - name: typecheck (cache hit, as running `npm i` on a cache miss will automatically run the `prepare` script, which builds and typechecks)
+              if: steps.cache-node_modules.outputs.cache-hit == 'true'
+              run: npm run build
             - name: lint
               run: npm run lint
-            - name: typecheck
-              run: npm run build
             - name: test
               run: npm test
