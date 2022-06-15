@@ -1,73 +1,28 @@
 name: Test & Release
 
-on: [push]
+on:
+    push:
+        branches:
+            - "master"
 
 jobs:
-    setupNode:
-      outputs:
-          package_lock_sha: ${{ steps.packageLockSha.outputs.package_lock_sha }}
-          node_version: ${{ steps.nvm.outputs.node_version }}
-      runs-on: ubuntu-latest
-      steps:
-          - name: 'Checkout'
-            uses: actions/checkout@v2
-          - name: save package-lock.json sha
-            id: packageLockSha
-            run: echo "##[set-output name=package_lock_sha;]${{ hashFiles('package-lock.json') }}"
-          - name: Get Node Version from .nvmrc
-            run: echo ::set-output name=node_version::$(cat .nvmrc)
-            id: nvm
-          - name: Set up Node
-            uses: actions/setup-node@v3
-            with:
-                node-version: '${{ steps.nvm.outputs.node_version }}'
-                cache: 'npm'
-          - name: Load cached node modules
-            uses: actions/cache@v2
-            id: cache-node_modules
-            with:
-                path: node_modules
-                key: ${{ runner.os }}-node_modules-${{ steps.packageLockSha.outputs.package_lock_sha }}
-                restore-keys: |
-                    ${{ runner.os }}-node_modules-
-          - name: install node_modules (cache miss)
-            if: steps.cache-node_modules.outputs.cache-hit != 'true'
-            run: npm i
-
-    test:
-        name: Test
-        needs: setupNode
+    setup-node-and-test:
         runs-on: ubuntu-latest
-        steps:
-            - name: 'Checkout'
-              uses: actions/checkout@v2
-            - name: Load node_modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node_modules-${{ needs.setupNode.outputs.package_lock_sha }}
-                  # no restore-keys here, as we should be guaranteed a cache hit by having run setupNode
-            - name: lint
-              run: npm run lint
-            - name: build
-              run: npm run build
-            - name: test
-              run: npm test
+        uses: ./.github/workflows/setup-node-and-test.yml
 
     release:
         name: Release
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        needs: test
+        needs: setup-node-and-test
         runs-on: ubuntu-latest
         steps:
-            - name: 'Checkout'
+            - name: "Checkout"
               uses: actions/checkout@v2
             - name: Load node_modules
               uses: actions/cache@v2
               with:
                   path: node_modules
-                  key: ${{ runner.os }}-node_modules-${{ needs.setupNode.outputs.package_lock_sha }}
-                  # no restore-keys here, as we should be guaranteed a cache hit by having run setupNode
+                  key: ${{ runner.os }}-node_modules-${{ needs.setup-node-and-test.outputs.package_lock_sha }}
+                  # no restore-keys here, as we should be guaranteed a cache hit by having run setup-node-and-test
             - run: npm run build
             - run: npx semantic-release
               env:
