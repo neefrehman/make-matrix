@@ -1,6 +1,6 @@
 <img src="assets/banner.gif" alt="make-matrix" width="100%">
 
-[![build](https://github.com/neefrehman/make-matrix/workflows/CI/badge.svg?branch=main)](https://github.com/neefrehman/make-matrix/actions "View the build actions for this project")
+[![build](https://github.com/neefrehman/make-matrix/actions/workflows/test-and-release.yml/badge.svg?branch=main)](https://github.com/neefrehman/make-matrix/actions "View the build actions for this project")
 [![npm version](http://img.shields.io/npm/v/make-matrix.svg?style=flat)](https://npmjs.org/package/make-matrix "View this project on npm")
 [![bundle size](https://badgen.net/bundlephobia/minzip/make-matrix)](https://bundlephobia.com/result?p=make-matrix "View this project on bundlephobia")
 
@@ -112,6 +112,10 @@ for (let x = 0; x < matrix.length; x += res) {
 }
 ```
 
+## Complexity
+
+The `makeMatrix` algorithm is recursive and takes exponential time, or $O(2^n)$, to complete. This means that adding new dimensions dramatically increases the amount of time taken to create a matrix. While creating a matrix of 7 dimensions will happen in around a millisecond, doing the same with 10 dimensions will verge into the hundreds of milliseconds. Please bear this in mind when creating matrices.
+
 ## API
 
 ```ts
@@ -144,7 +148,7 @@ This project uses [ESLint](https://github.com/eslint/eslint), [Prettier](https:/
 
 1. Eslint has found non-fixable issues in the code
 2. The Jest testing suites haven't all passed
-3. The commit message doesn't meet the [conventional commit format](https://www.conventionalcommits.org/en/v1.0.0/) (run `git cz` in terminal for help formatting your commit message)
+3. The commit message doesn't meet the [conventional commit format](https://www.conventionalcommits.org/en/v1.0.0/) (run `npm run commmitizen` in terminal for help formatting your commit message)
 
 Open your git logs to debug commit errors.
 
