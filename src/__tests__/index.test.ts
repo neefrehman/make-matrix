@@ -11,7 +11,7 @@ const specificDimensions = [[6], [1, 1], [3, 2, 3], [1, 4, 5, 2], [2, 4, 2, 4, 2
 
 const describeCases = [
     { argType: "N", testCases: nDimensions.map(n => [n, n]) },
-    { argType: "specific", testCases: specificDimensions.map(n => [n, n]) }
+    { argType: "specific", testCases: specificDimensions.map(n => [n, n]) },
 ];
 
 describe.each(describeCases)("arrays of $argType dimensions —", ({ testCases }) => {
