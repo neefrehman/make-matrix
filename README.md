@@ -2,6 +2,7 @@
 
 [![build](https://github.com/neefrehman/make-matrix/actions/workflows/test-and-release.yml/badge.svg?branch=main)](https://github.com/neefrehman/make-matrix/actions "View the build actions for this project")
 [![npm version](http://img.shields.io/npm/v/make-matrix.svg?style=flat)](https://npmjs.org/package/make-matrix "View this project on npm")
+[![types included](https://badgen.net/npm/types/make-matrix)](https://npmjs.org/package/make-matrix "Types are included in this package")
 [![bundle size](https://badgen.net/bundlephobia/minzip/make-matrix)](https://bundlephobia.com/result?p=make-matrix "View this project on bundlephobia")
 
 A simple, type-safe way to create multi-dimensional arrays
@@ -12,7 +13,7 @@ A simple, type-safe way to create multi-dimensional arrays
 -   🎛 Define exact dimensions to create an array of specified size
 -   🔢 Initialise every point in the array to a custom or self-aware starting value
 -   📜 Comes with [TypeScript](https://www.typescriptlang.org) definitions and type-safe returns
--   🔬 Tiny size ([~500 bytes gzipped](https://bundlephobia.com/result?p=make-matrix)), with no external dependencies
+-   🔬 Tiny size ([~440 bytes gzipped](https://bundlephobia.com/result?p=make-matrix)), with no external dependencies
 
 ## Installation
 
