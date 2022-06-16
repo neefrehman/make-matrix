@@ -52,7 +52,7 @@ function _makeMatrix<D extends number, T>(
     }
 
     if (!Number.isInteger(currentDimensionLength)) {
-        throw new TypeError(`Dimensions must be integers`);
+        throw new TypeError(`Dimension lengths must be integers`);
     }
 
     const currentDimension = currentPosition.length - 1 - remainingDimensionCount;
