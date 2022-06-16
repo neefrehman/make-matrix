@@ -13,6 +13,7 @@ on:
 
 jobs:
     setup-node-and-test:
+        name: Setup Node & Test
         outputs:
             package_lock_sha: ${{ steps.packageLockSha.outputs.package_lock_sha }}
             node_version: ${{ steps.nvm.outputs.node_version }}
