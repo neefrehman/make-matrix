@@ -73,7 +73,7 @@
     "simple-git-hooks": {
         "commit-msg": "npm run commit-msg",
         "pre-commit": "npm run pre-commit",
-        "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+        "prepare-commit-msg": "exec < /dev/tty && git-cz --hook || true"
     },
     "commitlint": {
         "extends": [

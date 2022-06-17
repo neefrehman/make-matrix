@@ -60,7 +60,6 @@ function _makeMatrix<D extends number, T>(
 
     const matrix = [...Array(currentDimensionLength)].map((_, i) => {
         currentPosition[currentDimension] = i;
-        // @ts-ignore — `Type instantiation is excessively deep...`
         return needsRecursion
             ? _makeMatrix(
                   remainingDimensions as typeof dimensions,

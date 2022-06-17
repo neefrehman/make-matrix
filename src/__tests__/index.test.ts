@@ -17,35 +17,30 @@ const describeCases = [
 describe.each(describeCases)("arrays of $argType dimensions —", ({ testCases }) => {
     describe("No initial values:", () => {
         test.each(testCases)("%p", dimensions => {
-            // @ts-ignore — `Type instantiation is excessively deep...`
             expect(makeMatrix(dimensions)).toMatchSnapshot();
         });
     });
 
     describe("string initial values:", () => {
         test.each(testCases)("%p", dimensions => {
-            // @ts-ignore — `Type instantiation is excessively deep...`
             expect(makeMatrix(dimensions, "string")).toMatchSnapshot();
         });
     });
 
     describe("number initial values:", () => {
         test.each(testCases)("%p", dimensions => {
-            // @ts-ignore — `Type instantiation is excessively deep...`
             expect(makeMatrix(dimensions, 0)).toMatchSnapshot();
         });
     });
 
     describe("callback initial values — math:", () => {
         test.each(testCases)("%p", dimensions => {
-            // @ts-ignore — `Type instantiation is excessively deep...`
             expect(makeMatrix(dimensions, () => 10 - 2)).toMatchSnapshot();
         });
     });
 
     describe("self aware callback initial values — vector:", () => {
         test.each(testCases)("%p", dimensions => {
-            // @ts-ignore — `Type instantiation is excessively deep...`
             expect(makeMatrix(dimensions, vector => vector)).toMatchSnapshot();
         });
     });
@@ -61,7 +56,6 @@ describe.each(describeCases)("arrays of $argType dimensions —", ({ testCases }
     describe("self aware callback initial values — object conversion:", () => {
         test.each(testCases)("%p", dimensions => {
             expect(
-                // @ts-ignore — `Type instantiation is excessively deep...`
                 makeMatrix(dimensions, ([x, y, z, a, b, c]) => ({ x, y, z, a, b, c }))
             ).toMatchSnapshot();
         });
