@@ -87,11 +87,10 @@ threeDNumberArray[2][1][2][0] = 10;   // 🚨 error: Property '0' does not exist
 
 This type-safety will work for any number of dimensions, however large numbers may slow down the typescript compiler, due to the recursive nature of the types working under the hood.
 
-Please also be aware that—when using this function with a primitive instead of a literal type, such as when creating matrices of dynamic size—the compiler will error as below. This is an unfortunate limitation with recursive types that can't be worked around. Instead, you'll have to use a `// @ts-ignore` statement.
+Please also be aware that—when using this function with a primitive instead of a literal type, such as when creating matrices of dynamic size—the exact return type can't be determined and will instead resolve to `any[]`.
 
 ```ts
-const dimensions = [2, 6, 5] as number[];
-const threeDNumberArray = makeMatrix(dimensions, 0); // 🚨 error: Type instantiation is excessively deep and possibly infinite
+const createDynamicMatrix = (dimensions: number[]) => makeMatrix(dimensions, 0); // return type of any[]
 ```
 
 ## Example
