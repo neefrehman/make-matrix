@@ -2,12 +2,12 @@
     "name": "make-matrix",
     "version": "1.0.0",
     "description": "A simple, type-safe way to create multi-dimensional arrays",
-    "homepage": "https://github.com/neefrehman/make-matrix#readme",
+    "homepage": "https://github.com/neefrehman/make-matrix",
     "bugs": {
         "url": "https://github.com/neefrehman/make-matrix/issues"
     },
     "author": "Neef Rehman",
-    "license": "ISC",
+    "license": "MIT",
     "files": [
         "lib/**/*"
     ],
@@ -19,11 +19,11 @@
     },
     "keywords": [
         "matrix",
-        "nth dimenson",
+        "nth dimension",
         "array",
         "multidimensional",
-        "generative coding",
-        "creative coding"
+        "math",
+        "typescript"
     ],
     "devDependencies": {
         "@commitlint/cli": "^17.0.2",
@@ -50,8 +50,6 @@
         "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
         "lint:fix": "eslint \"src/**/*.{js,ts,tsx}\" --fix",
         "test": "jest --config jest.config.js",
-        "test:coverage": "jest --coverage --config jest.config.js",
-        "updateSnapShots": "jest --updateSnapshot",
         "build": "tsc",
         "prepare": "npm run build",
         "prepublishOnly": "npm test && npm run lint",
@@ -86,7 +84,9 @@
         }
     },
     "release": {
-        "branches": ["main"],
+        "branches": [
+            "main"
+        ],
         "plugins": [
             "@semantic-release/commit-analyzer",
             "@semantic-release/release-notes-generator",
