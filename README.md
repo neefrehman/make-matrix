@@ -85,9 +85,7 @@ threeDNumberArray[2][1] = 10;         // 🚨 error: Type 'number' is not assign
 threeDNumberArray[2][1][2][0] = 10;   // 🚨 error: Property '0' does not exist on type 'Number'
 ```
 
-This type-safety will work for any number of dimensions, however large numbers may slow down the typescript compiler, due to the recursive nature of the types working under the hood.
-
-Please also be aware that—when using this function with a primitive instead of a literal type, such as when creating matrices of dynamic size—the exact return type can't be determined and will instead resolve to `any[]`.
+Please be aware that—when using this function with a primitive instead of a literal type, such as when creating matrices of dynamic size—the exact return type can't be determined and will instead resolve to `any[]`.
 
 ```ts
 const createDynamicMatrix = (dimensions: number[]) => makeMatrix(dimensions, 0); // return type of any[]
