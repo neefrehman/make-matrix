@@ -35,7 +35,7 @@ benny
         benny.complete(),
         isDiff ? { name: "skip" } : benny.save({ file: packageName, version })
     )
-    .then(({ results }) => {
+    .then(async ({ results }) => {
         if (!isDiff) {
             return;
         }
@@ -73,10 +73,7 @@ benny
             ["new", "old", "delta"]
         );
 
-        return prettyDiffs;
-    })
-    .then(prettyDiffs => {
-        if (!prettyDiffs || !isInPullRequestAction) {
+        if (!isInPullRequestAction) {
             return;
         }
 
@@ -88,7 +85,7 @@ benny
         });
 
         const octokit = getOctokit(process.env.GITHUB_TOKEN ?? "");
-        octokit.rest.issues.createComment({
+        await octokit.rest.issues.createComment({
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
