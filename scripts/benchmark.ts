@@ -39,6 +39,7 @@ benny
             };
         });
 
+        console.log("\n");
         console.log(
             diffs
                 .map(

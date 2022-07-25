@@ -51,24 +51,31 @@ jobs:
             - name: test
               run: npm test
             - name: Get changed files
+              if: github.event_name == 'pull_release'
               id: src_changed
               uses: tj-actions/changed-files@v24
               with:
-                files: |
-                  src/index.ts
+                files: src/index.ts
             - name: Benchmark against current release
-              if: github.event_name == 'pull_release' && steps.src_changed.outputs.any_changed == 'true'
+              if: steps.src_changed.outputs.any_changed == 'true'
               id: benchmark
-              run: npm run benchmark:diff
+              run: npm run benchmark:diff | tee ./benchmark-diff-output
+            - name: Save benchmark PR Comment
+              if: steps.src_changed.outputs.any_changed == 'true'
+              run: |
+                COMMENT="$(cat benchmark-diff-output | tail -4 || echo '🚨 Could not properly parse benchmark.')"
+                echo "##[set-output name=comment;]${COMMENT}"
+              id: save_pr_comment
             - name: comment benchmark diff to PR
-              if: github.event_name == 'pull_release' && steps.src_changed.outputs.any_changed == 'true'
-              uses: actions/github-script@v5
+              if: steps.src_changed.outputs.any_changed == 'true'
+              uses: unsplash/comment-on-pr@v1.3.0
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
-                github-token: ${{secrets.GITHUB_TOKEN}}
-                script: |
-                  github.rest.issues.createComment({
-                    issue_number: context.issue.number,
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    body: ${{ steps.benchmark.outputs.stdout }}
-                  })
+                msg: |
+                  ## Benchmark results against currently published version:
+
+                  ```
+                  ${{ steps.save_pr_comment.outputs.comment }}
+                  ```
+
