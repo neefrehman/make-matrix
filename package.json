@@ -58,13 +58,14 @@
         "prepare": "npm run build",
         "preversion": "npm run lint",
         "version": "npm run format && git add -A src",
-        "postversion": "npm run benchmark && git push && git push --tags",
+        "postversion": "npm run benchmark:ci && git push && git push --tags",
         "pre-commit": "lint-staged",
         "commit-msg": "commitlint -e",
         "commmitizen": "git-cz",
-        "benchmark": "ts-node scripts/benchmark.ts current",
-        "benchmark:diff": "ts-node scripts/benchmark.ts diff",
-        "benchmark:diff:ci": "ts-node scripts/benchmark.ts diff ci"
+        "benchmark": "ts-node benchmark/run-benchmark.ts current",
+        "benchmark:ci": "ts-node benchmark/run-benchmark.ts current ci",
+        "benchmark:diff": "ts-node benchmark/run-benchmark.ts diff",
+        "benchmark:diff:ci": "ts-node benchmark/run-benchmark.ts diff ci"
     },
     "lint-staged": {
         "*": [],
