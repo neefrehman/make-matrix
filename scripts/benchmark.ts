@@ -28,7 +28,7 @@ benny
         benny.add("specificDimensions", () => {
             makeMatrix([2, 4, 2, 4, 2]);
         }),
-        benny.add("specificDimensions — callback", () => {
+        benny.add("specific & callback", () => {
             makeMatrix([2, 4, 2, 4, 2], vector => `my position is ${vector.join()}`);
         }),
         benny.cycle(),
@@ -80,7 +80,7 @@ benny
             return;
         }
 
-        let body = `### Benchmark against currently published version (${version}):\n`;
+        let body = `### Benchmark against currently published version:\n`;
         body += "| Key  | Current PR | Published version | Difference |\n";
         body += "| :--- | :--------: | :---------------: | :--------: |\n";
         prettyDiffs.forEach(diff => {

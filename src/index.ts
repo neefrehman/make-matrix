@@ -5,7 +5,7 @@ import type { Matrix, ValueOrFunction, Vector } from "./types";
  * values.
  *
  * If a number is passed as the `dimensions` parameter, the smallest array with
- * that number of dimensions is returned. Ifan array of numbers is passed, the returned
+ * that number of dimensions is returned. If an array of numbers is passed, the returned
  * matrix will be of those exact dimensions.
  *
  * @param dimensions `D`: The desired dimensions of the matrix. A number or array of numbers.

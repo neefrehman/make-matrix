@@ -1,25 +1,25 @@
 {
   "name": "make-matrix",
-  "date": "2022-07-25T11:34:21.273Z",
+  "date": "2022-07-25T15:20:45.038Z",
   "version": "2.1.2",
   "results": [
     {
       "name": "nDimensions",
-      "ops": 26938,
-      "margin": 0.59,
-      "percentSlower": 87.78
+      "ops": 26653,
+      "margin": 0.36,
+      "percentSlower": 87.55
     },
     {
       "name": "specificDimensions",
-      "ops": 220352,
-      "margin": 0.4,
+      "ops": 214107,
+      "margin": 0.32,
       "percentSlower": 0
     },
     {
-      "name": "specificDimensions — callback",
-      "ops": 55075,
-      "margin": 0.18,
-      "percentSlower": 75.01
+      "name": "specific & callback",
+      "ops": 53908,
+      "margin": 0.36,
+      "percentSlower": 74.82
     }
   ],
   "fastest": {
