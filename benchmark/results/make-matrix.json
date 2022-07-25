@@ -1,0 +1,33 @@
+{
+  "name": "make-matrix",
+  "date": "2022-07-25T11:34:21.273Z",
+  "version": "2.1.2",
+  "results": [
+    {
+      "name": "nDimensions",
+      "ops": 26938,
+      "margin": 0.59,
+      "percentSlower": 87.78
+    },
+    {
+      "name": "specificDimensions",
+      "ops": 220352,
+      "margin": 0.4,
+      "percentSlower": 0
+    },
+    {
+      "name": "specificDimensions — callback",
+      "ops": 55075,
+      "margin": 0.18,
+      "percentSlower": 75.01
+    }
+  ],
+  "fastest": {
+    "name": "specificDimensions",
+    "index": 1
+  },
+  "slowest": {
+    "name": "nDimensions",
+    "index": 0
+  }
+}
