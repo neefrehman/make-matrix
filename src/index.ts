@@ -34,7 +34,7 @@ const makeMatrix = <D extends number, T>(
  */
 function _makeMatrix<D extends number, T>(
     dimensions: D | Vector<D>,
-    initialValues: ValueOrFunction<D, T> = null,
+    initialValues: ValueOrFunction<D, T>,
     currentPosition: Vector<D>
 ): Matrix<D, T> {
     let currentDimensionLength: number;
@@ -52,7 +52,7 @@ function _makeMatrix<D extends number, T>(
     }
 
     if (!Number.isInteger(currentDimensionLength)) {
-        throw new TypeError(`Dimension lengths must be integers`);
+        throw new TypeError(`Dimensions must be integers`);
     }
 
     const currentDimension = currentPosition.length - 1 - remainingDimensionCount;
