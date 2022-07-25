@@ -26,6 +26,7 @@
         "typescript"
     ],
     "devDependencies": {
+        "@actions/github": "^5.0.3",
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
         "@types/jest": "^28.1.6",
@@ -61,7 +62,8 @@
         "commit-msg": "commitlint -e",
         "commmitizen": "git-cz",
         "benchmark": "ts-node scripts/benchmark.ts current",
-        "benchmark:diff": "ts-node scripts/benchmark.ts diff"
+        "benchmark:diff": "ts-node scripts/benchmark.ts diff",
+        "benchmark:diff:ci": "ts-node scripts/benchmark.ts diff ci"
     },
     "lint-staged": {
         "*": [],
