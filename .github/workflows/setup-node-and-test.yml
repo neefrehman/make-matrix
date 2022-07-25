@@ -50,3 +50,15 @@ jobs:
               run: npm run lint
             - name: test
               run: npm test
+            - name: Has src changed
+              if: github.event_name == 'pull_request'
+              id: src_changed
+              uses: tj-actions/changed-files@v24
+              with:
+                  files: src/index.ts
+            - name: Benchmark against current release
+              if: steps.src_changed.outputs.any_changed == 'true'
+              id: benchmark
+              run: npm run benchmark:diff:ci
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

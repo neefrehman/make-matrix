@@ -6,7 +6,8 @@
         "outDir": "./lib",
         "strict": true,
         "skipLibCheck": true,
+        "resolveJsonModule": true
     },
-    "include": ["src"],
+    "include": ["src", "scripts"],
     "exclude": ["node_modules", "**/__tests__/*"]
 }
