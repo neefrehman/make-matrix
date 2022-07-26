@@ -1,33 +1,33 @@
 {
-  "name": "make-matrix",
-  "date": "2022-07-25T16:39:42.465Z",
-  "version": "2.1.4",
-  "results": [
-    {
-      "name": "nDimensions",
-      "ops": 988810,
-      "margin": 0.37,
-      "percentSlower": 0
+    "name": "make-matrix",
+    "date": "2022-07-25T16:27:37.604Z",
+    "version": "2.1.4",
+    "results": [
+        {
+            "name": "nDimensions",
+            "ops": 10238,
+            "margin": 2.26,
+            "percentSlower": 87.97
+        },
+        {
+            "name": "specificDimensions",
+            "ops": 85087,
+            "margin": 2.18,
+            "percentSlower": 0
+        },
+        {
+            "name": "specific & callback",
+            "ops": 16679,
+            "margin": 4.44,
+            "percentSlower": 80.4
+        }
+    ],
+    "fastest": {
+        "name": "specificDimensions",
+        "index": 1
     },
-    {
-      "name": "specificDimensions",
-      "ops": 306863,
-      "margin": 0.21,
-      "percentSlower": 68.97
-    },
-    {
-      "name": "specific & callback",
-      "ops": 30739,
-      "margin": 0.18,
-      "percentSlower": 96.89
+    "slowest": {
+        "name": "nDimensions",
+        "index": 0
     }
-  ],
-  "fastest": {
-    "name": "nDimensions",
-    "index": 0
-  },
-  "slowest": {
-    "name": "specific & callback",
-    "index": 2
-  }
 }
