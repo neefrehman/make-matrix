@@ -6,7 +6,8 @@ import makeMatrix from "../src/index";
 import { name as packageName, version } from "../package.json";
 
 const isDiff = process.argv[2] === "diff";
-const isInPullRequestAction = process.argv[3] === "ci";
+const isInCI = process.argv[3] === "ci";
+const file = `${packageName}-${isInCI ? "ci" : "local"}`;
 
 const directionEmojiMapping = { [-1]: "🚨", 0: "🔄", 1: "✅" };
 const getDirection = (diff: number) => (diff > 0 ? 1 : diff < 0 ? -1 : 0);
@@ -33,14 +34,18 @@ benny
         }),
         benny.cycle(),
         benny.complete(),
-        isDiff ? { name: "skip" } : benny.save({ file: packageName, version })
+        isDiff ? { name: "skip" } : benny.save({ file, version })
     )
     .then(async ({ results }) => {
         if (!isDiff) {
             return;
         }
 
-        const oldBenchmarkText = fs.readFileSync(`./benchmark/results/${packageName}.json`);
+        if (!fs.existsSync(`./benchmark/results/${file}.json`)) {
+            throw new Error("Benchmark not found to diff. Run `npm run benchmark` first");
+        }
+
+        const oldBenchmarkText = fs.readFileSync(`./benchmark/results/${file}.json`);
         const oldBenchmark = JSON.parse(oldBenchmarkText.toString());
         const oldResults: typeof results = oldBenchmark.results;
 
@@ -73,7 +78,7 @@ benny
             ["new", "old", "delta"]
         );
 
-        if (!isInPullRequestAction) {
+        if (!isInCI) {
             return;
         }
 
