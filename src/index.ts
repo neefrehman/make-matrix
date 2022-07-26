@@ -29,10 +29,6 @@ const makeMatrix = <D extends number, T>(
         return _makeMatrix(vecDimensions as Vector<D>, initialValues, initialPosition);
     }
 
-    if (dimensions.some(d => !Number.isInteger(d))) {
-        throw new TypeError("Dimensions must be integers");
-    }
-
     const initialPosition = Array(dimensions.length).fill(0) as Vector<D>;
     return _makeMatrix(dimensions, initialValues, initialPosition);
 };
