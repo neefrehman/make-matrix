@@ -48,11 +48,11 @@ jobs:
               run: npm run build
             - name: validate build
               run: |
-                FILE=lib/index.js 
-                FILE2=lib/index.d.ts
-                if [ -f $FILE ] && [ -f $FILE2 ]; then echo "Files exist" 
-                else echo "Files do not exist" && exit 1
-                fi
+                  FILE=lib/index.js 
+                  FILE2=lib/index.d.ts
+                  if [ -f $FILE ] && [ -f $FILE2 ]; then echo "Files exist" 
+                  else echo "Files do not exist" && exit 1
+                  fi
             - name: lint
               run: npm run lint
             - name: test
@@ -68,4 +68,4 @@ jobs:
               id: benchmark
               run: npm run benchmark:diff:ci
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

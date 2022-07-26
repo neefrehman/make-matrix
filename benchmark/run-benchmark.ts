@@ -78,7 +78,7 @@ benny
             ["new", "old", "delta"]
         );
 
-        if (!isInCI) {
+        if (!isInCI || !process.env.GITHUB_TOKEN) {
             return;
         }
 
@@ -89,8 +89,7 @@ benny
             body += `| ${diff.name} | ${diff.new}| ${diff.old} | ${diff.delta} |\n`;
         });
 
-        const octokit = getOctokit(process.env.GITHUB_TOKEN ?? "");
-        await octokit.rest.issues.createComment({
+        await getOctokit(process.env.GITHUB_TOKEN).rest.issues.createComment({
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,

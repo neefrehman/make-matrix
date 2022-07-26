@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`arrays of N dimensions — No initial values: 1 1`] = `
+exports[`arrays of N dimensions No initial values 1 1`] = `
 Array [
   null,
 ]
 `;
 
-exports[`arrays of N dimensions — No initial values: 2 1`] = `
+exports[`arrays of N dimensions No initial values 2 1`] = `
 Array [
   Array [
     null,
@@ -17,7 +17,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — No initial values: 3 1`] = `
+exports[`arrays of N dimensions No initial values 3 1`] = `
 Array [
   Array [
     Array [
@@ -46,7 +46,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — No initial values: 4 1`] = `
+exports[`arrays of N dimensions No initial values 4 1`] = `
 Array [
   Array [
     Array [
@@ -155,7 +155,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — No initial values: 5 1`] = `
+exports[`arrays of N dimensions No initial values 5 1`] = `
 Array [
   Array [
     Array [
@@ -690,13 +690,13 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — callback initial values — math: 1 1`] = `
+exports[`arrays of N dimensions callback initial values — math 1 1`] = `
 Array [
   8,
 ]
 `;
 
-exports[`arrays of N dimensions — callback initial values — math: 2 1`] = `
+exports[`arrays of N dimensions callback initial values — math 2 1`] = `
 Array [
   Array [
     8,
@@ -707,7 +707,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — callback initial values — math: 3 1`] = `
+exports[`arrays of N dimensions callback initial values — math 3 1`] = `
 Array [
   Array [
     Array [
@@ -736,7 +736,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — callback initial values — math: 4 1`] = `
+exports[`arrays of N dimensions callback initial values — math 4 1`] = `
 Array [
   Array [
     Array [
@@ -845,7 +845,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — callback initial values — math: 5 1`] = `
+exports[`arrays of N dimensions callback initial values — math 5 1`] = `
 Array [
   Array [
     Array [
@@ -1380,13 +1380,13 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — number initial values: 1 1`] = `
+exports[`arrays of N dimensions number initial values 1 1`] = `
 Array [
   0,
 ]
 `;
 
-exports[`arrays of N dimensions — number initial values: 2 1`] = `
+exports[`arrays of N dimensions number initial values 2 1`] = `
 Array [
   Array [
     0,
@@ -1397,7 +1397,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — number initial values: 3 1`] = `
+exports[`arrays of N dimensions number initial values 3 1`] = `
 Array [
   Array [
     Array [
@@ -1426,7 +1426,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — number initial values: 4 1`] = `
+exports[`arrays of N dimensions number initial values 4 1`] = `
 Array [
   Array [
     Array [
@@ -1535,7 +1535,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — number initial values: 5 1`] = `
+exports[`arrays of N dimensions number initial values 5 1`] = `
 Array [
   Array [
     Array [
@@ -2070,13 +2070,13 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — joined: 1 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — joined 1 1`] = `
 Array [
   "my position is 0",
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — joined: 2 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — joined 2 1`] = `
 Array [
   Array [
     "my position is 0,0",
@@ -2087,7 +2087,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — joined: 3 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — joined 3 1`] = `
 Array [
   Array [
     Array [
@@ -2116,7 +2116,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — joined: 4 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — joined 4 1`] = `
 Array [
   Array [
     Array [
@@ -2225,7 +2225,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — joined: 5 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — joined 5 1`] = `
 Array [
   Array [
     Array [
@@ -2760,7 +2760,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — object conversion: 1 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — object conversion 1 1`] = `
 Array [
   Object {
     "a": undefined,
@@ -2773,7 +2773,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — object conversion: 2 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — object conversion 2 1`] = `
 Array [
   Array [
     Object {
@@ -2798,7 +2798,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — object conversion: 3 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — object conversion 3 1`] = `
 Array [
   Array [
     Array [
@@ -2869,7 +2869,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — object conversion: 4 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — object conversion 4 1`] = `
 Array [
   Array [
     Array [
@@ -3146,7 +3146,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — object conversion: 5 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — object conversion 5 1`] = `
 Array [
   Array [
     Array [
@@ -4521,7 +4521,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — vector: 1 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — vector 1 1`] = `
 Array [
   Array [
     0,
@@ -4529,7 +4529,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — vector: 2 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — vector 2 1`] = `
 Array [
   Array [
     Array [
@@ -4546,7 +4546,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — vector: 3 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — vector 3 1`] = `
 Array [
   Array [
     Array [
@@ -4599,7 +4599,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — vector: 4 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — vector 4 1`] = `
 Array [
   Array [
     Array [
@@ -4828,7 +4828,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — self aware callback initial values — vector: 5 1`] = `
+exports[`arrays of N dimensions self aware callback initial values — vector 5 1`] = `
 Array [
   Array [
     Array [
@@ -6083,13 +6083,13 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — string initial values: 1 1`] = `
+exports[`arrays of N dimensions string initial values 1 1`] = `
 Array [
   "string",
 ]
 `;
 
-exports[`arrays of N dimensions — string initial values: 2 1`] = `
+exports[`arrays of N dimensions string initial values 2 1`] = `
 Array [
   Array [
     "string",
@@ -6100,7 +6100,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — string initial values: 3 1`] = `
+exports[`arrays of N dimensions string initial values 3 1`] = `
 Array [
   Array [
     Array [
@@ -6129,7 +6129,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — string initial values: 4 1`] = `
+exports[`arrays of N dimensions string initial values 4 1`] = `
 Array [
   Array [
     Array [
@@ -6238,7 +6238,7 @@ Array [
 ]
 `;
 
-exports[`arrays of N dimensions — string initial values: 5 1`] = `
+exports[`arrays of N dimensions string initial values 5 1`] = `
 Array [
   Array [
     Array [
@@ -6773,7 +6773,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — No initial values: [1, 1] 1`] = `
+exports[`arrays of specific dimensions No initial values [1, 1] 1`] = `
 Array [
   Array [
     null,
@@ -6781,7 +6781,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — No initial values: [1, 4, 5, 2] 1`] = `
+exports[`arrays of specific dimensions No initial values [1, 4, 5, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -6876,7 +6876,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — No initial values: [2, 4, 2, 4, 2] 1`] = `
+exports[`arrays of specific dimensions No initial values [2, 4, 2, 4, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -7189,7 +7189,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — No initial values: [3, 2, 3] 1`] = `
+exports[`arrays of specific dimensions No initial values [3, 2, 3] 1`] = `
 Array [
   Array [
     Array [
@@ -7230,7 +7230,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — No initial values: [6] 1`] = `
+exports[`arrays of specific dimensions No initial values [6] 1`] = `
 Array [
   null,
   null,
@@ -7241,7 +7241,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — callback initial values — math: [1, 1] 1`] = `
+exports[`arrays of specific dimensions callback initial values — math [1, 1] 1`] = `
 Array [
   Array [
     8,
@@ -7249,7 +7249,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — callback initial values — math: [1, 4, 5, 2] 1`] = `
+exports[`arrays of specific dimensions callback initial values — math [1, 4, 5, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -7344,7 +7344,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — callback initial values — math: [2, 4, 2, 4, 2] 1`] = `
+exports[`arrays of specific dimensions callback initial values — math [2, 4, 2, 4, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -7657,7 +7657,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — callback initial values — math: [3, 2, 3] 1`] = `
+exports[`arrays of specific dimensions callback initial values — math [3, 2, 3] 1`] = `
 Array [
   Array [
     Array [
@@ -7698,7 +7698,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — callback initial values — math: [6] 1`] = `
+exports[`arrays of specific dimensions callback initial values — math [6] 1`] = `
 Array [
   8,
   8,
@@ -7709,7 +7709,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — number initial values: [1, 1] 1`] = `
+exports[`arrays of specific dimensions number initial values [1, 1] 1`] = `
 Array [
   Array [
     0,
@@ -7717,7 +7717,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — number initial values: [1, 4, 5, 2] 1`] = `
+exports[`arrays of specific dimensions number initial values [1, 4, 5, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -7812,7 +7812,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — number initial values: [2, 4, 2, 4, 2] 1`] = `
+exports[`arrays of specific dimensions number initial values [2, 4, 2, 4, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -8125,7 +8125,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — number initial values: [3, 2, 3] 1`] = `
+exports[`arrays of specific dimensions number initial values [3, 2, 3] 1`] = `
 Array [
   Array [
     Array [
@@ -8166,7 +8166,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — number initial values: [6] 1`] = `
+exports[`arrays of specific dimensions number initial values [6] 1`] = `
 Array [
   0,
   0,
@@ -8177,7 +8177,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — joined: [1, 1] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — joined [1, 1] 1`] = `
 Array [
   Array [
     "my position is 0,0",
@@ -8185,7 +8185,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — joined: [1, 4, 5, 2] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — joined [1, 4, 5, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -8280,7 +8280,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — joined: [2, 4, 2, 4, 2] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — joined [2, 4, 2, 4, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -8593,7 +8593,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — joined: [3, 2, 3] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — joined [3, 2, 3] 1`] = `
 Array [
   Array [
     Array [
@@ -8634,7 +8634,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — joined: [6] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — joined [6] 1`] = `
 Array [
   "my position is 0",
   "my position is 1",
@@ -8645,7 +8645,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — object conversion: [1, 1] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — object conversion [1, 1] 1`] = `
 Array [
   Array [
     Object {
@@ -8660,7 +8660,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — object conversion: [1, 4, 5, 2] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — object conversion [1, 4, 5, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -9035,7 +9035,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — object conversion: [2, 4, 2, 4, 2] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — object conversion [2, 4, 2, 4, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -10244,7 +10244,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — object conversion: [3, 2, 3] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — object conversion [3, 2, 3] 1`] = `
 Array [
   Array [
     Array [
@@ -10411,7 +10411,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — object conversion: [6] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — object conversion [6] 1`] = `
 Array [
   Object {
     "a": undefined,
@@ -10464,7 +10464,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — vector: [1, 1] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — vector [1, 1] 1`] = `
 Array [
   Array [
     Array [
@@ -10475,7 +10475,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — vector: [1, 4, 5, 2] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — vector [1, 4, 5, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -10770,7 +10770,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — vector: [2, 4, 2, 4, 2] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — vector [2, 4, 2, 4, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -11851,7 +11851,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — vector: [3, 2, 3] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — vector [3, 2, 3] 1`] = `
 Array [
   Array [
     Array [
@@ -11964,7 +11964,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — self aware callback initial values — vector: [6] 1`] = `
+exports[`arrays of specific dimensions self aware callback initial values — vector [6] 1`] = `
 Array [
   Array [
     0,
@@ -11987,7 +11987,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — string initial values: [1, 1] 1`] = `
+exports[`arrays of specific dimensions string initial values [1, 1] 1`] = `
 Array [
   Array [
     "string",
@@ -11995,7 +11995,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — string initial values: [1, 4, 5, 2] 1`] = `
+exports[`arrays of specific dimensions string initial values [1, 4, 5, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -12090,7 +12090,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — string initial values: [2, 4, 2, 4, 2] 1`] = `
+exports[`arrays of specific dimensions string initial values [2, 4, 2, 4, 2] 1`] = `
 Array [
   Array [
     Array [
@@ -12403,7 +12403,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — string initial values: [3, 2, 3] 1`] = `
+exports[`arrays of specific dimensions string initial values [3, 2, 3] 1`] = `
 Array [
   Array [
     Array [
@@ -12444,7 +12444,7 @@ Array [
 ]
 `;
 
-exports[`arrays of specific dimensions — string initial values: [6] 1`] = `
+exports[`arrays of specific dimensions string initial values [6] 1`] = `
 Array [
   "string",
   "string",
