@@ -43,9 +43,16 @@ jobs:
             - name: install node_modules (cache miss)
               if: steps.cache-node_modules.outputs.cache-hit != 'true'
               run: npm i
-            - name: typecheck (cache hit, as running `npm i` on a cache miss will automatically run the `prepare` script, which builds and typechecks)
+            - name: typecheck (on cache hit, as running `npm i` on a cache miss will automatically run the `prepare` script, which builds and typechecks)
               if: steps.cache-node_modules.outputs.cache-hit == 'true'
               run: npm run build
+            - name: validate build
+              run: |
+                FILE=lib/index.js 
+                FILE2=lib/index.d.ts
+                if [ -f $FILE ] && [ -f $FILE2 ]; then echo "Files exist" 
+                else echo "Files do not exist" && exit 1
+                fi
             - name: lint
               run: npm run lint
             - name: test
