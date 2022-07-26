@@ -25,8 +25,8 @@ const makeMatrix = <D extends number, T>(
 ): Matrix<D, T> => {
     if (typeof dimensions === "number") {
         const initialPosition = Array(dimensions).fill(0) as Vector<D>;
-        const vecDimensions = [...Array(dimensions)].map((_, i) => dimensions - i);
-        return _makeMatrix(vecDimensions as Vector<D>, initialValues, initialPosition);
+        const arrayDimensions = [...Array(dimensions)].map((_, i) => dimensions - i);
+        return _makeMatrix(arrayDimensions as Vector<D>, initialValues, initialPosition);
     }
 
     const initialPosition = Array(dimensions.length).fill(0) as Vector<D>;
