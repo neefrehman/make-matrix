@@ -23,9 +23,17 @@ const makeMatrix = <D extends number, T>(
     dimensions: D | Vector<D>,
     initialValues: ValueOrFunction<D, T> = null
 ): Matrix<D, T> => {
-    const dimensionCount = typeof dimensions === "number" ? dimensions : dimensions.length;
-    const initialPosition = Array(dimensionCount).fill(0) as Vector<D>;
+    if (typeof dimensions === "number") {
+        const initialPosition = Array(dimensions).fill(0) as Vector<D>;
+        const vecDimensions = [...Array(dimensions)].map((_, i) => dimensions - i);
+        return _makeMatrix(vecDimensions as Vector<D>, initialValues, initialPosition);
+    }
 
+    if (dimensions.some(d => !Number.isInteger(d))) {
+        throw new TypeError("Dimensions must be integers");
+    }
+
+    const initialPosition = Array(dimensions.length).fill(0) as Vector<D>;
     return _makeMatrix(dimensions, initialValues, initialPosition);
 };
 
@@ -33,32 +41,16 @@ const makeMatrix = <D extends number, T>(
  * Recursively creates a matrix, and keeps track of the current vector.
  */
 function _makeMatrix<D extends number, T>(
-    dimensions: D | Vector<D>,
+    dimensions: Vector<D>,
     initialValues: ValueOrFunction<D, T>,
     currentPosition: Vector<D>
 ): Matrix<D, T> {
-    let currentDimensionLength: number;
-    let remainingDimensions: number | Vector;
-    let remainingDimensionCount: number;
-
-    if (typeof dimensions === "number") {
-        currentDimensionLength = dimensions;
-        remainingDimensions = dimensions - 1;
-        remainingDimensionCount = remainingDimensions;
-    } else {
-        currentDimensionLength = dimensions[0] ?? 0;
-        remainingDimensions = dimensions.slice(1);
-        remainingDimensionCount = remainingDimensions.length;
-    }
-
-    if (!Number.isInteger(currentDimensionLength)) {
-        throw new TypeError(`Dimensions must be integers`);
-    }
-
+    const [currentDimensionLength, ...remainingDimensions] = dimensions;
+    const remainingDimensionCount = remainingDimensions.length;
     const currentDimension = currentPosition.length - 1 - remainingDimensionCount;
     const needsRecursion = remainingDimensionCount > 0;
 
-    const matrix = [...Array(currentDimensionLength)].map((_, i) => {
+    return [...Array(currentDimensionLength)].map((_, i) => {
         currentPosition[currentDimension] = i;
         return needsRecursion
             ? _makeMatrix(
@@ -69,9 +61,7 @@ function _makeMatrix<D extends number, T>(
             : initialValues instanceof Function
             ? initialValues(currentPosition.slice() as Vector<D>)
             : initialValues;
-    });
-
-    return matrix as Matrix<D, T>;
+    }) as Matrix<D, T>;
 }
 
 export default makeMatrix;
