@@ -23,13 +23,14 @@ const makeMatrix = <D extends number, T>(
     dimensions: D | Vector<D>,
     initialValues: ValueOrFunction<D, T> = null
 ): Matrix<D, T> => {
+    const dimensionCount = typeof dimensions === "number" ? dimensions : dimensions.length;
+    const initialPosition = Array(dimensionCount).fill(0) as Vector<D>;
+
     if (typeof dimensions === "number") {
-        const initialPosition = Array(dimensions).fill(0) as Vector<D>;
         const arrayDimensions = [...Array(dimensions)].map((_, i) => dimensions - i);
         return _makeMatrix(arrayDimensions as Vector<D>, initialValues, initialPosition);
     }
 
-    const initialPosition = Array(dimensions.length).fill(0) as Vector<D>;
     return _makeMatrix(dimensions, initialValues, initialPosition);
 };
 
@@ -42,9 +43,8 @@ function _makeMatrix<D extends number, T>(
     currentPosition: Vector<D>
 ): Matrix<D, T> {
     const [currentDimensionLength, ...remainingDimensions] = dimensions;
-    const remainingDimensionCount = remainingDimensions.length;
-    const currentDimension = currentPosition.length - 1 - remainingDimensionCount;
-    const needsRecursion = remainingDimensionCount > 0;
+    const currentDimension = currentPosition.length - 1 - remainingDimensions.length;
+    const needsRecursion = remainingDimensions.length > 0;
 
     return [...Array(currentDimensionLength)].map((_, i) => {
         currentPosition[currentDimension] = i;
