@@ -5,19 +5,19 @@
     "results": [
         {
             "name": "nDimensions",
-            "ops": 10238,
+            "ops": 9481,
             "margin": 2.26,
             "percentSlower": 87.97
         },
         {
             "name": "specificDimensions",
-            "ops": 85087,
+            "ops": 119244,
             "margin": 2.18,
             "percentSlower": 0
         },
         {
             "name": "specific & callback",
-            "ops": 16679,
+            "ops": 24286,
             "margin": 4.44,
             "percentSlower": 80.4
         }

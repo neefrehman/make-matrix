@@ -23,7 +23,7 @@
                 "assets": [
                     "package.json",
                     "package-lock.json",
-                    "benchmark/results/make-matrix.json"
+                    "benchmark/results/make-matrix-ci.json"
                 ],
                 "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
             }
