@@ -49,11 +49,7 @@ function _makeMatrix<D extends number, T>(
     return [...Array(currentDimensionLength)].map((_, i) => {
         currentPosition[currentDimension] = i;
         return needsRecursion
-            ? _makeMatrix(
-                  remainingDimensions as typeof dimensions,
-                  initialValues,
-                  currentPosition
-              )
+            ? _makeMatrix(remainingDimensions as Vector<D>, initialValues, currentPosition)
             : initialValues instanceof Function
             ? initialValues(currentPosition.slice() as Vector<D>)
             : initialValues;
