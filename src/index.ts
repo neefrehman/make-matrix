@@ -1,23 +1,20 @@
 import type { Matrix, ValueOrFunction, Vector } from "./types";
 
 /**
- * Returns a matrix (multi-dimensional array) with your desired dimensions and
- * values.
+ * Returns a matrix (multi-dimensional array) with your desired dimensions and values.
  *
- * If a number is passed as the `dimensions` parameter, the smallest array with
- * that number of dimensions is returned. If an array of numbers is passed, the returned
- * matrix will be of those exact dimensions.
+ * If a number is passed as the `dimensions` parameter, a matrix with that number of dimensions
+ * is returned. If an array of numbers is passed, the returned matrix have those exact dimensions.
  *
- * @param dimensions `D`: The desired dimensions of the matrix. A number or array of numbers.
- * @param initialValues The value that each point in the matrix initialises to. Can also take a
- *  callback function which returns a value to fill the matrix dynamically. Defaults to `null`.
+ * @param dimensions    The desired dimensions of the matrix. A number or array of numbers.
+ * @param initialValues The initial value for each point in the matrix. Can also take a callback function to fill the matrix dynamically. Defaults to `null`.
  *
  * @example
  * const twoDArray = makeMatrix(2); // A 2D array
- * const threeXThreeXTwoArray = makeMatrix([3, 3, 2]); // An array of size 3x3x2
- * const twoDNumberArray = makeMatrix([3, 5], 0); // A 3x5 array initialised to 0
- * const twoDRandomNumberArray = makeMatrix([1, 4], () => Math.random()); // A 1x4 array initialised with random numbers
- * const twoDVectorArray = makeMatrix([3, 3], vector => vector.join()); // A 3x3 array initialised with each point's co-ordinate as a string
+ * const threeXThreeXTwoArray = makeMatrix([3, 3, 2]); // A 3x3x2 array
+ * const twoDNumberArray = makeMatrix([3, 5], 0); // A 3x5 array containing 0
+ * const twoDRandomNumberArray = makeMatrix([1, 4], () => Math.random()); // A 1x4 array containing random numbers
+ * const twoDVectorArray = makeMatrix([3, 3], vector => vector.join()); // A 3x3 array containing each point's co-ordinate as a string
  */
 const makeMatrix = <D extends number, T>(
     dimensions: D | Vector<D>,
@@ -35,7 +32,7 @@ const makeMatrix = <D extends number, T>(
 };
 
 /**
- * Recursively creates a matrix, and keeps track of the current vector.
+ * Recursively creates a matrix (depth first), and keeps track of the current vector.
  */
 function _makeMatrix<D extends number, T>(
     dimensions: Vector<D>,

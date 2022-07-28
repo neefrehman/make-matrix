@@ -37,12 +37,8 @@ benny
         isDiff ? { name: "skip" } : benny.save({ file, version })
     )
     .then(async ({ results }) => {
-        if (!isDiff) {
+        if (!isDiff || !fs.existsSync(`./benchmark/results/${file}.json`)) {
             return;
-        }
-
-        if (!fs.existsSync(`./benchmark/results/${file}.json`)) {
-            throw new Error("Benchmark not found to diff. Run `npm run benchmark` first");
         }
 
         const oldBenchmarkText = fs.readFileSync(`./benchmark/results/${file}.json`);
