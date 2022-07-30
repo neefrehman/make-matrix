@@ -11,8 +11,6 @@ export type Matrix<D extends number, T = unknown> = Brand<_Matrix<D, T, []>>;
  * Instead, we short circuit the type to resolve to `any[]`, to avoid the typescript compiler
  * throwing a `type instantiation is excessively deep...` error. This ensures an array of
  * at least one dimension is returned, but unfortunately can't provide more safety than that.
- *
- * @example const m = makeMatrix([] as number[]); // will return `any[]` to avoid a compiler error
  */
 type _Matrix<
     D extends number,
