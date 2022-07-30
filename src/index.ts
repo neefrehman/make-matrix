@@ -1,4 +1,4 @@
-import type { Matrix, ValueOrFunction, Vector } from "./types";
+import type { Matrix, Vector } from "./types";
 
 /**
  * Returns a matrix (multi-dimensional array) with your desired dimensions and values.
@@ -18,7 +18,7 @@ import type { Matrix, ValueOrFunction, Vector } from "./types";
  */
 const makeMatrix = <D extends number, T>(
     dimensions: D | Vector<D>,
-    initialValues: ValueOrFunction<D, T> = null
+    initialValues: T | ((vector: Vector<D>) => T) | null = null
 ): Matrix<D, T> => {
     const dimensionCount = typeof dimensions === "number" ? dimensions : dimensions.length;
     const initialPosition = Array(dimensionCount).fill(0) as Vector<D>;
@@ -36,7 +36,7 @@ const makeMatrix = <D extends number, T>(
  */
 function _makeMatrix<D extends number, T>(
     dimensions: Vector<D>,
-    initialValues: ValueOrFunction<D, T>,
+    initialValues: T | ((vector: Vector<D>) => T) | null,
     currentPosition: Vector<D>
 ): Matrix<D, T> {
     const [currentDimensionLength, ...remainingDimensions] = dimensions;
