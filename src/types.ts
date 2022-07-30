@@ -1,8 +1,7 @@
 /**
  * A typed multidimensional array returned by `makeMatrix`.
- * @remarks literals will be widened to their primitive types.
  */
-export type Matrix<D extends number, T = unknown> = Brand<_Matrix<D, WidenLiterals<T>, []>>;
+export type Matrix<D extends number, T = unknown> = Brand<_Matrix<D, T, []>>;
 
 /**
  * Recursively constructs a `Matrix` type and keeps track of the number of recursions.
@@ -35,17 +34,6 @@ type _Matrix<
 export type Vector<D extends number> = Brand<
     number extends D ? number[] : [number, ...number[]] & { readonly length: D }
 >;
-
-/**
- * Expands literal types to their primitive
- */
-type WidenLiterals<T> = T extends boolean
-    ? boolean
-    : T extends string
-    ? string
-    : T extends number
-    ? number
-    : T;
 
 /**
  * Stops intellisense from expanding types and exposing their more complicated internals.
