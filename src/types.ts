@@ -2,7 +2,7 @@
  * A typed multidimensional array returned by `makeMatrix`.
  * @remarks literals will be widened to their primitive types.
  */
-export type Matrix<D extends number, T = unknown> = _Matrix<D, WidenLiterals<T>, []>;
+export type Matrix<D extends number, T = unknown> = Brand<_Matrix<D, WidenLiterals<T>, []>>;
 
 /**
  * Recursively constructs a `Matrix` type and keeps track of the number of recursions.
@@ -32,9 +32,9 @@ type _Matrix<
  * When a `Vector` is created without knowing the exact number of dimensions, such as when
  * creating one dynamically, we short circuit the type to resolve to `number[]`.
  */
-export type Vector<D extends number> = number extends D
-    ? number[]
-    : [number, ...number[]] & { readonly length: D };
+export type Vector<D extends number> = Brand<
+    number extends D ? number[] : [number, ...number[]] & { readonly length: D }
+>;
 
 /**
  * Expands literal types to their primitive
@@ -46,3 +46,10 @@ type WidenLiterals<T> = T extends boolean
     : T extends number
     ? number
     : T;
+
+/**
+ * Stops intellisense from expanding types and exposing their more complicated internals.
+ * @link https://github.com/microsoft/TypeScript/issues/31940#issuecomment-841712377
+ */
+// eslint-disable-next-line @typescript-eslint/ban-types
+type Brand<D> = D & {};
