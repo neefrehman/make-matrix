@@ -1,5 +1,14 @@
 import makeMatrix from "../index";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+const checkTypeCompilation = (vector: number[]) => {
+    const matrix1: string[][][][] = makeMatrix(4, "hello");
+    const matrix2: number[][] = makeMatrix([4, 5], ([a]) => a);
+    const matrix3: string[] = makeMatrix([4], v => v[0].toString());
+    const matrix4: any[] = makeMatrix(vector);
+};
+/* eslint-enable @typescript-eslint/no-unused-vars */
+
 const nDimensions = [1, 2, 3, 4, 5];
 const specificDimensions = [[6], [1, 1], [3, 2, 3], [1, 4, 5, 2], [2, 4, 2, 4, 2]];
 
