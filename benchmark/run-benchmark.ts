@@ -78,17 +78,17 @@ benny
             return;
         }
 
-        let body = `### Benchmark against currently published version:\n`;
-        body += "| Key  | Current PR | Published version | Difference |\n";
-        body += "| :--- | :--------: | :---------------: | :--------: |\n";
+        const body = ["### Benchmark against currently published version:"];
+        body.push("| Key  | Current PR | Published version | Difference |");
+        body.push("| :--- | :--------: | :---------------: | :--------: |");
         prettyDiffs.forEach(diff => {
-            body += `| ${diff.name} | ${diff.new}| ${diff.old} | ${diff.delta} |\n`;
+            body.push(`| ${diff.name} | ${diff.new}| ${diff.old} | ${diff.delta} |`);
         });
 
         await getOctokit(process.env.GITHUB_TOKEN).rest.issues.createComment({
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body,
+            body: body.join("\n"),
         });
     });
