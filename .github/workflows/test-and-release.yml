@@ -14,7 +14,7 @@ jobs:
         needs: setup-node-and-test
         runs-on: ubuntu-latest
         steps:
-            - name: "Checkout"
+            - name: Checkout
               uses: actions/checkout@v2
             - name: Load node_modules
               uses: actions/cache@v2
@@ -22,8 +22,10 @@ jobs:
                   path: node_modules
                   key: ${{ runner.os }}-node_modules-${{ needs.setup-node-and-test.outputs.package_lock_sha }}
                   # no restore-keys here, as we should be guaranteed a cache hit by having run setup-node-and-test
-            - run: npm run build
-            - run: npx semantic-release
+            - name: Build
+              run: npm run build
+            - name: Release
+              run: npx semantic-release
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

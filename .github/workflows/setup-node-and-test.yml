@@ -19,9 +19,9 @@ jobs:
             node_version: ${{ steps.nvm.outputs.node_version }}
         runs-on: ubuntu-latest
         steps:
-            - name: "Checkout"
+            - name: Checkout
               uses: actions/checkout@v2
-            - name: save package-lock.json sha
+            - name: Save package-lock.json sha
               id: packageLockSha
               run: echo "##[set-output name=package_lock_sha;]${{ hashFiles('package-lock.json') }}"
             - name: Get Node Version from .nvmrc
@@ -40,22 +40,15 @@ jobs:
                   key: ${{ runner.os }}-node_modules-${{ steps.packageLockSha.outputs.package_lock_sha }}
                   restore-keys: |
                       ${{ runner.os }}-node_modules-
-            - name: install node_modules (cache miss)
+            - name: Install node_modules (on cache miss)
               if: steps.cache-node_modules.outputs.cache-hit != 'true'
               run: npm i
-            - name: typecheck (on cache hit, as running `npm i` on a cache miss will automatically run the `prepare` script, which builds and typechecks)
+            - name: Typecheck (on cache hit, as running `npm i` on a cache miss will run the `prepare` script, which builds/typechecks)
               if: steps.cache-node_modules.outputs.cache-hit == 'true'
               run: npm run build
-            - name: validate build
-              run: |
-                  FILE=lib/index.js 
-                  FILE2=lib/index.d.ts
-                  if [ -f $FILE ] && [ -f $FILE2 ]; then echo "Files exist" 
-                  else echo "Files do not exist" && exit 1
-                  fi
-            - name: lint
+            - name: Lint
               run: npm run lint
-            - name: test
+            - name: Test
               run: npm test
             - name: Has src changed
               if: github.event_name == 'pull_request'
