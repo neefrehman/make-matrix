@@ -42,25 +42,9 @@ describe.each(describeCases)("arrays of $argType dimensions", ({ testCases }) =>
         });
     });
 
-    describe("self aware callback initial values — vector", () => {
+    describe("self aware callback initial values", () => {
         test.each(testCases)("%p", dimensions => {
             expect(makeMatrix(dimensions, vector => vector)).toMatchSnapshot();
-        });
-    });
-
-    describe("self aware callback initial values — joined", () => {
-        test.each(testCases)("%p", dimensions => {
-            expect(
-                makeMatrix(dimensions, vector => `my position is ${vector.join()}`)
-            ).toMatchSnapshot();
-        });
-    });
-
-    describe("self aware callback initial values — object conversion", () => {
-        test.each(testCases)("%p", dimensions => {
-            expect(
-                makeMatrix(dimensions, ([x, y, z, a, b, c]) => ({ x, y, z, a, b, c }))
-            ).toMatchSnapshot();
         });
     });
 });
