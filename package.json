@@ -1,6 +1,6 @@
 {
   "name": "make-matrix",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "license": "MIT",
   "description": "A simple, type-safe way to create multi-dimensional arrays",
   "author": "Neef Rehman",
@@ -47,10 +47,10 @@
     "pre-commit": "lint-staged",
     "commit-msg": "commitlint -e",
     "commmitizen": "git-cz",
-    "benchmark": "node --loader ts-node/esm --experimental-specifier-resolution=node  benchmark/run-benchmark.ts current",
-    "benchmark:ci": "node --loader ts-node/esm --experimental-specifier-resolution=node  benchmark/run-benchmark.ts current ci",
-    "benchmark:diff": "node --loader ts-node/esm --experimental-specifier-resolution=node  benchmark/run-benchmark.ts diff",
-    "benchmark:diff:ci": "node --loader ts-node/esm --experimental-specifier-resolution=node  benchmark/run-benchmark.ts diff ci"
+    "benchmark": "node --loader ts-node/esm --experimental-specifier-resolution=node benchmark/run-benchmark.ts current",
+    "benchmark:ci": "node --loader ts-node/esm --experimental-specifier-resolution=node benchmark/run-benchmark.ts current ci",
+    "benchmark:diff": "node --loader ts-node/esm --experimental-specifier-resolution=node benchmark/run-benchmark.ts diff",
+    "benchmark:diff:ci": "node --loader ts-node/esm --experimental-specifier-resolution=node benchmark/run-benchmark.ts diff ci"
   },
   "devDependencies": {
     "@actions/github": "^5.1.1",

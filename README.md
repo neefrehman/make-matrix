@@ -13,7 +13,7 @@ A simple, type-safe way to create multi-dimensional arrays
 -   🎛 Define exact dimensions to create an array of specified size
 -   🔢 Initialise every point in the array to a custom or self-aware starting value
 -   📜 Comes with [TypeScript](https://www.typescriptlang.org) definitions and type-safe returns
--   🔬 Tiny size, with no external dependencies: [![bundle size](https://badgen.net/bundlephobia/minzip/make-matrix)](https://bundlephobia.com/result?p=make-matrix "View this project on bundlephobia")
+-   🔬 Tiny size, with no external dependencies: **~250 bytes esm & ~500 bytes cjs (minzipped)**
 
 ## Installation
 

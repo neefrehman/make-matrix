@@ -11,8 +11,12 @@
       {
         "assets": [
           {
-            "path": "lib/index.js",
-            "label": "make-matrix.js"
+            "path": "dist/index.cjs",
+            "label": "make-matrix.min.js"
+          },
+          {
+            "path": "dist/index.js",
+            "label": "make-matrix.min.mjs"
           }
         ]
       }

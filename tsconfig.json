@@ -3,7 +3,7 @@
     "target": "es6",
     "module": "NodeNext",
     "declaration": true,
-    "outDir": "./dist",
+    "outDir": "./lib",
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true
