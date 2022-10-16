@@ -1,22 +1,9 @@
 {
   "name": "make-matrix",
   "version": "2.2.0",
-  "description": "A simple, type-safe way to create multi-dimensional arrays",
-  "homepage": "https://github.com/neefrehman/make-matrix",
-  "bugs": {
-    "url": "https://github.com/neefrehman/make-matrix/issues"
-  },
-  "author": "Neef Rehman",
   "license": "MIT",
-  "files": [
-    "lib/**/*"
-  ],
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/neefrehman/make-matrix.git"
-  },
+  "description": "A simple, type-safe way to create multi-dimensional arrays",
+  "author": "Neef Rehman",
   "keywords": [
     "matrix",
     "nth dimension",
@@ -25,6 +12,43 @@
     "math",
     "typescript"
   ],
+  "homepage": "https://github.com/neefrehman/make-matrix",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neefrehman/make-matrix.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neefrehman/make-matrix/issues"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs",
+    "types": "./dist/index.d.ts"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "format": "prettier \"src/**/*.{js,ts,tsx}\"",
+    "format:fix": "prettier \"src/**/*.{js,ts,tsx}\" --write",
+    "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
+    "lint:fix": "eslint \"src/**/*.{js,ts,tsx}\" --fix",
+    "test": "jest --config jest.config.js",
+    "build": "tsup src/index.ts --dts --format esm,cjs --minify --clean",
+    "prepare": "npm run build",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "npm run benchmark:ci && git push && git push --tags",
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -e",
+    "commmitizen": "git-cz",
+    "benchmark": "ts-node benchmark/run-benchmark.ts current",
+    "benchmark:ci": "ts-node benchmark/run-benchmark.ts current ci",
+    "benchmark:diff": "ts-node benchmark/run-benchmark.ts diff",
+    "benchmark:diff:ci": "ts-node benchmark/run-benchmark.ts diff ci"
+  },
   "devDependencies": {
     "@actions/github": "^5.1.1",
     "@commitlint/cli": "^17.1.2",
@@ -46,26 +70,8 @@
     "simple-git-hooks": "^2.8.0",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
+    "tsup": "^6.2.3",
     "typescript": "^4.8.4"
-  },
-  "scripts": {
-    "format": "prettier \"src/**/*.{js,ts,tsx}\"",
-    "format:fix": "prettier \"src/**/*.{js,ts,tsx}\" --write",
-    "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
-    "lint:fix": "eslint \"src/**/*.{js,ts,tsx}\" --fix",
-    "test": "jest --config jest.config.js",
-    "build": "tsc",
-    "prepare": "npm run build",
-    "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
-    "postversion": "npm run benchmark:ci && git push && git push --tags",
-    "pre-commit": "lint-staged",
-    "commit-msg": "commitlint -e",
-    "commmitizen": "git-cz",
-    "benchmark": "ts-node benchmark/run-benchmark.ts current",
-    "benchmark:ci": "ts-node benchmark/run-benchmark.ts current ci",
-    "benchmark:diff": "ts-node benchmark/run-benchmark.ts diff",
-    "benchmark:diff:ci": "ts-node benchmark/run-benchmark.ts diff ci"
   },
   "lint-staged": {
     "*": [],

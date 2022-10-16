@@ -1,6 +1,8 @@
 .git/
 node_modules/
 lib/
+dist/
 coverage/
 .jest-cache/
 benchmark/results/make-matrix-local.json
+.DS_Store

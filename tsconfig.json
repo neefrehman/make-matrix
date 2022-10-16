@@ -3,7 +3,7 @@
     "target": "es6",
     "module": "CommonJS",
     "declaration": true,
-    "outDir": "./lib",
+    "outDir": "./dist",
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true
