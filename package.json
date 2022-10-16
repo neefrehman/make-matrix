@@ -23,18 +23,21 @@
   "files": [
     "dist/**/*"
   ],
+  "type": "module",
+  "sideEffects": false,
   "exports": {
-    "require": "./dist/index.js",
-    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.js",
     "types": "./dist/index.d.ts"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "scripts": {
     "format": "prettier \"src/**/*.{js,ts,tsx}\"",
     "format:fix": "prettier \"src/**/*.{js,ts,tsx}\" --write",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{js,ts,tsx}\" --fix",
+    "typecheck": "tsc",
     "test": "jest --config jest.config.js",
     "build": "tsup src/index.ts --dts --format esm,cjs --minify --clean",
     "prepare": "npm run build",
@@ -44,10 +47,10 @@
     "pre-commit": "lint-staged",
     "commit-msg": "commitlint -e",
     "commmitizen": "git-cz",
-    "benchmark": "ts-node benchmark/run-benchmark.ts current",
-    "benchmark:ci": "ts-node benchmark/run-benchmark.ts current ci",
-    "benchmark:diff": "ts-node benchmark/run-benchmark.ts diff",
-    "benchmark:diff:ci": "ts-node benchmark/run-benchmark.ts diff ci"
+    "benchmark": "node --loader ts-node/esm --experimental-specifier-resolution=node  benchmark/run-benchmark.ts current",
+    "benchmark:ci": "node --loader ts-node/esm --experimental-specifier-resolution=node  benchmark/run-benchmark.ts current ci",
+    "benchmark:diff": "node --loader ts-node/esm --experimental-specifier-resolution=node  benchmark/run-benchmark.ts diff",
+    "benchmark:diff:ci": "node --loader ts-node/esm --experimental-specifier-resolution=node  benchmark/run-benchmark.ts diff ci"
   },
   "devDependencies": {
     "@actions/github": "^5.1.1",

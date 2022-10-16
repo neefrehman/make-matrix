@@ -2,8 +2,10 @@
 import * as fs from "fs";
 import { context, getOctokit } from "@actions/github";
 import benny from "benny";
-import makeMatrix from "../src/index";
-import { name as packageName, version } from "../package.json";
+import makeMatrix from "../src/index.js";
+import packageJson from "../package.json" assert { type: "json" };
+
+const { name: packageName, version } = packageJson;
 
 const isDiff = process.argv[2] === "diff";
 const isInCI = process.argv[3] === "ci";

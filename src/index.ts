@@ -1,4 +1,4 @@
-import type { Matrix, Vector } from "./types";
+import type { Matrix, Vector } from "./types.js";
 
 /**
  * Creates a matrix (multi-dimensional array) with your desired dimensions and values.

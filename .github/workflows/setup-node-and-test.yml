@@ -42,21 +42,20 @@ jobs:
             ${{ runner.os }}-node_modules-
       - name: Install node_modules (on cache miss)
         if: steps.cache-node_modules.outputs.cache-hit != 'true'
-        run: npm i
-      - name: Typecheck (on cache hit, as running `npm i` on a cache miss will run the `prepare` script, which builds/typechecks)
-        if: steps.cache-node_modules.outputs.cache-hit == 'true'
-        run: npm run build
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
       - name: Lint
         run: npm run lint
       - name: Test
         run: npm test
-      - name: Has src changed
+      - name: Has src changed (on pull request)
         if: github.event_name == 'pull_request'
         id: src_changed
         uses: tj-actions/changed-files@v24
         with:
           files: src/index.ts
-      - name: Benchmark against current release
+      - name: Benchmark against current release (on pull request)
         if: steps.src_changed.outputs.any_changed == 'true'
         id: benchmark
         run: npm run benchmark:diff:ci
