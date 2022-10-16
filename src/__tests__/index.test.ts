@@ -1,13 +1,24 @@
 import makeMatrix from "../index";
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
-const checkTypeCompilation = (vector: number[]) => {
-  const matrix1: string[][][][] = makeMatrix(4, "hello");
-  const matrix2: number[][] = makeMatrix([4, 5], ([a]) => a);
-  const matrix3: string[] = makeMatrix([4], v => v[0].toString());
-  const matrix4: any[] = makeMatrix(vector);
-};
-/* eslint-enable @typescript-eslint/no-unused-vars */
+describe("Assert types", () => {
+  const expectType = <Type>(_: Type): void => void 0; // eslint-disable-line @typescript-eslint/no-unused-vars
+
+  it("resolves to the correct type", () => {
+    expectType<string[][][][]>(makeMatrix(4, "hello"));
+    expectType<number[][]>(makeMatrix([4, 5], ([a]) => a));
+    expectType<string[]>(makeMatrix([4], v => v[0].toString()));
+
+    expectType<{ x: number; y: number; z: number }[][][]>(
+      makeMatrix([4, 5, 6], ([x, y, z]) => ({ x, y, z }))
+    );
+
+    expectType<(0 | 1)[]>(
+      makeMatrix([4], () => (Math.random() > 0.5 ? (0 as const) : (1 as const)))
+    );
+
+    expectType<any[]>(makeMatrix([] as number[]));
+  });
+});
 
 const nDimensions = [1, 2, 3, 4, 5];
 const specificDimensions = [[6], [1, 1], [3, 2, 3], [1, 4, 5, 2], [2, 4, 2, 4, 2]];
