@@ -1,93 +1,93 @@
 {
-    "name": "make-matrix",
-    "version": "2.2.0",
-    "description": "A simple, type-safe way to create multi-dimensional arrays",
-    "homepage": "https://github.com/neefrehman/make-matrix",
-    "bugs": {
-        "url": "https://github.com/neefrehman/make-matrix/issues"
-    },
-    "author": "Neef Rehman",
-    "license": "MIT",
-    "files": [
-        "lib/**/*"
-    ],
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/neefrehman/make-matrix.git"
-    },
-    "keywords": [
-        "matrix",
-        "nth dimension",
-        "array",
-        "multidimensional",
-        "math",
-        "typescript"
-    ],
-    "devDependencies": {
-        "@actions/github": "^5.0.3",
-        "@commitlint/cli": "^17.0.3",
-        "@commitlint/config-conventional": "^17.0.3",
-        "@semantic-release/git": "^10.0.1",
-        "@types/jest": "^28.1.7",
-        "@typescript-eslint/eslint-plugin": "^5.33.1",
-        "@typescript-eslint/parser": "^5.33.1",
-        "benny": "^3.7.1",
-        "commitizen": "^4.2.5",
-        "cz-conventional-changelog": "^3.3.0",
-        "eslint": "^8.22.0",
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "jest": "^28.1.3",
-        "lint-staged": "^13.0.3",
-        "prettier": "^2.7.1",
-        "semantic-release": "^19.0.3",
-        "simple-git-hooks": "^2.8.0",
-        "ts-jest": "^28.0.8",
-        "ts-node": "^10.9.1",
-        "typescript": "^4.7.4"
-    },
-    "scripts": {
-        "format": "prettier \"src/**/*.{js,ts,tsx}\"",
-        "format:fix": "prettier \"src/**/*.{js,ts,tsx}\" --write",
-        "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
-        "lint:fix": "eslint \"src/**/*.{js,ts,tsx}\" --fix",
-        "test": "jest --config jest.config.js",
-        "build": "tsc",
-        "prepare": "npm run build",
-        "preversion": "npm run lint",
-        "version": "npm run format && git add -A src",
-        "postversion": "npm run benchmark:ci && git push && git push --tags",
-        "pre-commit": "lint-staged",
-        "commit-msg": "commitlint -e",
-        "commmitizen": "git-cz",
-        "benchmark": "ts-node benchmark/run-benchmark.ts current",
-        "benchmark:ci": "ts-node benchmark/run-benchmark.ts current ci",
-        "benchmark:diff": "ts-node benchmark/run-benchmark.ts diff",
-        "benchmark:diff:ci": "ts-node benchmark/run-benchmark.ts diff ci"
-    },
-    "lint-staged": {
-        "*": [],
-        "*.(js|ts|tsx)": [
-            "eslint --fix",
-            "prettier --write",
-            "jest --findRelatedTests --passWithNoTests --config jest.config.js"
-        ]
-    },
-    "simple-git-hooks": {
-        "commit-msg": "npm run commit-msg",
-        "pre-commit": "npm run pre-commit",
-        "prepare-commit-msg": "exec < /dev/tty && git-cz --hook || true"
-    },
-    "commitlint": {
-        "extends": [
-            "@commitlint/config-conventional"
-        ]
-    },
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
-        }
+  "name": "make-matrix",
+  "version": "2.2.0",
+  "description": "A simple, type-safe way to create multi-dimensional arrays",
+  "homepage": "https://github.com/neefrehman/make-matrix",
+  "bugs": {
+    "url": "https://github.com/neefrehman/make-matrix/issues"
+  },
+  "author": "Neef Rehman",
+  "license": "MIT",
+  "files": [
+    "lib/**/*"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neefrehman/make-matrix.git"
+  },
+  "keywords": [
+    "matrix",
+    "nth dimension",
+    "array",
+    "multidimensional",
+    "math",
+    "typescript"
+  ],
+  "devDependencies": {
+    "@actions/github": "^5.0.3",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/jest": "^28.1.7",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
+    "benny": "^3.7.1",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^28.1.3",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "semantic-release": "^19.0.3",
+    "simple-git-hooks": "^2.8.0",
+    "ts-jest": "^28.0.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "format": "prettier \"src/**/*.{js,ts,tsx}\"",
+    "format:fix": "prettier \"src/**/*.{js,ts,tsx}\" --write",
+    "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
+    "lint:fix": "eslint \"src/**/*.{js,ts,tsx}\" --fix",
+    "test": "jest --config jest.config.js",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "npm run benchmark:ci && git push && git push --tags",
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -e",
+    "commmitizen": "git-cz",
+    "benchmark": "ts-node benchmark/run-benchmark.ts current",
+    "benchmark:ci": "ts-node benchmark/run-benchmark.ts current ci",
+    "benchmark:diff": "ts-node benchmark/run-benchmark.ts diff",
+    "benchmark:diff:ci": "ts-node benchmark/run-benchmark.ts diff ci"
+  },
+  "lint-staged": {
+    "*": [],
+    "*.(js|ts|tsx)": [
+      "eslint --fix",
+      "prettier --write",
+      "jest --findRelatedTests --passWithNoTests --config jest.config.js"
+    ]
+  },
+  "simple-git-hooks": {
+    "commit-msg": "npm run commit-msg",
+    "pre-commit": "npm run pre-commit",
+    "prepare-commit-msg": "exec < /dev/tty && git-cz --hook || true"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
+  }
 }

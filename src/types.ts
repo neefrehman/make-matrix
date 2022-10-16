@@ -14,14 +14,14 @@ export type Matrix<D extends number, T = unknown> = Brand<_Matrix<D, T, []>>;
  * least one dimension is returned, but unfortunately can't provide more safety than that.
  */
 type _Matrix<
-    D extends number,
-    T = unknown,
-    RecursionCountArray extends number[] = []
+  D extends number,
+  T = unknown,
+  RecursionCountArray extends number[] = []
 > = number extends D
-    ? any[]
-    : D extends RecursionCountArray["length"]
-    ? T
-    : _Matrix<D, T[], [...RecursionCountArray, D]>;
+  ? any[]
+  : D extends RecursionCountArray["length"]
+  ? T
+  : _Matrix<D, T[], [...RecursionCountArray, D]>;
 
 /**
  * An array of numbers with defined length, corresponding to points in a `Matrix`.
@@ -35,7 +35,7 @@ type _Matrix<
  * `makeMatrix` can accept a dynamically created `dimensions` parameter.
  */
 export type Vector<D extends number> = Brand<
-    number extends D ? number[] : [number, ...number[]] & { readonly length: D }
+  number extends D ? number[] : [number, ...number[]] & { readonly length: D }
 >;
 
 /**

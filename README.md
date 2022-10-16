@@ -80,6 +80,7 @@ For example, a three-dimensional array of numbers will be of type `number[][][]`
 const threeDNumberArray = makeMatrix([2, 6, 5], 0); // return type of number[][][]
 
 threeDNumberArray[2][1][2] = 10;      // ✅ OK
+
 threeDNumberArray[2][1][2] = false;   // 🚨 error: Type 'boolean' is not assignable to type 'number'
 threeDNumberArray[2][1] = 10;         // 🚨 error: Type 'number' is not assignable to type 'number[]'
 threeDNumberArray[2][1][2][0] = 10;   // 🚨 error: Property '0' does not exist on type 'Number'
@@ -100,13 +101,13 @@ const res = 10; // 10px grid resolution
 const matrix = makeMatrix([5, 5, 5]); // A 5x5x5 cube grid
 
 for (let x = 0; x < matrix.length; x += res) {
-    for (let y = 0; y < matrix[x].length; y += res) {
-        for (let z = 0; z < matrix[x][y].length; z += res) {
-            line(x, y, z, x + res, y, z);
-            line(x, y, z, x, y + res, z);
-            line(x, y, z, x, y, z + res);
-        }
+  for (let y = 0; y < matrix[x].length; y += res) {
+    for (let z = 0; z < matrix[x][y].length; z += res) {
+      line(x, y, z, x + res, y, z);
+      line(x, y, z, x, y + res, z);
+      line(x, y, z, x, y, z + res);
     }
+  }
 }
 ```
 
@@ -118,8 +119,8 @@ The `makeMatrix` algorithm is recursive and takes exponential time, or $O(2^n)$,
 
 ```ts
 makeMatrix<D, T>(
-    dimensions: D | VectorOfLength<D>,
-    initialValues?: T | ((vector: VectorOfLength<D>) => T) = null
+  dimensions: D | VectorOfLength<D>,
+  initialValues?: T | ((vector: VectorOfLength<D>) => T) = null
 ): Matrix<D, T>;
 ```
 

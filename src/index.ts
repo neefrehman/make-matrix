@@ -17,40 +17,40 @@ import type { Matrix, Vector } from "./types";
  * const twoDVectorArray = makeMatrix([3, 3], vector => vector.join()); // A 3x3 array containing each point's co-ordinate as a string
  */
 const makeMatrix = <D extends number, T>(
-    dimensions: D | Vector<D>,
-    initialValues: T | ((vector: Vector<D>) => T) | null = null
+  dimensions: D | Vector<D>,
+  initialValues: T | ((vector: Vector<D>) => T) | null = null
 ): Matrix<D, T> => {
-    const dimensionCount = typeof dimensions === "number" ? dimensions : dimensions.length;
-    const initialPosition = Array(dimensionCount).fill(0) as Vector<D>;
+  const dimensionCount = typeof dimensions === "number" ? dimensions : dimensions.length;
+  const initialPosition = Array(dimensionCount).fill(0) as Vector<D>;
 
-    if (typeof dimensions === "number") {
-        const arrayDimensions = [...Array(dimensions)].map((_, i) => dimensions - i);
-        return _makeMatrix(arrayDimensions as Vector<D>, initialValues, initialPosition);
-    }
+  if (typeof dimensions === "number") {
+    const arrayDimensions = [...Array(dimensions)].map((_, i) => dimensions - i);
+    return _makeMatrix(arrayDimensions as Vector<D>, initialValues, initialPosition);
+  }
 
-    return _makeMatrix(dimensions, initialValues, initialPosition);
+  return _makeMatrix(dimensions, initialValues, initialPosition);
 };
 
 /**
  * Recursively creates a matrix (depth first), and keeps track of the current vector.
  */
 function _makeMatrix<D extends number, T>(
-    dimensions: Vector<D>,
-    initialValues: T | ((vector: Vector<D>) => T) | null,
-    currentPosition: Vector<D>
+  dimensions: Vector<D>,
+  initialValues: T | ((vector: Vector<D>) => T) | null,
+  currentPosition: Vector<D>
 ): Matrix<D, T> {
-    const [currentDimensionLength, ...remainingDimensions] = dimensions;
-    const currentDimension = currentPosition.length - 1 - remainingDimensions.length;
-    const needsRecursion = remainingDimensions.length > 0;
+  const [currentDimensionLength, ...remainingDimensions] = dimensions;
+  const currentDimension = currentPosition.length - 1 - remainingDimensions.length;
+  const needsRecursion = remainingDimensions.length > 0;
 
-    return [...Array(currentDimensionLength)].map((_, i) => {
-        currentPosition[currentDimension] = i;
-        return needsRecursion
-            ? _makeMatrix(remainingDimensions as Vector<D>, initialValues, currentPosition)
-            : initialValues instanceof Function
-            ? initialValues(currentPosition.slice() as Vector<D>)
-            : initialValues;
-    }) as Matrix<D, T>;
+  return [...Array(currentDimensionLength)].map((_, i) => {
+    currentPosition[currentDimension] = i;
+    return needsRecursion
+      ? _makeMatrix(remainingDimensions as Vector<D>, initialValues, currentPosition)
+      : initialValues instanceof Function
+      ? initialValues(currentPosition.slice() as Vector<D>)
+      : initialValues;
+  }) as Matrix<D, T>;
 }
 
 export default makeMatrix;
