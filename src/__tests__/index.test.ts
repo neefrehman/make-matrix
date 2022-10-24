@@ -1,35 +1,18 @@
 import makeMatrix from "../index";
 
-describe("Assert types", () => {
-  const expectType = <Type>(_: Type): void => void 0; // eslint-disable-line @typescript-eslint/no-unused-vars
+const nDimensionCases = [1, 2, 3, 4, 5];
+const specificDimensionCases = [[6], [1, 1], [3, 2, 3], [1, 4, 5, 2], [2, 4, 2, 4, 2]];
 
-  it("resolves to the correct type", () => {
-    expectType<string[][][][]>(makeMatrix(4, "hello"));
-    expectType<number[][]>(makeMatrix([4, 5], ([a]) => a));
-    expectType<string[]>(makeMatrix([4], v => v[0].toString()));
-
-    expectType<{ x: number; y: number; z: number }[][][]>(
-      makeMatrix([4, 5, 6], ([x, y, z]) => ({ x, y, z }))
-    );
-
-    expectType<(0 | 1)[]>(
-      makeMatrix([4], () => (Math.random() > 0.5 ? (0 as const) : (1 as const)))
-    );
-
-    expectType<any[]>(makeMatrix([] as number[]));
-  });
-});
-
-const nDimensions = [1, 2, 3, 4, 5];
-const specificDimensions = [[6], [1, 1], [3, 2, 3], [1, 4, 5, 2], [2, 4, 2, 4, 2]];
+// So cases can be used as test titles and test values
+const prepareIterativeTestCases = (cases: any[]) => cases.map(c => [c, c]);
 
 const describeCases = [
-  { argType: "N", testCases: nDimensions.map(n => [n, n]) },
-  { argType: "specific", testCases: specificDimensions.map(n => [n, n]) },
+  { argType: "N", testCases: prepareIterativeTestCases(nDimensionCases) },
+  { argType: "specific", testCases: prepareIterativeTestCases(specificDimensionCases) },
 ];
 
 describe.each(describeCases)("arrays of $argType dimensions", ({ testCases }) => {
-  describe("No initial values", () => {
+  describe("no initial values", () => {
     test.each(testCases)("%p", dimensions => {
       expect(makeMatrix(dimensions)).toMatchSnapshot();
     });
