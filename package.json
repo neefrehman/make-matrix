@@ -39,7 +39,7 @@
     "lint:fix": "eslint \"src/**/*.{js,ts,tsx}\" --fix",
     "typecheck": "tsc",
     "test": "jest --config jest.config.js",
-    "build": "tsup src/index.ts --dts --format esm,cjs --minify --clean",
+    "build": "tsup src/index.ts --dts --format esm,cjs --clean --treeshake --minify",
     "prepare": "npm run build",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
