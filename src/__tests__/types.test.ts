@@ -1,6 +1,6 @@
 import makeMatrix from "../index";
 
-const expectType = <Type>(_: Type): void => void 0; // eslint-disable-line @typescript-eslint/no-unused-vars
+const expectType = <Type>(_: Type) => void _;
 
 describe("assert types", () => {
   it("resolves to the correct type", () => {
