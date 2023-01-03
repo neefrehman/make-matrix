@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Save package-lock.json sha
         id: packageLockSha
         run: echo "package_lock_sha=${{ hashFiles('package-lock.json') }}" >> $GITHUB_OUTPUT
@@ -33,7 +33,7 @@ jobs:
           node-version: "${{ steps.nvm.outputs.node_version }}"
           cache: "npm"
       - name: Load cached node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-node_modules
         with:
           path: node_modules
@@ -52,7 +52,7 @@ jobs:
       - name: Has src changed (on pull request)
         if: github.event_name == 'pull_request'
         id: src_changed
-        uses: tj-actions/changed-files@v24
+        uses: tj-actions/changed-files@v35
         with:
           files: src/index.ts
       - name: Benchmark against current release (on pull request)
