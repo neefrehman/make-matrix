@@ -44,6 +44,4 @@ function _makeMatrix<D extends number, T>(
   }) as Matrix<D, T>;
 }
 
-export default makeMatrix;
-
 export { makeMatrix, type Matrix };

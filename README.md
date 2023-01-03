@@ -24,7 +24,7 @@ npm install make-matrix
 ```
 
 ```js
-import makeMatrix from "make-matrix";
+import { makeMatrix } from "make-matrix";
 ```
 
 ## Usage
