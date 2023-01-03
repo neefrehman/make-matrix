@@ -2,7 +2,7 @@
 import * as fs from "fs";
 import { context, getOctokit } from "@actions/github";
 import benny from "benny";
-import makeMatrix from "../src/index.js";
+import { makeMatrix } from "../src/index.js";
 import packageJson from "../package.json" assert { type: "json" };
 
 const { name: packageName, version } = packageJson;
@@ -25,13 +25,10 @@ type Diff = {
 benny
   .suite(
     "make-matrix",
-    benny.add("nDimensions", () => {
-      makeMatrix(6);
-    }),
-    benny.add("specificDimensions", () => {
+    benny.add("base", () => {
       makeMatrix([2, 4, 2, 4, 2]);
     }),
-    benny.add("specific & callback", () => {
+    benny.add("with callback", () => {
       makeMatrix([2, 4, 2, 4, 2], vector => `my position is ${vector.join()}`);
     }),
     benny.cycle(),

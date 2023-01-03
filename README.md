@@ -31,12 +31,9 @@ import makeMatrix from "make-matrix";
 
 ### Create a matrix
 
-To simply create an array of `n` dimensions, just pass `n` as the function's first parameter. And to create an array with exact dimensions, pass in an array of numbers.
+To create a matrix, pass in an array with the desired dimensions.
 
 ```js
-// create a 2D array
-const twoDimensionalArray = makeMatrix(2);
-
 // create an array of size 3x3x2
 const threeByThreeByTwoArray = makeMatrix([3, 3, 2]);
 ```
@@ -47,10 +44,10 @@ By default each point in the matrix will be initialised to `null` (so that if re
 
 ```js
 // create a 3x5 array, with each point equal to 0
-const twoDimensionalNumberArray = makeMatrix([3, 5], 0);
+const twoDNumberArray = makeMatrix([3, 5], 0);
 
 // create a 2x6x5 array, with each point equal to "value"
-const threeDimensionalStringArray = makeMatrix([2, 6, 5], "value");
+const threeDStringArray = makeMatrix([2, 6, 5], "value");
 ```
 
 ### Pass a callback for dynamic initial values
@@ -119,7 +116,7 @@ The `makeMatrix` algorithm is recursive and takes exponential time, or $O(2^n)$,
 
 ```ts
 makeMatrix<D, T>(
-  dimensions: D | VectorOfLength<D>,
+  dimensions: VectorOfLength<D>,
   initialValues?: T | ((vector: VectorOfLength<D>) => T) = null
 ): Matrix<D, T>;
 ```
@@ -128,7 +125,7 @@ makeMatrix<D, T>(
 
 | Name  | Description  |
 | ------------- | ------------- |
-| `dimensions`  | The desired dimensions of the matrix. A number or array of numbers.  |
+| `dimensions`  | The desired dimensions of the matrix. An array of numbers.  |
 | `initialValues`  | The value that each point in the matrix will initialise to. Can take any value. If a callback is passed, it will be run for each point in the matrix, which will be initialised to the callbacks returned value. (Optional — defaults to `null`).  |
 
 ### Returns
