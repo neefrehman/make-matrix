@@ -12,18 +12,10 @@
   "plugins": ["@typescript-eslint", "prettier"],
   "extends": ["plugin:@typescript-eslint/recommended", "prettier"],
   "rules": {
-    "strict": 0,
-    "no-console": "warn",
-    "prefer-destructuring": [
-      "error",
-      {
-        "AssignmentExpression": {
-          "array": false
-        }
-      }
-    ],
+    "strict": 2,
+    "no-console": "error",
+    "prefer-destructuring": "error",
     "prettier/prettier": "warn",
-    "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-explicit-any": "off"
   }
 }

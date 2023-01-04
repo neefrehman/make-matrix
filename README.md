@@ -9,11 +9,11 @@ A simple, type-safe way to create multi-dimensional arrays
 
 ## Features
 
--   🛸 Easily create multi-dimensional arrays, with as many dimensions as needed
--   🎛 Define exact dimensions to create an array of specified size
--   🔢 Initialise every point in the array to a custom or self-aware starting value
--   📜 Comes with [TypeScript](https://www.typescriptlang.org) definitions and type-safe returns
--   🔬 Tiny size, with no external dependencies
+-  🛸 Easily create multi-dimensional arrays, with as many dimensions as needed
+-  🎛 Define exact dimensions to create an array of specified size
+-  🔢 Initialise every point in the array to a custom or self-aware starting value
+-  📜 Comes with [TypeScript](https://www.typescriptlang.org) definitions and type-safe returns
+-  🔬 Tiny size, with no external dependencies
 
 ## Installation
 
@@ -140,7 +140,7 @@ This project welcomes contributions. To get started, please [open an issue](http
 
 ### Testing, linting and commit style
 
-This project uses [ESLint](https://github.com/eslint/eslint), [Prettier](https://github.com/prettier/prettier), [commitlint](https://github.com/conventional-changelog/commitlint) and [Jest](https://github.com/facebook/jest) — in combination with [lint-staged](https://github.com/okonet/lint-staged) and [Husky](https://github.com/typicode/husky) — to enforce code quality, consistency and changelog style. These tools will check changed files, and cancel a commit with logging if any of the following are true:
+This project uses [ESLint](https://github.com/eslint/eslint), [Prettier](https://github.com/prettier/prettier), [commitlint](https://github.com/conventional-changelog/commitlint) and [Jest](https://github.com/facebook/jest) — in combination with [lint-staged](https://github.com/okonet/lint-staged) and [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks) — to enforce code quality, consistency and changelog style. These tools will check changed files, and cancel a commit with logging if any of the following are true:
 
 1. Eslint has found non-fixable issues in the code
 2. The Jest testing suites haven't all passed
