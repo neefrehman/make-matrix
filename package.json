@@ -43,14 +43,15 @@
     "prepare": "npm run build",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
-    "postversion": "npm run benchmark:ci && git push && git push --tags",
+    "postversion": "npm run benchmark:ci && npm run updateBadges && git push && git push --tags",
+    "updateBadges": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/update-badges.ts",
     "pre-commit": "lint-staged",
     "commit-msg": "commitlint -e",
     "commmitizen": "git-cz",
-    "benchmark": "node --loader ts-node/esm --experimental-specifier-resolution=node benchmark/run-benchmark.ts current",
-    "benchmark:ci": "node --loader ts-node/esm --experimental-specifier-resolution=node benchmark/run-benchmark.ts current ci",
-    "benchmark:diff": "node --loader ts-node/esm --experimental-specifier-resolution=node benchmark/run-benchmark.ts diff",
-    "benchmark:diff:ci": "node --loader ts-node/esm --experimental-specifier-resolution=node benchmark/run-benchmark.ts diff ci"
+    "benchmark": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/run-benchmark.ts current",
+    "benchmark:ci": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/run-benchmark.ts current ci",
+    "benchmark:diff": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/run-benchmark.ts diff",
+    "benchmark:diff:ci": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/run-benchmark.ts diff ci"
   },
   "devDependencies": {
     "@actions/github": "^5.1.1",

@@ -1,9 +1,9 @@
 <img src="assets/banner.gif" alt="make-matrix" width="100%">
 
 [![build](https://github.com/neefrehman/make-matrix/actions/workflows/test-and-release.yml/badge.svg?branch=main)](https://github.com/neefrehman/make-matrix/actions "View the build actions for this project")
-[![npm version](http://img.shields.io/npm/v/make-matrix.svg?style=flat)](https://npmjs.org/package/make-matrix "View this project on npm")
-[![types included](https://badgen.net/npm/types/make-matrix)](https://npmjs.org/package/make-matrix "Types are included in this package")
-[![bundle size](https://badgen.net/bundlephobia/minzip/make-matrix)](https://bundlephobia.com/result?p=make-matrix "View this project on bundlephobia")
+[![npm version](https://img.shields.io/badge/npm-v3.0.0-0074c1)](https://npmjs.org/package/make-matrix "View this project on npm")
+[![types included](https://img.shields.io/badge/types-included-0074c1)](https://npmjs.org/package/make-matrix "Types are included in this package")
+[![bundle size](https://img.shields.io/badge/minzipped_size-207_B-0074c1)](https://bundlephobia.com/result?p=make-matrix "View this project on bundlephobia")
 
 A simple, type-safe way to create multi-dimensional arrays
 
@@ -123,16 +123,16 @@ makeMatrix<D, T>(
 
 ### Parameters
 
-| Name  | Description  |
-| ------------- | ------------- |
-| `dimensions`  | The desired dimensions of the matrix. An array of numbers.  |
-| `initialValues`  | The value that each point in the matrix will initialise to. Can take any value. If a callback is passed, it will be run for each point in the matrix, which will be initialised to the callbacks returned value. (Optional — defaults to `null`).  |
+| Name            | Description |
+| --------------- | ----------- |
+| `dimensions`    | The desired dimensions of the matrix. An array of numbers. |
+| `initialValues` | The value that each point in the matrix will initialise to. Can take any value. If a callback is passed, it will be run for each point in the matrix, which will be initialised to the callbacks returned value. (Optional — defaults to `null`). |
 
 ### Returns
 
-| Name  | Description  |
-| ------------- | ------------- |
-| `Matrix`  | A multidimensional array of your desired dimensions, with each point initialised to equal the `initialValues` parameter (or its returned value).  |
+| Name     | Description |
+| -------- | ----------- |
+| `Matrix` | A multidimensional array of your desired dimensions, with each point initialised to equal the `initialValues` parameter (or its returned value). |
 
 ## Contributing
 
