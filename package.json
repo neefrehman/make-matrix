@@ -1,6 +1,6 @@
 {
   "name": "make-matrix",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "license": "MIT",
   "description": "A simple, type-safe way to create multi-dimensional arrays",
   "author": "Neef Rehman",
