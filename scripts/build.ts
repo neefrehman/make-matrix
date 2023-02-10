@@ -12,6 +12,7 @@ export default defineConfig([
     ...baseConfig,
     dts: true,
     clean: true,
+    sourcemap: true,
   },
   {
     ...baseConfig,
