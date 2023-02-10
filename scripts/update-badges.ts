@@ -25,9 +25,9 @@ const getVersionCommand = `grep -m 1 \"version\" package.json | awk -F: '{ print
 
 /*
  * With sed command that I couldn't quite get the regex working for:
- * gzip dist/index.js -kf && stat -f%z dist/index.js.gz | (read MINZIPPED_SIZE && sed -i '' "s/\d+_B/$MINZIPPED_SIZE\_B/" README.md)
+ * gzip dist/index.min.js -kf && stat -f%z dist/index.min.js.gz | (read MINZIPPED_SIZE && sed -i '' "s/\d+_B/$MINZIPPED_SIZE\_B/" README.md)
  */
-const getMinZippedSizeCommand = `gzip dist/index.js -kf && stat -f%z dist/index.js.gz`;
+const getMinZippedSizeCommand = `gzip dist/index.min.js -kf && stat -f%z dist/index.min.js.gz`;
 
 const main = async () => {
   const currentReadme = fs.readFileSync("./README.md", "utf-8");
