@@ -33,6 +33,7 @@
       "@semantic-release/git",
       {
         "assets": [
+          "README.md",
           "package.json",
           "package-lock.json",
           "benchmark/results/make-matrix-ci.json"
