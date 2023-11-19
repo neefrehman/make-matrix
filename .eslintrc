@@ -15,7 +15,7 @@
     "strict": 2,
     "no-console": "error",
     "prefer-destructuring": "error",
-    "prettier/prettier": "warn",
+    "prettier/prettier": "error",
     "@typescript-eslint/no-explicit-any": "off"
   }
 }
