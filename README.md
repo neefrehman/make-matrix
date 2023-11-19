@@ -83,10 +83,10 @@ threeDNumberArray[2][1] = 10;         // 🚨 error: Type 'number' is not assign
 threeDNumberArray[2][1][2][0] = 10;   // 🚨 error: Property '0' does not exist on type 'Number'
 ```
 
-Please be aware that—when using this function with a primitive instead of a literal type, such as when creating matrices of dynamic size—the exact return type can't be determined and will instead resolve to `any[]`.
+Please be aware that when using this function with a primitive instead of a literal type—such as when creating matrices of dynamic size—the exact return type cannot be determined and will instead resolve to `unknown[]`. This ensures an array of at least one dimension is returned, but is unable to provide any more safety than that. You must type the resulting matrix yourself, if you are able to provide more information than the compiler can infer. If not, then an explicit return type of `any[]` will provide the most 'relaxed' typing experience.
 
 ```ts
-const createDynamicMatrix = (dimensions: number[]) => makeMatrix(dimensions, 0); // return type of any[]
+const createDynamicMatrix = (dimensions: number[]) => makeMatrix(dimensions, 0); // return type of unknown[]
 ```
 
 ## Example
