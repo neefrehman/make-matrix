@@ -1,6 +1,6 @@
 {
   "name": "make-matrix",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "license": "MIT",
   "description": "A simple, type-safe way to create multi-dimensional arrays",
   "author": "Neef Rehman",
@@ -96,7 +96,11 @@
       "@commitlint/config-conventional"
     ],
     "rules": {
-      "body-max-line-length": [1, "always", 100]
+      "body-max-line-length": [
+        1,
+        "always",
+        100
+      ]
     }
   },
   "config": {
