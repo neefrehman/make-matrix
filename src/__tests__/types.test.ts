@@ -7,7 +7,7 @@ describe("assert types", () => {
     expectType<string[][][][]>(makeMatrix([1, 1, 1, 1], "hello"));
     expectType<number[][]>(makeMatrix([4, 5], ([a]) => a));
     expectType<string[]>(makeMatrix([4], v => v[0].toString()));
-    expectType<any[]>(makeMatrix([] as number[])); // eslint-disable-line @typescript-eslint/no-explicit-any
+    expectType<unknown[]>(makeMatrix([] as number[]));
 
     expectType<(0 | 1)[]>(
       makeMatrix([1], () => (Math.random() > 0.5 ? (0 as const) : (1 as const)))
