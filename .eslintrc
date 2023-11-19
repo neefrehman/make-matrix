@@ -14,8 +14,6 @@
   "rules": {
     "strict": 2,
     "no-console": "error",
-    "prefer-destructuring": "error",
-    "prettier/prettier": "error",
-    "@typescript-eslint/no-explicit-any": "off"
+    "prettier/prettier": "error"
   }
 }

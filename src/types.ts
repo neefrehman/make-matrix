@@ -18,7 +18,7 @@ type _Matrix<
   T = unknown,
   RecursionCountArray extends number[] = [],
 > = number extends D
-  ? any[]
+  ? any[] // eslint-disable-line @typescript-eslint/no-explicit-any
   : D extends RecursionCountArray["length"]
     ? T
     : _Matrix<D, T[], [...RecursionCountArray, D]>;
