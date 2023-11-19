@@ -16,12 +16,12 @@ export type Matrix<D extends number, T = unknown> = Brand<_Matrix<D, T, []>>;
 type _Matrix<
   D extends number,
   T = unknown,
-  RecursionCountArray extends number[] = []
+  RecursionCountArray extends number[] = [],
 > = number extends D
   ? any[]
   : D extends RecursionCountArray["length"]
-  ? T
-  : _Matrix<D, T[], [...RecursionCountArray, D]>;
+    ? T
+    : _Matrix<D, T[], [...RecursionCountArray, D]>;
 
 /**
  * An array of numbers with defined length, corresponding to points in a `Matrix`.

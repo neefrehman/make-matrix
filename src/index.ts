@@ -39,8 +39,8 @@ function _makeMatrix<D extends number, T>(
     return remainingDimensions.length > 0
       ? _makeMatrix(remainingDimensions as Vector<D>, initialValues, currentPosition)
       : initialValues instanceof Function
-      ? initialValues(currentPosition.slice() as Vector<D>)
-      : initialValues;
+        ? initialValues(currentPosition.slice() as Vector<D>)
+        : initialValues;
   }) as Matrix<D, T>;
 }
 
