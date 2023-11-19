@@ -1,19 +1,19 @@
 {
   "name": "make-matrix",
-  "date": "2023-02-10T14:42:58.399Z",
-  "version": "3.0.2",
+  "date": "2023-11-19T12:51:03.770Z",
+  "version": "3.0.3",
   "results": [
     {
       "name": "base",
-      "ops": 109614,
-      "margin": 0.44,
+      "ops": 191199,
+      "margin": 1.85,
       "percentSlower": 0
     },
     {
       "name": "with callback",
-      "ops": 24145,
-      "margin": 0.55,
-      "percentSlower": 77.97
+      "ops": 36127,
+      "margin": 0.93,
+      "percentSlower": 81.11
     }
   ],
   "fastest": {
