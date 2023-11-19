@@ -48,7 +48,7 @@
     "updateBadges": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/update-badges.ts",
     "pre-commit": "lint-staged",
     "commit-msg": "commitlint -e",
-    "commmitizen": "git-cz",
+    "commmitizen": "cz",
     "benchmark": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/run-benchmark.ts current",
     "benchmark:ci": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/run-benchmark.ts current ci",
     "benchmark:diff": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/run-benchmark.ts diff",
@@ -89,8 +89,7 @@
   },
   "simple-git-hooks": {
     "commit-msg": "npm run commit-msg",
-    "pre-commit": "npm run pre-commit",
-    "prepare-commit-msg": "exec < /dev/tty && git-cz --hook || true"
+    "pre-commit": "npm run pre-commit"
   },
   "commitlint": {
     "extends": [
