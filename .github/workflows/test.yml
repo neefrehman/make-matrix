@@ -1,0 +1,32 @@
+name: Test
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Typescript monorepo
+        uses: ./.github/actions/setup
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        run: npm run test
+      - name: Has src changed
+        if: github.event_name == 'pull_request'
+        id: src_changed
+        uses: tj-actions/changed-files@v35
+        with:
+          files: src/index.ts
+      - name: Benchmark against current release
+        if: steps.src_changed.outputs.any_changed == 'true'
+        id: benchmark
+        run: npm run benchmark:diff:ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

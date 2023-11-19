@@ -1,0 +1,31 @@
+name: "Set up repository"
+description: "Sets up the repository for CI, by installing packages, and configuring the cache"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Save package-lock.json sha
+      id: package-lock-sha
+      run: echo "package_lock_sha=${{ hashFiles('package-lock.json') }}" >> $GITHUB_OUTPUT
+      shell: bash
+    - name: Get Node Version from .nvmrc
+      id: nvm
+      run: echo "node_version=$(cat .nvmrc)" >> $GITHUB_OUTPUT
+      shell: bash
+    - name: Set up Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: "${{ steps.nvm.outputs.node_version }}"
+        cache: "npm"
+    - name: Load cached node modules
+      uses: actions/cache@v3
+      id: cache-node_modules
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node_modules-${{ steps.package-lock-sha.outputs.package_lock_sha }}
+        restore-keys: |
+          ${{ runner.os }}-node_modules-
+    - name: Install node_modules (on cache miss)
+      if: steps.cache-node_modules.outputs.cache-hit != 'true'
+      run: npm ci
+      shell: bash

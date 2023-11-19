@@ -1,4 +1,4 @@
-name: Test & Release
+name: Release
 
 on:
   push:
@@ -6,27 +6,16 @@ on:
       - "main"
 
 jobs:
-  setup-node-and-test:
-    uses: ./.github/workflows/setup-node-and-test.yml
-
   release:
     name: Release
-    needs: setup-node-and-test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "${{ needs.setup-node-and-test.outputs.node_version }}"
-          cache: "npm"
-      - name: Load node_modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node_modules-${{ needs.setup-node-and-test.outputs.package_lock_sha }}
-          # no restore-keys here, as we should be guaranteed a cache hit by having run setup-node-and-test
+        uses: actions/checkout@v4
+      - name: Set up Typescript monorepo
+        uses: ./.github/actions/setup
+      - name: Test
+        run: npm run test
       - name: Build
         run: npm run build
       - name: Release
