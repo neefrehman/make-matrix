@@ -6,8 +6,8 @@
  * versioning is more reliable.
  *
  * @remarks
- * This work was initially planned to be shell-only, but due to issued with `sed` I felt
- * doing the writing in javascript was easier.
+ * This work was initially planned to be shell-only, but due to some getting `sed` to
+ * work, performing the write in javascript was a more reliable option.
  */
 
 import * as fs from "node:fs";
