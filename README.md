@@ -144,7 +144,7 @@ This project uses [ESLint](https://github.com/eslint/eslint), [Prettier](https:/
 
 1. Eslint has found non-fixable issues in the code
 2. The Jest testing suites haven't all passed
-3. The commit message doesn't meet the [conventional commit format](https://www.conventionalcommits.org/en/v1.0.0/) (run `npm run commmitizen` in terminal for help formatting your commit message)
+3. The commit message doesn't meet the [conventional commit format](https://www.conventionalcommits.org/en/v1.0.0/) (run `npm run commitizen` in terminal for help formatting your commit message)
 
 Open your git logs to debug commit errors.
 

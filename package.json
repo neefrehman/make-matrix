@@ -48,7 +48,7 @@
     "updateBadges": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/update-badges.ts",
     "pre-commit": "lint-staged",
     "commit-msg": "commitlint -e",
-    "commmitizen": "cz",
+    "commitizen": "cz",
     "commitlint": "commitlint",
     "benchmark": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/run-benchmark.ts current",
     "benchmark:ci": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/run-benchmark.ts current ci",
