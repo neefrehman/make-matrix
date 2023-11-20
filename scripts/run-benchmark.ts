@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import * as fs from "fs";
 import { context, getOctokit } from "@actions/github";
 import benny from "benny";
@@ -63,15 +62,20 @@ benny
       }`,
     }));
 
+    /* eslint-disable no-console */
     console.log("\n");
     console.log(`Benchmark against currently published version (${version}):\n`);
     console.table(
-      prettyDiffs.reduce((acc, { name, ...diff }) => {
-        acc[name] = diff;
-        return acc;
-      }, {} as { [name: string]: Record<string, any> }),
+      prettyDiffs.reduce<{ [name: string]: Record<string, string> }>(
+        (acc, { name, ...diff }) => {
+          acc[name] = diff;
+          return acc;
+        },
+        {}
+      ),
       ["new", "old", "delta"]
     );
+    /* eslint-enable no-console */
 
     if (!isInCI || !process.env.GITHUB_TOKEN) {
       return;
