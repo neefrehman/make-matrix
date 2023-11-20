@@ -4,18 +4,29 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+      include: scope
     groups:
-       dev-dependencies:
-          dependency-type: "development"
-          patterns:
-            - "*"
-          update-types:
-          - "minor"
-          - "patch"
-       lint-dependencies:
-          dependency-type: "development"
-          patterns:
-            - "eslint*"
-            - "@typescript-eslint/*"
-          update-types:
-          - "major"
+      dev-dependencies:
+        dependency-type: "development"
+        patterns:
+          - "*"
+        update-types:
+        - "minor"
+        - "patch"
+      lint-dependencies:
+        dependency-type: "development"
+        patterns:
+          - "eslint*"
+          - "@typescript-eslint/*"
+        update-types:
+        - "major"
+      commitlint-monorepo:
+        dependency-type: "development"
+        patterns:
+          - "@commitlint/*"
+        update-types:
+        - "major"
+          
