@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up Typescript monorepo
+      - name: Set up repo
         uses: ./.github/actions/setup
       - name: Typecheck
         run: npm run typecheck
