@@ -49,6 +49,7 @@
     "pre-commit": "lint-staged",
     "commit-msg": "commitlint -e",
     "commmitizen": "cz",
+    "commitlint": "commitlint",
     "benchmark": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/run-benchmark.ts current",
     "benchmark:ci": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/run-benchmark.ts current ci",
     "benchmark:diff": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/run-benchmark.ts diff",
