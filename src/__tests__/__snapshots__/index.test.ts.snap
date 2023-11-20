@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`makeMatrix callback initial values — math [1, 1] 1`] = `
+exports[`makeMatrix > callback initial values — math > %p [ 1, 1 ] 1`] = `
 [
   [
     8,
@@ -8,7 +8,7 @@ exports[`makeMatrix callback initial values — math [1, 1] 1`] = `
 ]
 `;
 
-exports[`makeMatrix callback initial values — math [1, 4, 5, 2] 1`] = `
+exports[`makeMatrix > callback initial values — math > %p [ 1, 4, 5, 2 ] 1`] = `
 [
   [
     [
@@ -103,7 +103,7 @@ exports[`makeMatrix callback initial values — math [1, 4, 5, 2] 1`] = `
 ]
 `;
 
-exports[`makeMatrix callback initial values — math [2, 4, 2, 4, 2] 1`] = `
+exports[`makeMatrix > callback initial values — math > %p [ 2, 4, 2, 4, 2 ] 1`] = `
 [
   [
     [
@@ -416,7 +416,7 @@ exports[`makeMatrix callback initial values — math [2, 4, 2, 4, 2] 1`] = `
 ]
 `;
 
-exports[`makeMatrix callback initial values — math [3, 2, 3] 1`] = `
+exports[`makeMatrix > callback initial values — math > %p [ 3, 2, 3 ] 1`] = `
 [
   [
     [
@@ -457,7 +457,7 @@ exports[`makeMatrix callback initial values — math [3, 2, 3] 1`] = `
 ]
 `;
 
-exports[`makeMatrix callback initial values — math [6] 1`] = `
+exports[`makeMatrix > callback initial values — math > %p [ 6 ] 1`] = `
 [
   8,
   8,
@@ -468,7 +468,7 @@ exports[`makeMatrix callback initial values — math [6] 1`] = `
 ]
 `;
 
-exports[`makeMatrix no initial values [1, 1] 1`] = `
+exports[`makeMatrix > no initial values > %p [ 1, 1 ] 1`] = `
 [
   [
     null,
@@ -476,7 +476,7 @@ exports[`makeMatrix no initial values [1, 1] 1`] = `
 ]
 `;
 
-exports[`makeMatrix no initial values [1, 4, 5, 2] 1`] = `
+exports[`makeMatrix > no initial values > %p [ 1, 4, 5, 2 ] 1`] = `
 [
   [
     [
@@ -571,7 +571,7 @@ exports[`makeMatrix no initial values [1, 4, 5, 2] 1`] = `
 ]
 `;
 
-exports[`makeMatrix no initial values [2, 4, 2, 4, 2] 1`] = `
+exports[`makeMatrix > no initial values > %p [ 2, 4, 2, 4, 2 ] 1`] = `
 [
   [
     [
@@ -884,7 +884,7 @@ exports[`makeMatrix no initial values [2, 4, 2, 4, 2] 1`] = `
 ]
 `;
 
-exports[`makeMatrix no initial values [3, 2, 3] 1`] = `
+exports[`makeMatrix > no initial values > %p [ 3, 2, 3 ] 1`] = `
 [
   [
     [
@@ -925,7 +925,7 @@ exports[`makeMatrix no initial values [3, 2, 3] 1`] = `
 ]
 `;
 
-exports[`makeMatrix no initial values [6] 1`] = `
+exports[`makeMatrix > no initial values > %p [ 6 ] 1`] = `
 [
   null,
   null,
@@ -936,7 +936,7 @@ exports[`makeMatrix no initial values [6] 1`] = `
 ]
 `;
 
-exports[`makeMatrix number initial values [1, 1] 1`] = `
+exports[`makeMatrix > number initial values > %p [ 1, 1 ] 1`] = `
 [
   [
     0,
@@ -944,7 +944,7 @@ exports[`makeMatrix number initial values [1, 1] 1`] = `
 ]
 `;
 
-exports[`makeMatrix number initial values [1, 4, 5, 2] 1`] = `
+exports[`makeMatrix > number initial values > %p [ 1, 4, 5, 2 ] 1`] = `
 [
   [
     [
@@ -1039,7 +1039,7 @@ exports[`makeMatrix number initial values [1, 4, 5, 2] 1`] = `
 ]
 `;
 
-exports[`makeMatrix number initial values [2, 4, 2, 4, 2] 1`] = `
+exports[`makeMatrix > number initial values > %p [ 2, 4, 2, 4, 2 ] 1`] = `
 [
   [
     [
@@ -1352,7 +1352,7 @@ exports[`makeMatrix number initial values [2, 4, 2, 4, 2] 1`] = `
 ]
 `;
 
-exports[`makeMatrix number initial values [3, 2, 3] 1`] = `
+exports[`makeMatrix > number initial values > %p [ 3, 2, 3 ] 1`] = `
 [
   [
     [
@@ -1393,7 +1393,7 @@ exports[`makeMatrix number initial values [3, 2, 3] 1`] = `
 ]
 `;
 
-exports[`makeMatrix number initial values [6] 1`] = `
+exports[`makeMatrix > number initial values > %p [ 6 ] 1`] = `
 [
   0,
   0,
@@ -1404,7 +1404,7 @@ exports[`makeMatrix number initial values [6] 1`] = `
 ]
 `;
 
-exports[`makeMatrix self aware callback initial values [1, 1] 1`] = `
+exports[`makeMatrix > self aware callback initial values > %p [ 1, 1 ] 1`] = `
 [
   [
     [
@@ -1415,7 +1415,7 @@ exports[`makeMatrix self aware callback initial values [1, 1] 1`] = `
 ]
 `;
 
-exports[`makeMatrix self aware callback initial values [1, 4, 5, 2] 1`] = `
+exports[`makeMatrix > self aware callback initial values > %p [ 1, 4, 5, 2 ] 1`] = `
 [
   [
     [
@@ -1710,7 +1710,7 @@ exports[`makeMatrix self aware callback initial values [1, 4, 5, 2] 1`] = `
 ]
 `;
 
-exports[`makeMatrix self aware callback initial values [2, 4, 2, 4, 2] 1`] = `
+exports[`makeMatrix > self aware callback initial values > %p [ 2, 4, 2, 4, 2 ] 1`] = `
 [
   [
     [
@@ -2791,7 +2791,7 @@ exports[`makeMatrix self aware callback initial values [2, 4, 2, 4, 2] 1`] = `
 ]
 `;
 
-exports[`makeMatrix self aware callback initial values [3, 2, 3] 1`] = `
+exports[`makeMatrix > self aware callback initial values > %p [ 3, 2, 3 ] 1`] = `
 [
   [
     [
@@ -2904,7 +2904,7 @@ exports[`makeMatrix self aware callback initial values [3, 2, 3] 1`] = `
 ]
 `;
 
-exports[`makeMatrix self aware callback initial values [6] 1`] = `
+exports[`makeMatrix > self aware callback initial values > %p [ 6 ] 1`] = `
 [
   [
     0,
@@ -2927,7 +2927,7 @@ exports[`makeMatrix self aware callback initial values [6] 1`] = `
 ]
 `;
 
-exports[`makeMatrix string initial values [1, 1] 1`] = `
+exports[`makeMatrix > string initial values > %p [ 1, 1 ] 1`] = `
 [
   [
     "string",
@@ -2935,7 +2935,7 @@ exports[`makeMatrix string initial values [1, 1] 1`] = `
 ]
 `;
 
-exports[`makeMatrix string initial values [1, 4, 5, 2] 1`] = `
+exports[`makeMatrix > string initial values > %p [ 1, 4, 5, 2 ] 1`] = `
 [
   [
     [
@@ -3030,7 +3030,7 @@ exports[`makeMatrix string initial values [1, 4, 5, 2] 1`] = `
 ]
 `;
 
-exports[`makeMatrix string initial values [2, 4, 2, 4, 2] 1`] = `
+exports[`makeMatrix > string initial values > %p [ 2, 4, 2, 4, 2 ] 1`] = `
 [
   [
     [
@@ -3343,7 +3343,7 @@ exports[`makeMatrix string initial values [2, 4, 2, 4, 2] 1`] = `
 ]
 `;
 
-exports[`makeMatrix string initial values [3, 2, 3] 1`] = `
+exports[`makeMatrix > string initial values > %p [ 3, 2, 3 ] 1`] = `
 [
   [
     [
@@ -3384,7 +3384,7 @@ exports[`makeMatrix string initial values [3, 2, 3] 1`] = `
 ]
 `;
 
-exports[`makeMatrix string initial values [6] 1`] = `
+exports[`makeMatrix > string initial values > %p [ 6 ] 1`] = `
 [
   "string",
   "string",
