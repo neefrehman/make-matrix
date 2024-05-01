@@ -65,7 +65,7 @@
     "benny": "^3.7.1",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.54.0",
+    "eslint": "^9.1.1",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "lint-staged": "^15.1.0",
