@@ -2,7 +2,7 @@ import * as fs from "fs";
 import { context, getOctokit } from "@actions/github";
 import benny from "benny";
 import { makeMatrix } from "../src/index.js";
-import packageJson from "../package.json" assert { type: "json" };
+import packageJson from "../package.json" with { type: "json" };
 
 const { name: packageName, version } = packageJson;
 
