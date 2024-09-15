@@ -16,13 +16,6 @@ updates:
         update-types:
         - "minor"
         - "patch"
-      lint-dependencies:
-        dependency-type: "development"
-        patterns:
-          - "eslint*"
-          - "@typescript-eslint/*"
-        update-types:
-        - "major"
       commitlint-monorepo:
         dependency-type: "development"
         patterns:

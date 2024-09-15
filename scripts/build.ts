@@ -1,4 +1,4 @@
-import { defineConfig, Options } from "tsup";
+import { type Options, defineConfig } from "tsup";
 
 const baseConfig: Options = {
   entry: ["src/index.ts"],
@@ -18,7 +18,7 @@ export default defineConfig([
     ...baseConfig,
     minify: "terser",
     outExtension: ({ format }) => ({
-      js: format === "esm" ? `.min.js` : `.min.${format}`,
+      js: format === "esm" ? ".min.js" : `.min.${format}`,
     }),
   },
 ]);

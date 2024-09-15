@@ -1,8 +1,10 @@
-import * as fs from "fs";
+import * as fs from "node:fs";
+
 import { context, getOctokit } from "@actions/github";
 import benny from "benny";
-import { makeMatrix } from "../src/index.js";
+
 import packageJson from "../package.json" with { type: "json" };
+import { makeMatrix } from "../src/index.js";
 
 const { name: packageName, version } = packageJson;
 
@@ -62,7 +64,6 @@ benny
       }`,
     }));
 
-    /* eslint-disable no-console */
     console.log("\n");
     console.log(`Benchmark against currently published version (${version}):\n`);
     console.table(
@@ -75,7 +76,6 @@ benny
       ),
       ["new", "old", "delta"]
     );
-    /* eslint-enable no-console */
 
     if (!isInCI || !process.env.GITHUB_TOKEN) {
       return;
@@ -84,9 +84,9 @@ benny
     const body = ["### Benchmark against currently published version:"];
     body.push("| Key  | Current PR | Published version | Difference |");
     body.push("| :--- | :--------: | :---------------: | :--------: |");
-    prettyDiffs.forEach(diff => {
+    for (const diff of prettyDiffs) {
       body.push(`| ${diff.name} | ${diff.new}| ${diff.old} | ${diff.delta} |`);
-    });
+    }
 
     await getOctokit(process.env.GITHUB_TOKEN).rest.issues.createComment({
       issue_number: context.issue.number,

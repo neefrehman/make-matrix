@@ -1,4 +1,5 @@
-import { expect, test, describe } from "vitest";
+import { describe, expect, test } from "vitest";
+
 import { makeMatrix } from "../index";
 
 const testCases = [[6], [1, 1], [3, 2, 3], [1, 4, 5, 2], [2, 4, 2, 4, 2]];

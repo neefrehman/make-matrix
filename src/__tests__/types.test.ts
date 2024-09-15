@@ -1,4 +1,5 @@
-import { assertType, test, describe } from "vitest";
+import { assertType, describe, test } from "vitest";
+
 import { makeMatrix } from "../index";
 
 describe("assert types", () => {
