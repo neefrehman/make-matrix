@@ -1,4 +1,4 @@
-name: Release
+name: Test & Release
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   release:
-    name: Release
+    name: Test & Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,6 +16,12 @@ jobs:
           fetch-depth: 2
       - name: Set up repo
         uses: ./.github/actions/setup
+      - name: Check
+        run: pnpm run check
+      - name: Typecheck
+        run: pnpm run typecheck
+      - name: Test
+        run: pnpm run test
       - name: Validate current commit (last commit) with commitlint
         run: pnpm run commitlint -- --from HEAD~1 --to HEAD --verbose
       - name: Release
