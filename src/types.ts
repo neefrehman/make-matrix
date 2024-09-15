@@ -42,5 +42,4 @@ export type Vector<D extends number> = Brand<
  *
  * @see {@link https://github.com/microsoft/TypeScript/issues/31940} for discussion
  */
-// eslint-disable-next-line @typescript-eslint/ban-types
 type Brand<D> = D & {};
