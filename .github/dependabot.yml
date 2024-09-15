@@ -22,4 +22,8 @@ updates:
           - "@commitlint/*"
         update-types:
         - "major"
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: "monthly"
           
