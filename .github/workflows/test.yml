@@ -21,7 +21,7 @@ jobs:
       - name: Has src changed
         if: github.event_name == 'pull_request'
         id: src_changed
-        uses: tj-actions/changed-files@v41
+        uses: tj-actions/changed-files@v45
         with:
           files: src/index.ts
       - name: Benchmark against current release
