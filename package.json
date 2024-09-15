@@ -36,10 +36,10 @@
     "typecheck": "tsc",
     "test": "vitest run",
     "build": "tsup --config='scripts/build.ts'",
-    "prepare": "npm run build",
-    "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
-    "postversion": "npm run benchmark:ci && npm run updateBadges && git push && git push --tags",
+    "prepare": "pnpm run build",
+    "preversion": "pnpm run lint",
+    "version": "pnpm run format && git add -A src",
+    "postversion": "pnpm run benchmark:ci && pnpm run updateBadges && git push && git push --tags",
     "updateBadges": "node --loader ts-node/esm scripts/update-badges.ts",
     "pre-commit": "lint-staged",
     "commit-msg": "commitlint -e",
@@ -86,5 +86,6 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "packageManager": "pnpm@9.9.0"
 }

@@ -16,12 +16,16 @@ jobs:
           fetch-depth: 2
       - name: Set up repo
         uses: ./.github/actions/setup
+      - name: Check
+        run: pnpm run check
+      - name: Typecheck
+        run: pnpm run typecheck
       - name: Test
-        run: npm run test
+        run: pnpm run test
       - name: Build
-        run: npm run build
+        run: pnpm run build
       - name: Validate current commit (last commit) with commitlint
-        run: npm run commitlint -- --from HEAD~1 --to HEAD --verbose
+        run: pnpm run commitlint -- --from HEAD~1 --to HEAD --verbose
       - name: Release
         run: npx semantic-release
         env:

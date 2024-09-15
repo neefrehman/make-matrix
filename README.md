@@ -136,7 +136,7 @@ makeMatrix<D, T>(
 
 ## Contributing
 
-This project welcomes contributions. To get started, please [open an issue](https://github.com/neefrehman/make-matrix/issues) to do discuss the change you'd like to make. Then fork the repo, open it in your editor, and run `npm install` in your terminal. This will get everything set up for you to start making changes.
+This project welcomes contributions. To get started, please [open an issue](https://github.com/neefrehman/make-matrix/issues) to do discuss the change you'd like to make. Then fork the repo, open it in your editor, and run `pnpm install` in your terminal. This will get everything set up for you to start making changes.
 
 ### Testing, linting and commit style
 
@@ -144,7 +144,7 @@ This project uses [Biome](https://biomejs.dev/), [commitlint](https://github.com
 
 1. Biome has found non-fixable issues in the code
 2. The Vitest testing suites haven't all passed
-3. The commit message doesn't meet the [conventional commit format](https://www.conventionalcommits.org/en/v1.0.0/) (run `npm run commitizen` in terminal for help formatting your commit message)
+3. The commit message doesn't meet the [conventional commit format](https://www.conventionalcommits.org/en/v1.0.0/) (run `pnpm run commitizen` in terminal for help formatting your commit message)
 
 Open your git logs to debug commit errors.
 
