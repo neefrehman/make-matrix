@@ -1,15 +1,6 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "module": "NodeNext",
-    "declaration": true,
-    "outDir": "./lib",
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true
-  },
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@total-typescript/tsconfig/bundler/no-dom/library",
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]
 }

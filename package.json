@@ -33,7 +33,7 @@
   "scripts": {
     "check": "biome check",
     "check:fix": "biome check --write",
-    "typecheck": "tsc",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "build": "tsup --config='scripts/build.ts'",
     "prepare": "pnpm run build",
@@ -56,6 +56,7 @@
     "@commitlint/cli": "^19.0.3",
     "@commitlint/config-conventional": "^19.0.3",
     "@semantic-release/git": "^10.0.1",
+    "@total-typescript/tsconfig": "^1.0.4",
     "benny": "^3.7.1",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
