@@ -3,10 +3,7 @@ import type { Matrix, Vector } from "./types.js";
 /**
  * Creates a matrix (multi-dimensional array) with your desired dimensions and values.
  *
- * If a number is passed as the `dimensions` parameter, a matrix with that number of dimensions
- * is returned. If an array of numbers is passed, the returned matrix have those exact dimensions.
- *
- * @param dimensions    The desired dimensions of the matrix. A number or array of numbers.
+ * @param dimensions    The desired dimensions of the matrix.
  * @param initialValues The initial value for each point in the matrix. Can also take a callback function—with an argument that resolves to the current point's vector—to fill the matrix dynamically. Defaults to `null`.
  *
  * @example
