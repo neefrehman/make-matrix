@@ -1,24 +1,21 @@
-import { type Options, defineConfig } from "tsup";
+import { type Options, defineConfig } from "tsdown";
 
 const baseConfig: Options = {
   entry: ["src/index.ts"],
-  splitting: true,
-  treeshake: true,
-  format: ["cjs", "esm"],
+  format: ["cjs", "es"],
+  platform: "neutral",
 };
 
 export default defineConfig([
   {
     ...baseConfig,
-    dts: true,
-    clean: true,
     sourcemap: true,
   },
   {
     ...baseConfig,
-    minify: "terser",
-    outExtension: ({ format }) => ({
-      js: format === "esm" ? ".min.js" : `.min.${format}`,
+    minify: true,
+    outExtensions: ({ format }) => ({
+      js: format === "es" ? ".min.js" : `.min.${format}`,
     }),
   },
 ]);

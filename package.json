@@ -24,9 +24,12 @@
   "type": "module",
   "sideEffects": false,
   "exports": {
-    "types": "./dist/index.d.ts",
-    "require": "./dist/index.cjs",
-    "import": "./dist/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "development": "./src/index.ts"
+    }
   },
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
@@ -36,19 +39,19 @@
     "format:fix": "biome format --write",
     "typecheck": "tsc",
     "test": "vitest run",
-    "build": "tsup --config='scripts/build.ts'",
+    "build": "tsdown --config='scripts/build.ts'",
     "preversion": "pnpm run check",
     "version": "pnpm run build && pnpm run format:fix && git add -A src",
     "postversion": "pnpm run benchmark:ci && pnpm run updateBadges && git push && git push --tags",
-    "updateBadges": "node --loader ts-node/esm scripts/update-badges.ts",
+    "updateBadges": "tsx scripts/update-badges.ts",
     "pre-commit": "lint-staged",
     "commit-msg": "commitlint -e",
     "commitizen": "cz",
     "commitlint": "commitlint",
-    "benchmark": "node --loader ts-node/esm scripts/run-benchmark.ts current",
-    "benchmark:ci": "node --loader ts-node/esm scripts/run-benchmark.ts current ci",
-    "benchmark:diff": "node --loader ts-node/esm scripts/run-benchmark.ts diff",
-    "benchmark:diff:ci": "node --loader ts-node/esm scripts/run-benchmark.ts diff ci"
+    "benchmark": "tsx scripts/run-benchmark.ts current",
+    "benchmark:ci": "tsx scripts/run-benchmark.ts current ci",
+    "benchmark:diff": "tsx scripts/run-benchmark.ts diff",
+    "benchmark:diff:ci": "tsx scripts/run-benchmark.ts diff ci"
   },
   "devDependencies": {
     "@actions/github": "6.0.1",
@@ -63,8 +66,8 @@
     "semantic-release": "24.2.4",
     "simple-git-hooks": "2.13.0",
     "terser": "5.39.2",
-    "ts-node": "10.9.2",
-    "tsup": "8.5.0",
+    "tsdown": "0.12.2",
+    "tsx": "^4.19.4",
     "typescript": "5.8.3",
     "vitest": "3.1.4"
   },
