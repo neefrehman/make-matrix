@@ -13,8 +13,7 @@ const isInCI = process.argv[3] === "ci";
 const file = `${packageName}-${isInCI ? "ci" : "local"}`;
 
 const directionEmojiMapping = { [-1]: "🚨", 0: "🔄", 1: "✅" };
-const getDirection = (diff: number) => (diff > 0 ? 1 : diff < 0 ? -1 : 0);
-const getEmoji = (diff: number) => directionEmojiMapping[getDirection(diff)];
+const getEmoji = (diff: number) => directionEmojiMapping[Math.sign(diff)];
 
 type Diff = {
   name: string;
