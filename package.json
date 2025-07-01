@@ -63,13 +63,13 @@
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
     "lint-staged": "15.5.2",
-    "semantic-release": "24.2.4",
+    "semantic-release": "24.2.6",
     "simple-git-hooks": "2.13.0",
-    "terser": "5.39.2",
-    "tsdown": "0.12.2",
+    "terser": "5.43.1",
+    "tsdown": "0.12.9",
     "tsx": "^4.19.4",
     "typescript": "5.8.3",
-    "vitest": "3.1.4"
+    "vitest": "3.2.4"
   },
   "lint-staged": {
     "*": [],
