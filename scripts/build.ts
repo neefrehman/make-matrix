@@ -1,21 +1,10 @@
-import { type Options, defineConfig } from "tsdown";
+import { defineConfig } from "tsdown";
 
-const baseConfig: Options = {
+export const buildConfig = defineConfig({
   entry: ["src/index.ts"],
-  format: ["cjs", "es"],
+  format: ["es"],
   platform: "neutral",
-};
+  sourcemap: true,
+});
 
-export default defineConfig([
-  {
-    ...baseConfig,
-    sourcemap: true,
-  },
-  {
-    ...baseConfig,
-    minify: true,
-    outExtensions: ({ format }) => ({
-      js: format === "es" ? ".min.js" : `.min.${format}`,
-    }),
-  },
-]);
+export default buildConfig;

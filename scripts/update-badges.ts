@@ -14,30 +14,33 @@ import { exec } from "node:child_process";
 import * as fs from "node:fs";
 import { promisify } from "node:util";
 
+import { build } from "tsdown";
+
+import packageJson from "../package.json" with { type: "json" };
+import { buildConfig } from "./build.ts";
+
 const execAsync = promisify(exec);
 const getStdOut = async (sh: string) => (await execAsync(sh)).stdout.trim();
-
-/*
- * With sed command that I couldn't quite get the regex working for:
- * grep -m 1 \"version\" package.json | awk -F: '{ print $2 }' | sed 's/[",]//g' | (read VERSION && sed -i '' "/v(\d+\.)?(\d+\.)?(\*|\d+)/v$VERSION/" README.md)
- */
-const getVersionCommand = `grep -m 1 \"version\" package.json | awk -F: '{ print $2 }' | sed 's/[",]//g'`;
-
-/*
- * With sed command that I couldn't quite get the regex working for:
- * gzip dist/index.min.js -kf && wc -c < dist/index.min.js.gz | (read MINZIPPED_SIZE && sed -i '' "s/\d+_B/$MINZIPPED_SIZE\_B/" README.md)
- */
-const getMinZippedSizeCommand =
-  "gzip dist/index.min.js -kf && wc -c < dist/index.min.js.gz";
 
 const main = async () => {
   const currentReadme = fs.readFileSync("./README.md", "utf-8");
 
-  const newVersion = await getStdOut(getVersionCommand);
-  const newMinzippedSize = await getStdOut(getMinZippedSizeCommand);
+  await build({
+    ...buildConfig,
+    filter: undefined, // required to avoid type error
+    minify: true,
+    sourcemap: false,
+    dts: false,
+    outDir: "tmp",
+    outExtensions: () => ({ js: ".min.js" }),
+  });
+
+  const newMinzippedSize = await getStdOut(
+    "gzip tmp/index.min.js -kf && wc -c < tmp/index.min.js.gz"
+  );
 
   const newReadme = currentReadme
-    .replace(/v(\d+\.)?(\d+\.)?(\*|\d+)/, `v${newVersion}`)
+    .replace(/v(\d+\.)?(\d+\.)?(\*|\d+)/, `v${packageJson.version}`)
     .replace(/\d+_B/, `${newMinzippedSize}_B`);
 
   fs.writeFileSync("./README.md", newReadme);

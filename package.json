@@ -20,13 +20,15 @@
   "bugs": {
     "url": "https://github.com/neefrehman/make-matrix/issues"
   },
-  "files": ["src/**/*", "dist/**/*"],
+  "files": [
+    "src/**/*",
+    "dist/**/*"
+  ],
   "type": "module",
   "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
       "import": "./dist/index.js",
       "development": "./src/index.ts"
     }
@@ -42,47 +44,45 @@
     "build": "tsdown --config='scripts/build.ts'",
     "preversion": "pnpm run check",
     "version": "pnpm run build && pnpm run format:fix && git add -A src",
-    "postversion": "pnpm run benchmark:ci && pnpm run updateBadges && git push && git push --tags",
-    "updateBadges": "tsx scripts/update-badges.ts",
-    "pre-commit": "lint-staged",
+    "postversion": "pnpm run benchmark:ci && node --experimental-strip-types scripts/update-badges.ts && git push && git push --tags",
     "commit-msg": "commitlint -e",
     "commitizen": "cz",
     "commitlint": "commitlint",
-    "benchmark": "tsx scripts/run-benchmark.ts current",
-    "benchmark:ci": "tsx scripts/run-benchmark.ts current ci",
-    "benchmark:diff": "tsx scripts/run-benchmark.ts diff",
-    "benchmark:diff:ci": "tsx scripts/run-benchmark.ts diff ci"
+    "benchmark": "node --experimental-strip-types scripts/run-benchmark.ts current",
+    "benchmark:ci": "node --experimental-strip-types scripts/run-benchmark.ts current ci",
+    "benchmark:diff": "node --experimental-strip-types scripts/run-benchmark.ts diff",
+    "benchmark:diff:ci": "node --experimental-strip-types scripts/run-benchmark.ts diff ci"
   },
   "devDependencies": {
     "@actions/github": "6.0.1",
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.2.4",
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@semantic-release/git": "10.0.1",
+    "@types/node": "24.3.3",
     "benny": "3.7.1",
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
-    "lint-staged": "15.5.2",
-    "semantic-release": "24.2.7",
+    "semantic-release": "24.2.8",
     "simple-git-hooks": "2.13.1",
-    "terser": "5.43.1",
-    "tsdown": "0.13.1",
-    "tsx": "^4.19.4",
+    "tsdown": "0.15.1",
     "typescript": "5.9.2",
     "vitest": "3.2.4"
   },
-  "lint-staged": {
-    "*": [],
-    "*.(js|ts|tsx)": ["biome check --write", "vitest related --run --passWithNoTests"]
-  },
   "simple-git-hooks": {
-    "commit-msg": "npm run commit-msg",
-    "pre-commit": "npm run pre-commit"
+    "commit-msg": "pnpm run commit-msg",
+    "pre-commit": "pnpm run check:fix && pnpm run test"
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"],
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
     "rules": {
-      "body-max-line-length": [1, "always", 100]
+      "body-max-line-length": [
+        1,
+        "always",
+        100
+      ]
     }
   },
   "config": {
@@ -90,5 +90,5 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "packageManager": "pnpm@9.9.0"
+  "packageManager": "pnpm@10.15.1"
 }

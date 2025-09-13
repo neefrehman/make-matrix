@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -16,16 +16,31 @@
     "attributePosition": "auto",
     "bracketSpacing": true
   },
-  "organizeImports": {
-    "enabled": true
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ":NODE:",
+              ":BLANK_LINE:",
+              ":PACKAGE:",
+              ":BLANK_LINE:",
+              ":PATH:",
+              ":BLANK_LINE:"
+            ]
+          }
+        }
+      }
+    }
   },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
       "correctness": {
-        "noUnusedVariables": "error",
-        "useArrayLiterals": "error"
+        "noUnusedVariables": "error"
       },
       "style": {
         "noNamespace": "error",
@@ -51,7 +66,7 @@
   },
   "overrides": [
     {
-      "include": ["./scripts/run-benchmark.ts"],
+      "includes": ["./scripts/**/*.ts"],
       "linter": { "rules": { "suspicious": { "noConsole": "off" } } }
     }
   ]
