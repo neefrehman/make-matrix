@@ -21,7 +21,7 @@ const getStdOut = async (sh: string) => (await execAsync(sh)).stdout.trim();
  * With sed command that I couldn't quite get the regex working for:
  * grep -m 1 \"version\" package.json | awk -F: '{ print $2 }' | sed 's/[",]//g' | (read VERSION && sed -i '' "/v(\d+\.)?(\d+\.)?(\*|\d+)/v$VERSION/" README.md)
  */
-const getVersionCommand = `grep -m 1 \"version\" package.json | awk -F: '{ print $2 }' | sed 's/[",]//g'`;
+const getVersionCommand = `grep -m 1 "version" package.json | awk -F: '{ print $2 }' | sed 's/[",]//g'`;
 
 /*
  * With sed command that I couldn't quite get the regex working for:

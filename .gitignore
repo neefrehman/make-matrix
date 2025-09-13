@@ -2,6 +2,7 @@
 node_modules/
 lib/
 dist/
+tmp/
 coverage/
 .jest-cache/
 benchmark/results/make-matrix-local.json

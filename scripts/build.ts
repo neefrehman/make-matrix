@@ -1,4 +1,4 @@
-import { type Options, defineConfig } from "tsdown";
+import { defineConfig, type Options } from "tsdown";
 
 const baseConfig: Options = {
   entry: ["src/index.ts"],

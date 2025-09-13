@@ -140,7 +140,7 @@ This project welcomes contributions. To get started, please [open an issue](http
 
 ### Testing, linting and commit style
 
-This project uses [Biome](https://biomejs.dev/), [commitlint](https://github.com/conventional-changelog/commitlint) and [vitest](https://vitest.dev/) — in combination with [lint-staged](https://github.com/okonet/lint-staged) and [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks) — to enforce code quality, consistency and changelog style. These tools will check changed files, and cancel a commit with logging if any of the following are true:
+This project uses [Biome](https://biomejs.dev/), [commitlint](https://github.com/conventional-changelog/commitlint) and [vitest](https://vitest.dev/) — in combination with [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks) — to enforce code quality, consistency and changelog style. These tools will check changed files, and cancel a commit with logging if any of the following are true:
 
 1. Biome has found non-fixable issues in the code
 2. The Vitest testing suites haven't all passed

@@ -4,7 +4,7 @@ import { context, getOctokit } from "@actions/github";
 import benny from "benny";
 
 import packageJson from "../package.json" with { type: "json" };
-import { makeMatrix } from "../src/index.js";
+import { makeMatrix } from "../src/index.ts";
 
 const { name: packageName, version } = packageJson;
 
@@ -13,7 +13,7 @@ const isInCI = process.argv[3] === "ci";
 const file = `${packageName}-${isInCI ? "ci" : "local"}`;
 
 const directionEmojiMapping = { [-1]: "🚨", 0: "🔄", 1: "✅" };
-const getEmoji = (diff: number) => directionEmojiMapping[Math.sign(diff)];
+const getEmoji = (diff: number) => directionEmojiMapping[Math.sign(diff) as -1 | 0 | 1];
 
 type Diff = {
   name: string;
