@@ -12,21 +12,21 @@ import type { Matrix, Vector } from "./types.js";
  * const twoDRandomNumberArray = makeMatrix([1, 4], () => Math.random()); // A 1x4 array containing random numbers
  * const twoDVectorArray = makeMatrix([3, 3], vector => vector.join()); // A 3x3 array containing each point's co-ordinate as a string
  */
-const makeMatrix = <D extends number, T>(
-  dimensions: Vector<D>,
+const makeMatrix = <const D extends readonly number[], T>(
+  dimensions: D,
   initialValues: T | ((currentPosition: Vector<D>) => T) | null = null
 ): Matrix<D, T> => {
-  const initialPosition = Array(dimensions.length).fill(0) as Vector<D>;
-  return _makeMatrix(dimensions, initialValues, initialPosition);
+  const initialPosition = Array(dimensions.length).fill(0);
+  return _makeMatrix(dimensions, initialValues, initialPosition as Vector<D>);
 };
 
 /**
  * Recursively creates a matrix (depth first), and keeps track of the current position's vector.
  */
-function _makeMatrix<D extends number, T>(
-  dimensions: Vector<D>,
+function _makeMatrix<const D extends readonly number[], T>(
+  dimensions: D,
   initialValues: T | ((currentPosition: Vector<D>) => T) | null,
-  currentPosition: Vector<D>
+  currentPosition: number[]
 ): Matrix<D, T> {
   const [currentDimensionLength, ...remainingDimensions] = dimensions;
   const currentDimension = currentPosition.length - remainingDimensions.length - 1;
@@ -34,7 +34,7 @@ function _makeMatrix<D extends number, T>(
   return [...Array(currentDimensionLength)].map((_, i) => {
     currentPosition[currentDimension] = i;
     return remainingDimensions.length > 0
-      ? _makeMatrix(remainingDimensions as Vector<D>, initialValues, currentPosition)
+      ? _makeMatrix(remainingDimensions as unknown as D, initialValues, currentPosition)
       : initialValues instanceof Function
         ? initialValues(currentPosition.slice() as Vector<D>)
         : initialValues;
