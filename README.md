@@ -1,7 +1,7 @@
 <img src="assets/banner.gif" alt="make-matrix" width="100%">
 
 [![build](https://github.com/neefrehman/make-matrix/actions/workflows/test-and-release.yml/badge.svg?branch=main)](https://github.com/neefrehman/make-matrix/actions "View the build actions for this project")
-[![npm version](https://img.shields.io/badge/npm-v4.0.2-0074c1)](https://npmjs.org/package/make-matrix "View this project on npm")
+[![npm version](https://img.shields.io/badge/npm-v4.0.3-0074c1)](https://npmjs.org/package/make-matrix "View this project on npm")
 [![types included](https://img.shields.io/badge/types-included-0074c1)](https://npmjs.org/package/make-matrix "Types are included in this package")
 [![bundle size](https://img.shields.io/badge/minzipped_size-202_B-0074c1)](https://bundlephobia.com/result?p=make-matrix "View this project on bundlephobia")
 
