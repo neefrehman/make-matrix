@@ -29,7 +29,6 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
       "import": "./dist/index.js",
       "development": "./src/index.ts"
     }
@@ -45,8 +44,7 @@
     "build": "tsdown --config='scripts/build.ts'",
     "preversion": "pnpm run check",
     "version": "pnpm run build && pnpm run format:fix && git add -A src",
-    "postversion": "pnpm run benchmark:ci && pnpm run updateBadges && git push && git push --tags",
-    "updateBadges": "node --experimental-strip-types scripts/update-badges.ts",
+    "postversion": "pnpm run benchmark:ci && node --experimental-strip-types scripts/update-badges.ts && git push && git push --tags",
     "commit-msg": "commitlint -e",
     "commitizen": "cz",
     "commitlint": "commitlint",
